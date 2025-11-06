@@ -68,6 +68,19 @@ class _MyAppState extends State<MyApp> {
       );
     }
 
+    // Convert string themeMode to ThemeMode enum
+    ThemeMode selectedThemeMode;
+    switch (_settings.themeMode) {
+      case 'light':
+        selectedThemeMode = ThemeMode.light;
+        break;
+      case 'dark':
+        selectedThemeMode = ThemeMode.dark;
+        break;
+      default:
+        selectedThemeMode = ThemeMode.system;
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'DISK KMs sångbok',
@@ -81,6 +94,17 @@ class _MyAppState extends State<MyApp> {
         ),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFFD4AF37), // Gold color
+          secondary: const Color(0xFFD4AF37), // Gold
+          primary: const Color(0xFFFFD700), // Brighter gold for dark mode
+          surface: const Color(0xFF1E1E1E), // Dark grey
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+      ),
+      themeMode: selectedThemeMode, // Use the setting from AppSettings
       home: SongListScreen(
         settings: _settings,
         onSettingsChanged: _updateSettings,

@@ -27,6 +27,54 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
+          // Theme Mode Setting
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.palette),
+                    title: const Text('Tema'),
+                    subtitle: const Text('Välj ljust, mörkt eller systemtema'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: SegmentedButton<String>(
+                      segments: const [
+                        ButtonSegment<String>(
+                          value: 'system',
+                          label: Text('System'),
+                          icon: Icon(Icons.brightness_auto),
+                        ),
+                        ButtonSegment<String>(
+                          value: 'light',
+                          label: Text('Ljust'),
+                          icon: Icon(Icons.light_mode),
+                        ),
+                        ButtonSegment<String>(
+                          value: 'dark',
+                          label: Text('Mörkt'),
+                          icon: Icon(Icons.dark_mode),
+                        ),
+                      ],
+                      selected: {widget.settings.themeMode},
+                      onSelectionChanged: (Set<String> newSelection) {
+                        final updatedSettings = widget.settings.copyWith(
+                          themeMode: newSelection.first,
+                        );
+                        widget.onSettingsChanged(updatedSettings);
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+
           // Show Adult Songs
           Card(
             child: SwitchListTile(
