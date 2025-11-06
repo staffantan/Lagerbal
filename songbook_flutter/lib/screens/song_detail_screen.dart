@@ -101,9 +101,10 @@ class SongDetailScreen extends StatelessWidget {
               ]
             : null,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title
@@ -146,6 +147,7 @@ class SongDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }

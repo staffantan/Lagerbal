@@ -307,8 +307,9 @@ class _SongListScreenState extends State<SongListScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
+      body: SafeArea(
+        child: Column(
+          children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
@@ -382,6 +383,7 @@ class _SongListScreenState extends State<SongListScreen> {
                   ),
           ),
         ],
+      ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addCustomSong,

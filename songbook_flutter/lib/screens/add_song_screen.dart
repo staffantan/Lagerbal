@@ -53,9 +53,10 @@ class _AddSongScreenState extends State<AddSongScreen> {
           ),
         ],
       ),
-      body: Form(
-        key: _formKey,
-        child: ListView(
+      body: SafeArea(
+        child: Form(
+          key: _formKey,
+          child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
             // Title
@@ -150,6 +151,7 @@ class _AddSongScreenState extends State<AddSongScreen> {
             ),
           ],
         ),
+      ),
       ),
     );
   }
