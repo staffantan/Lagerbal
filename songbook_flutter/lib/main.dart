@@ -71,7 +71,13 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'DISK KMs sångbok',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFFD4AF37), // Gold color
+          secondary: const Color(0xFFD4AF37), // Gold
+          primary: const Color(0xFF757575), // Grey
+          surface: const Color(0xFFF5F5F5), // Light grey
+          brightness: Brightness.light,
+        ),
         useMaterial3: true,
       ),
       home: SongListScreen(
