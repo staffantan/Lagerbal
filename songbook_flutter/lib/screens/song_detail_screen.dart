@@ -7,12 +7,16 @@ class SongDetailScreen extends StatelessWidget {
   final Song song;
   final bool isCustomSong;
   final VoidCallback? onDelete;
+  final bool isFavorite;
+  final VoidCallback? onToggleFavorite;
 
   const SongDetailScreen({
     super.key,
     required this.song,
     this.isCustomSong = false,
     this.onDelete,
+    this.isFavorite = false,
+    this.onToggleFavorite,
   });
 
   void _confirmDelete(BuildContext context) {
@@ -86,20 +90,27 @@ class SongDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(song.title),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        actions: isCustomSong && onDelete != null
-            ? [
-                IconButton(
-                  icon: const Icon(Icons.share),
-                  tooltip: 'Dela låt',
-                  onPressed: () => _shareSong(context),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.delete),
-                  tooltip: 'Radera låt',
-                  onPressed: () => _confirmDelete(context),
-                ),
-              ]
-            : null,
+        actions: [
+          // Favorite button (always visible)
+          IconButton(
+            icon: Icon(isFavorite ? Icons.star : Icons.star_border),
+            tooltip: isFavorite ? 'Ta bort från favoriter' : 'Lägg till i favoriter',
+            onPressed: onToggleFavorite,
+          ),
+          // Share and delete buttons (only for custom songs)
+          if (isCustomSong && onDelete != null) ...[
+            IconButton(
+              icon: const Icon(Icons.share),
+              tooltip: 'Dela låt',
+              onPressed: () => _shareSong(context),
+            ),
+            IconButton(
+              icon: const Icon(Icons.delete),
+              tooltip: 'Radera låt',
+              onPressed: () => _confirmDelete(context),
+            ),
+          ],
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

@@ -29,7 +29,9 @@ class _SongListScreenState extends State<SongListScreen> {
   final TextEditingController _searchController = TextEditingController();
   String _searchQuery = '';
   final List<Song> _customSongs = [];
+  final Set<String> _favoriteSongs = {}; // Track favorite song titles
   static const String _customSongsKey = 'custom_songs';
+  static const String _favoritesKey = 'favorite_songs';
   late AppLinks _appLinks;
   StreamSubscription<Uri>? _linkSubscription;
 
@@ -37,6 +39,7 @@ class _SongListScreenState extends State<SongListScreen> {
   void initState() {
     super.initState();
     _loadCustomSongs();
+    _loadFavorites();
     _initDeepLinks();
   }
 
@@ -102,6 +105,8 @@ class _SongListScreenState extends State<SongListScreen> {
                           song: song,
                           isCustomSong: true,
                           onDelete: () => _deleteCustomSong(song),
+                          isFavorite: _isFavorite(song),
+                          onToggleFavorite: () => _toggleFavorite(song),
                         ),
                       ),
                     );
@@ -175,6 +180,39 @@ class _SongListScreenState extends State<SongListScreen> {
     await prefs.setString(_customSongsKey, songsJson);
   }
 
+  Future<void> _loadFavorites() async {
+    final prefs = await SharedPreferences.getInstance();
+    final favoritesJson = prefs.getStringList(_favoritesKey);
+    
+    if (favoritesJson != null) {
+      setState(() {
+        _favoriteSongs.clear();
+        _favoriteSongs.addAll(favoritesJson);
+      });
+    }
+  }
+
+  Future<void> _saveFavorites() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList(_favoritesKey, _favoriteSongs.toList());
+  }
+
+  void _toggleFavorite(Song song) {
+    setState(() {
+      if (_favoriteSongs.contains(song.title)) {
+        _favoriteSongs.remove(song.title);
+      } else {
+        _favoriteSongs.add(song.title);
+      }
+    });
+    _saveFavorites();
+  }
+
+  bool _isFavorite(Song song) {
+    return _favoriteSongs.contains(song.title);
+  }
+
+
   void _addCustomSong() async {
     final newSong = await Navigator.push<Song>(
       context,
@@ -235,9 +273,38 @@ class _SongListScreenState extends State<SongListScreen> {
       return true;
     }).toList();
 
-    // Add custom songs category at the beginning if there are custom songs and setting is enabled
-    if (_customSongs.isNotEmpty && widget.settings.showCustomSongs) {
+    // Collect all favorite songs from all categories
+    final favoriteSongsList = <Song>[];
+    if (_favoriteSongs.isNotEmpty) {
+      // Check custom songs
+      for (final song in _customSongs) {
+        if (_favoriteSongs.contains(song.title)) {
+          favoriteSongsList.add(song);
+        }
+      }
+      // Check all sample songs
+      for (final category in sampleSongbook) {
+        for (final song in category.songs) {
+          if (_favoriteSongs.contains(song.title)) {
+            favoriteSongsList.add(song);
+          }
+        }
+      }
+    }
+
+    // Add favorites category at the beginning if there are favorites
+    if (favoriteSongsList.isNotEmpty) {
       categoriesToShow.insert(0, Category(
+        name: 'Favoriter',
+        songs: favoriteSongsList,
+      ));
+    }
+
+    // Add custom songs category after favorites if there are custom songs and setting is enabled
+    if (_customSongs.isNotEmpty && widget.settings.showCustomSongs) {
+      // Insert after favorites (if exists) or at beginning
+      final insertIndex = favoriteSongsList.isNotEmpty ? 1 : 0;
+      categoriesToShow.insert(insertIndex, Category(
         name: 'Egna visor',
         songs: _customSongs,
       ));
@@ -378,6 +445,8 @@ class _SongListScreenState extends State<SongListScreen> {
                         songs: songs,
                         showCount: _searchQuery.isNotEmpty,
                         onDeleteSong: category.name == 'Egna visor' ? _deleteCustomSong : null,
+                        isFavorite: _isFavorite,
+                        onToggleFavorite: _toggleFavorite,
                       );
                     },
                   ),
@@ -399,12 +468,16 @@ class _CategorySection extends StatelessWidget {
   final List<Song> songs;
   final bool showCount;
   final Function(Song)? onDeleteSong;
+  final bool Function(Song) isFavorite;
+  final Function(Song) onToggleFavorite;
 
   const _CategorySection({
     required this.category,
     required this.songs,
     this.showCount = false,
     this.onDeleteSong,
+    required this.isFavorite,
+    required this.onToggleFavorite,
   });
 
   @override
@@ -432,6 +505,8 @@ class _CategorySection extends StatelessWidget {
               onDelete: isCustomCategory && onDeleteSong != null
                   ? () => onDeleteSong!(song)
                   : null,
+              isFavorite: isFavorite(song),
+              onToggleFavorite: () => onToggleFavorite(song),
             )),
         const Divider(height: 1),
       ],
@@ -443,11 +518,15 @@ class _SongListTile extends StatelessWidget {
   final Song song;
   final bool isCustomSong;
   final VoidCallback? onDelete;
+  final bool isFavorite;
+  final VoidCallback onToggleFavorite;
 
   const _SongListTile({
     required this.song,
     this.isCustomSong = false,
     this.onDelete,
+    required this.isFavorite,
+    required this.onToggleFavorite,
   });
 
   @override
@@ -463,6 +542,8 @@ class _SongListTile extends StatelessWidget {
               song: song,
               isCustomSong: isCustomSong,
               onDelete: onDelete,
+              isFavorite: isFavorite,
+              onToggleFavorite: onToggleFavorite,
             ),
           ),
         );
