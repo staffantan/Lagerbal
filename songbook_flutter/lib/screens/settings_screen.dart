@@ -42,21 +42,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: SegmentedButton<String>(
+                      showSelectedIcon: false,
                       segments: const [
                         ButtonSegment<String>(
                           value: 'system',
-                          label: Text('System'),
                           icon: Icon(Icons.brightness_auto),
+                          tooltip: 'System',
                         ),
                         ButtonSegment<String>(
                           value: 'light',
-                          label: Text('Ljust'),
                           icon: Icon(Icons.light_mode),
+                          tooltip: 'Ljust',
                         ),
                         ButtonSegment<String>(
                           value: 'dark',
-                          label: Text('Mörkt'),
                           icon: Icon(Icons.dark_mode),
+                          tooltip: 'Mörkt',
                         ),
                       ],
                       selected: {widget.settings.themeMode},
