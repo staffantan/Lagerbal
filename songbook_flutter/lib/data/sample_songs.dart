@@ -7,8 +7,8 @@ final List<Category> sampleSongbook = [
     songs: [
       Song(
         title: 'Nationalsången',
-        author: 'Text: Richard Dybeck',
-        melody: 'Melodi: Så rider jag mig över tolvmilan skog',
+        author: 'Richard Dybeck',
+        melody: 'Så rider jag mig över tolvmilan skog',
         lyrics: '''Du gamla, Du fria, Du fjällhöga nord
 Du tysta, Du glädjerika sköna!
 Jag hälsar Dig, vänaste land uppå jord,
@@ -32,7 +32,7 @@ Jag byter Dig ej, mot allt i en värld.
       ),
       Song(
         title: 'Gustafs Skål',
-        author: 'Text: Carl Michael Bellman',
+        author: 'Carl Michael Bellman',
         melody: '',
         lyrics: '''||: Gustafs skål!
 Den bäste Kung, som Norden äger: 
@@ -59,8 +59,8 @@ Till at göra rätt. :||''',
       ),
       Song(
         title: 'Kungssången',
-        author: 'Text: Carl Vilhelm August Strandberg',
-        melody: 'Melodi: Otto Lindblad',
+        author: 'Carl Vilhelm August Strandberg',
+        melody: 'Otto Lindblad',
         lyrics: '''Ur svenska hjärtans djup en gång
 en samfälld och en enkel sång,
 som går till kungen fram!
@@ -104,7 +104,7 @@ utöver nordanland!''',
       ),
       Song(
         title: 'Här är gudagott att vara',
-        author: 'Text: Gunnar Wennerberg',
+        author: 'Gunnar Wennerberg',
         melody: '',
         lyrics: '''Här är gudagott att vara.
 O, vad livet dock är skönt.
@@ -118,8 +118,8 @@ Dricka oss små blommor till.''',
       ),
       Song(
         title: 'Sveriges flagga',
-        author: 'Text: Karl Gustav Ossiannilsson',
-        melody: 'Melodi: Hugo Alfvén',
+        author: 'Karl Gustav Ossiannilsson',
+        melody: 'Hugo Alfvén',
         lyrics: '''Flamma stolt mot dunkla skyar
 lik en glimt av sommarens sol!
 över Sveriges skogar, berg och byar,
@@ -141,8 +141,8 @@ Han skall bära stark vårt fria svenska folk!''',
       ),
       Song(
         title: 'Studentsången',
-        author: 'Text: Herman Sätherberg',
-        melody: 'Melodi: Prins Gustaf',
+        author: 'Herman Sätherberg',
+        melody: 'Prins Gustaf',
         lyrics: '''Sjung om studentens lyckliga dag
 låtom oss fröjdas i ungdomens vår!
 än klappar hjärtat med friska slag,
@@ -170,8 +170,8 @@ Liv och blod för vårt fädernesland!''',
       ),
       Song(
         title: 'Frans Mikael Franzéns dryckesvisa',
-        author: 'Text: Biskop Frans Mikael Franzén',
-        melody: 'Melodi: Olof Åhlström',
+        author: 'Biskop Frans Mikael Franzén',
+        melody: 'Olof Åhlström',
         lyrics: '''När skämtet tar ordet vid vänskapens bord
 med fingret kring glasen som dofta.
 Så drick och var glad, på vår sorgliga jord
@@ -211,8 +211,8 @@ i tysthet en var åt sin flicka.''',
       ),
       Song(
         title: 'Sverige',
-        author: 'Text: Verner von Heidenstam',
-        melody: 'Melodi: Wilhelm Stenhammar',
+        author: 'Verner von Heidenstam',
+        melody: 'Wilhelm Stenhammar',
         lyrics: '''Sverige, Sverige, Sverige fosterland
 Vår längtans bygd, vårt hem på jorden.
 Nu spelar källorna, där härar lysts av brand,
@@ -228,8 +228,8 @@ och våra fäder sova under kyrkohällen!''',
       ),
       Song(
         title: 'O gamla klang- och jubeltid',
-        author: 'Text: August Lindh',
-        melody: 'Melodi: O alte Burschenherrlichkeit',
+        author: 'August Lindh',
+        melody: 'O alte Burschenherrlichkeit',
         lyrics: '''O gamla klang- och jubeltid
 ditt minne skall förbliva
 och än åt livets bistra strid,
@@ -276,7 +276,7 @@ bland skålar och pokaler!''',
       ),
       Song(
         title: 'O alte Burschenherrlichkeit',
-        author: 'Text: Eugen Höfling',
+        author: 'Eugen Höfling',
         melody: '',
         lyrics: '''O alte Burschenherrlichkeit,
 Wohin bist du entschwunden,
@@ -348,8 +348,8 @@ Noch lebt die alte Treue.''',
       ),
       Song(
         title: 'Nu grönskar det',
-        author: 'Text: Evelyn Lindström',
-        melody: 'Melodi: Johann Sebastian Bach, ur Bondekantaten',
+        author: 'Evelyn Lindström',
+        melody: 'Johann Sebastian Bach, ur Bondekantaten',
         lyrics: '''Nu grönskar det i dalens famn
 nu doftar äng och lid.
 Kom med, kom med på vandringsfärd
@@ -371,7 +371,7 @@ där våren går i blom.''',
       ),
       Song(
         title: 'Den blomstertid nu kommer',
-        author: 'Text: Israel Kolmodin',
+        author: 'Israel Kolmodin',
         melody: '',
         lyrics: '''Den blomstertid nu kommer
 med lust och fägring stor.
@@ -403,7 +403,7 @@ och fröjda på en gång.''',
       ),
       Song(
         title: 'De brevitate vitae',
-        author: 'Text: Christian Wilhelm Kindleben',
+        author: 'Christian Wilhelm Kindleben',
         melody: '',
         lyrics: '''||: Gaudeamus igitur, juvenes dum sumus! :||
 Post jucundam juventutem,
@@ -437,8 +437,8 @@ quivis antiburschius,
       ),
       Song(
         title: 'Längtan till landet',
-        author: 'Text: Herman Sätherberg',
-        melody: 'Melodi: Otto Lindblad',
+        author: 'Herman Sätherberg',
+        melody: 'Otto Lindblad',
         lyrics: '''Vintern rasat ut bland våra fjällar,
 drivans blommor smälta ner och dö.
 Himlen ler i vårens ljusa kvällar,
@@ -460,7 +460,7 @@ vattenfågelns lek kring fjärd och ö.''',
       ),
       Song(
         title: 'Vårvindar friska',
-        author: 'Text: Julia Kristina Nyberg alias Euphrosyne',
+        author: 'Julia Kristina Nyberg alias Euphrosyne',
         melody: '',
         lyrics: '''Vårvindar friska, leka och viska
 lunderna kring, likt älskande par.
@@ -511,8 +511,8 @@ Kom liljor...''',
       ),
       Song(
         title: 'Majsång',
-        author: 'Text: Johan Ludvig Runeberg',
-        melody: 'Melodi: Lars Magnus Béen',
+        author: 'Johan Ludvig Runeberg',
+        melody: 'Lars Magnus Béen',
         lyrics: '''Sköna maj, välkommen
 till vår bygd igen!
 Sköna maj, välkommen,
@@ -564,8 +564,8 @@ liksom vi: Välkommen, sköna maj!''',
       ),
       Song(
         title: 'En vänlig grönskas rika dräkt',
-        author: 'Text: Carl David af Wirsén',
-        melody: 'Melodi: Waldemar Åhlén',
+        author: 'Carl David af Wirsén',
+        melody: 'Waldemar Åhlén',
         lyrics: '''En vänlig grönskas rika dräkt
 har smyckat dal och ängar.
 Nu smeker vindens ljumma fläkt
@@ -598,8 +598,8 @@ Blott Herrens ord förbliver.''',
     songs: [
       Song(
         title: 'Portos visa',
-        author: 'Text: Tord Andrén',
-        melody: 'Melodi: You can\'t get a man with a gun',
+        author: 'Tord Andrén',
+        melody: 'You can\'t get a man with a gun',
         lyrics: '''Jag vill börja gasqua
 var fan är min flaska?
 Vem i helvete stal min butelj?
@@ -624,7 +624,7 @@ för att pröva på rubb och stubb.
       Song(
         title: 'Jag har aldrig var\'t på snusen',
         author: '',
-        melody: 'Melodi: Åh, hur saligt att få vandra',
+        melody: 'Åh, hur saligt att få vandra',
         lyrics: '''Jag har aldrig var't på snusen
 aldrig rökat en cigarr, halleluja!
 Mina dygder äro tusen,
@@ -663,7 +663,7 @@ Skål, skål, skål, skååål.
       Song(
         title: 'Handelsvisa',
         author: '',
-        melody: 'Melodi: Åh, hur saligt att få vandra',
+        melody: 'Åh, hur saligt att få vandra',
         lyrics: '''Jag vill aldrig gå på Handels,
 aldrig tenta företagsekonomi.
 Deras IQ den e' Mandels
@@ -690,7 +690,7 @@ uppå denna Handels ljuva domedag!
       Song(
         title: 'Jag vill inte gå på Fysik',
         author: '',
-        melody: 'Melodi: Åh, hur saligt att få vandra',
+        melody: 'Åh, hur saligt att få vandra',
         lyrics: '''Jag vill inte gå på Fysik,
 aldrig tenta termometerdynamik.
 Jag vill inte höra syntmusik,
@@ -716,8 +716,8 @@ uppå Konsulatets ljuva domedag
       ),
       Song(
         title: 'Härjarevisan',
-        author: 'Text: Hans Alfredson',
-        melody: 'Melodi: Gärdebylåten',
+        author: 'Hans Alfredson',
+        melody: 'Gärdebylåten',
         lyrics: '''Liksom våra fäder, vikingarna i Norden
 drar vi landet runt och super oss under borden.
 Brännvinet har blitt ett elixir för kropp såväl som själ.
@@ -755,8 +755,8 @@ Ja, nu skall vi ut och härja...''',
       ),
       Song(
         title: 'Auld Lang Syne',
-        author: 'Text: Robert Burns',
-        melody: 'Melodi: Scottish Air',
+        author: 'Robert Burns',
+        melody: 'Scottish Air',
         lyrics: '''Should auld acquaintance be forgot,
 and never brought to mind?
 Should auld acquaintance be forgot,
@@ -778,7 +778,7 @@ for auld lang syne.
       Song(
         title: 'Our Family',
         author: '',
-        melody: 'Melodi: My Bonnie',
+        melody: 'My Bonnie',
         lyrics: '''My father makes counterfeit money.
 My mother brews synthetic gin.
 My sister sells kisses to sailors.
@@ -813,7 +813,7 @@ My God, what a mess I am in!
       Song(
         title: 'Spritbolaget',
         author: '',
-        melody: 'Melodi: Snickerboa',
+        melody: 'Snickerboa',
         lyrics: '''Till spritbolaget ränner jag
 och bankar på dess port.
 Jag vill ha nåt som bränner bra
@@ -839,7 +839,7 @@ Drycken intages.
       Song(
         title: 'Uti min mage',
         author: '',
-        melody: 'Melodi: Uti vår hage',
+        melody: 'Uti vår hage',
         lyrics: '''Uti min mage en längtan mig tär,
 kom hjärtans fröjd.
 Där råder en hunger som ropar så här:
@@ -868,7 +868,7 @@ kom hjärtans fröjd.''',
       Song(
         title: 'Jag var full en gång',
         author: '',
-        melody: 'Melodi: Flottarkärlek',
+        melody: 'Flottarkärlek',
         lyrics: '''Jag var full en gång för länge sen,
 på knäna kröp jag hem.
 Varje dike var för mig ett vilohem.
@@ -900,8 +900,8 @@ sedan dess har alla kallat mig för skit, mera sprit!''',
       ),
       Song(
         title: 'Bamsesången',
-        author: 'Text: D-LTH, Sångarstriden 1987',
-        melody: 'Melodi: Signaturmelodin till Bamse',
+        author: 'D-LTH, Sångarstriden 1987',
+        melody: 'Signaturmelodin till Bamse',
         lyrics: '''Jag skall festa, ta det lugnt med spriten.
 Ha det roligt utan att va' full.
 Inte krypa runt med festeliten,
@@ -923,7 +923,7 @@ Först en öl...''',
       Song(
         title: 'Det var länge sen',
         author: '',
-        melody: 'Melodi: Det var länge sen jag plocka\' några blommor',
+        melody: 'Det var länge sen jag plocka\' några blommor',
         lyrics: '''Det var länge sen jag plocka' några tentor.
 Det var länge sen jag tog några poäng.
 Det var länge sen jag handla' på Systemet.
@@ -937,7 +937,7 @@ men å andra sidan går de om igen.''',
       Song(
         title: 'Dance macabre',
         author: '',
-        melody: 'Melodi: Vårvindar friska',
+        melody: 'Vårvindar friska',
         lyrics: '''Runt kring vår stuga, smådjävlar sluga
 dansa så tyst med bockfot och svans.
 Varulvar yla, isande kyla
@@ -1016,7 +1016,7 @@ kan jag väl inte gosa.''',
       Song(
         title: 'Född i Norge',
         author: '',
-        melody: 'Melodi: Oh my darling Clementine',
+        melody: 'Oh my darling Clementine',
         lyrics: '''Född i Norge, bor i Sverige,
 Danmark är mitt fosterland,
 talar spanska som en jude,
@@ -1041,7 +1041,7 @@ att de aldrig hittar opp.''',
       Song(
         title: 'De som är nyktra',
         author: '',
-        melody: 'Melodi: Du är den ende',
+        melody: 'Du är den ende',
         lyrics: '''De som är nyktra
 de har inget roligt,
 de har bara ansvar
@@ -1065,7 +1065,7 @@ De som är nyktra...''',
       Song(
         title: 'Eno',
         author: '',
-        melody: 'Melodi: Staffan stalledräng',
+        melody: 'Staffan stalledräng',
         lyrics: '''Eno är en masochist,
 vi slår honom så gärna.
 Motorsåg och giftig kvist,
@@ -1077,7 +1077,7 @@ spikarna i huvudet de blänka''',
       Song(
         title: 'Siffervisan',
         author: '',
-        melody: 'Melodi: Ritsch, ratsch, fillibom',
+        melody: 'Ritsch, ratsch, fillibom',
         lyrics: '''||: 1, 2, 75, 6, 7, 75, 6, 7, 75, 6, 7,
 1, 2, 75, 6, 7, 75, 6, 7, 73,
 107, 103, 102, 107, 6, 19, 27,
@@ -1087,8 +1087,8 @@ spikarna i huvudet de blänka''',
       ),
       Song(
         title: 'Pelle Jöns',
-        author: 'Text: Britt G. Hallqvist',
-        melody: 'Melodi: Moster Ingeborg',
+        author: 'Britt G. Hallqvist',
+        melody: 'Moster Ingeborg',
         lyrics: '''Det var en gång en daggmask som hette Pelle Jöns.
 Han var så rädd för skator, han var så rädd för höns.
 Han var så rädd för metare och letare med burk.
@@ -1103,7 +1103,7 @@ De hittar många maskar, men ingen Pelle Jöns.''',
       Song(
         title: 'Moralvisa',
         author: '',
-        melody: 'Melodi: Vem kan segla',
+        melody: 'Vem kan segla',
         lyrics: '''Den som dricker mer än han tål,
 strax runt badrummet crawlar,
 i sitt surplus av får i kål,
@@ -1183,7 +1183,7 @@ That's what we'll do with the drunken sailor...''',
       Song(
         title: 'Balladen om den onyktre',
         author: '',
-        melody: 'Melodi: När månen vandrar på fästet blå',
+        melody: 'När månen vandrar på fästet blå',
         lyrics: '''När jag är fuller då är jag glad,
 fan vet om jag ej är vacker.
 Jag vandrar kring i vår lilla stad,
@@ -1230,7 +1230,7 @@ och snygg och stilig, och snygg och stilig.''',
       Song(
         title: 'Vi som oss för att glupa satt',
         author: '',
-        melody: 'Melodi: Vi gå över daggstänkta berg',
+        melody: 'Vi gå över daggstänkta berg',
         lyrics: '''Vi som oss för att glupa satt, supa glatt,
 ity den som försmå sin första tår, törsta får.
 Av längtan vi tryckas,
@@ -1247,7 +1247,7 @@ På denna protestbullerfest, full är bäst.''',
       Song(
         title: 'Störthärligt full',
         author: '',
-        melody: 'Melodi: Fat Mammy Brown',
+        melody: 'Fat Mammy Brown',
         lyrics: '''Nu har alla lämnat festen
 och jag sitter ensam kvar
 ibland groggar, pilsnerflaskor
@@ -1292,7 +1292,7 @@ För jag är...''',
       Song(
         title: 'Lyft ditt välförsedda glas',
         author: '',
-        melody: 'Melodi: Ding Dong Merrily on High',
+        melody: 'Ding Dong Merrily on High',
         lyrics: '''Lyft ditt välförsedda glas
 det är en ljuvlig börda,
 nu har grabbarna kalas,
@@ -1314,8 +1314,8 @@ Begravningsklockor klämtar.''',
       ),
       Song(
         title: 'Sakta det går med banan',
-        author: 'Text: Torbjörn H, Mats T, Peo K och Lennart H.',
-        melody: 'Melodi: Sakta vi gå genom stan',
+        author: 'Torbjörn H, Mats T, Peo K och Lennart H.',
+        melody: 'Sakta vi gå genom stan',
         lyrics: '''Å, det är skönt
 att med frukter och grönt
 uppnå ett djupare plan.
@@ -1362,7 +1362,7 @@ Sakta det går med banan...''',
       Song(
         title: 'Nikolajevs längtan',
         author: '',
-        melody: 'Melodi: Ryska nationalsången',
+        melody: 'Ryska nationalsången',
         lyrics: '''Mitt namn är Nikolajev, kosmonaut ifrån Sovjet.
 Jag åker runt jorden i min rymdraket,
 men drabbats jag har av en olycka stor,
@@ -1423,7 +1423,7 @@ så får hon inte dansa sista dansen med dig...''',
       Song(
         title: 'Somnarvisa',
         author: '',
-        melody: 'Melodi: Idas sommarvisa',
+        melody: 'Idas sommarvisa',
         lyrics: '''Du ska inte tro du får somna
 när spriten har satt lite fart.
 Om armar och ben börjar domna
@@ -1451,7 +1451,7 @@ räck mig handen din.''',
       Song(
         title: 'Katta vore',
         author: '',
-        melody: 'Melodi: Du ska få min gamla cykel när jag dör',
+        melody: 'Du ska få min gamla cykel när jag dör',
         lyrics: '''Katta vore hon ha onge unner lon, unner lon.
 Katta vore hon ha onge unner lon, unner lon.
 Snälla pappa ta en häschitro
@@ -1475,7 +1475,7 @@ som dom skull''',
       ),
       Song(
         title: 'Min häst',
-        author: 'Text: Lasse Åberg',
+        author: 'Lasse Åberg',
         melody: '',
         lyrics: '''Min häst den har gula öron,
 och vita små skor av trä.
@@ -1487,7 +1487,7 @@ med blåa små vingar under magen.''',
       Song(
         title: 'Jag är en liten undulat',
         author: '',
-        melody: 'Melodi: Med en enkel tulipan',
+        melody: 'Med en enkel tulipan',
         lyrics: '''Jag är en liten undulat
 som får så dåligt med mat.
 För dom jag bor hos, för dom jag bor hos
@@ -1501,7 +1501,7 @@ så jag får skåla.''',
       Song(
         title: 'A long time ago',
         author: '',
-        melody: 'Melodi: Schuberts Marche Militaire',
+        melody: 'Schuberts Marche Militaire',
         lyrics: '''A long time ago in a small town in Germany
 there was a shoemaker, Shoemaker was his name.
 He could play the violin, violin, violin
@@ -1522,8 +1522,8 @@ He could play the bloody fool...''',
       ),
       Song(
         title: 'Lille Olle',
-        author: 'Text: Calle Isaksson',
-        melody: 'Melodi: Katjuscha',
+        author: 'Calle Isaksson',
+        melody: 'Katjuscha',
         lyrics: '''Lille Olle skulle gå på disco,
 men han hade inte någon sprit.
 Lille Olle skaffa' lite hembränt,
@@ -1578,7 +1578,7 @@ vi drack varandra till, och vi sade gutår!''',
       Song(
         title: 'Raj, raj',
         author: '',
-        melody: 'Melodi: Elvira Madigan',
+        melody: 'Elvira Madigan',
         lyrics: '''Om vi inga texter kunna
 sjunga vi blott dessa ord:
 Raj, raj, raj, raj, raj, raj, raj, raj,
@@ -1587,8 +1587,8 @@ raj, raj, raj, raj kring vårt bord''',
       ),
       Song(
         title: 'Lingonben',
-        author: 'Text: Povel Ramel',
-        melody: 'Melodi: Povel Ramel',
+        author: 'Povel Ramel',
+        melody: 'Povel Ramel',
         lyrics: '''Bluff och Spark och Tork och Kvark
 voro sex små dvärgar.
 En var ful och en var glad
@@ -1632,7 +1632,7 @@ hur skall Lillan orka?''',
       Song(
         title: 'Hoppe Hoppe Hare',
         author: '',
-        melody: 'Melodi: Imse vimse spindel',
+        melody: 'Imse vimse spindel',
         lyrics: '''Hoppe Hoppe Hare satt och mumsa bär
 klappa sig på magen, 'det va' gott de' här'.
 Fram smyger räven, tänker Hoppe ta,
@@ -1647,7 +1647,7 @@ Hoppe Hoppe Hare hoppar inte alls.''',
       Song(
         title: 'Solen',
         author: '',
-        melody: 'Melodi: Camptown Races',
+        melody: 'Camptown Races',
         lyrics: '''Solen den går upp och ner, doda doda.
 Jag skall aldrig supa mer, hej doda dej.
 Hej doda dej, hej doda dej.
@@ -1688,7 +1688,7 @@ och så en liten klick med sylt.''',
       Song(
         title: 'Älsk me gullong',
         author: '',
-        melody: 'Melodi: Love me tender',
+        melody: 'Love me tender',
         lyrics: '''Älsk mä Gullong, hall mä hart,
 krama heile mäg.
 Bloon män fa sån himla fart
@@ -1720,7 +1720,7 @@ i jer bara kär.''',
       Song(
         title: 'Skånsk madavisa',
         author: '',
-        melody: 'Melodi: Aspelöv och lindelöv',
+        melody: 'Aspelöv och lindelöv',
         lyrics: '''Rabbemos å spegefläsk, panntofflagröd med knudor,
 fläskasvålar, grisatassar, prinsakorv me snudor,
 fittemadar, sillarumpor, sylta me röbedor,
@@ -1766,7 +1766,7 @@ Sjung hopp, faderallanlej!''',
       Song(
         title: 'Hell and Gore',
         author: '',
-        melody: 'Melodi: Helan går',
+        melody: 'Helan går',
         lyrics: '''Hell and Gore,
 chung hop father Allan-Allan-ley.
 Hell and Gore,
@@ -1780,7 +1780,7 @@ chung hop father Allan-ley.
       ),
       Song(
         title: 'Alla tallarna',
-        author: 'Text: Lars T. Johansson och Ehrling Eliasson',
+        author: 'Lars T. Johansson och Ehrling Eliasson',
         melody: '',
         lyrics: '''Alla tallarna, alla tallarna, alla stora, alla små!
 Alla tallarna, alla tallarna, ska vi koka 'rännvin på!
@@ -1792,7 +1792,7 @@ Skål!''',
       Song(
         title: 'Måsen',
         author: '',
-        melody: 'Melodi: När månen vandrar',
+        melody: 'När månen vandrar',
         lyrics: '''Det satt en mås på en klyvarbom
  och tom i krävan var kräket.
  Och tungan lådde vid skepparns gom
@@ -1829,7 +1829,7 @@ Skål!''',
       Song(
         title: 'JASen',
         author: '',
-        melody: 'Melodi: När månen vandrar på fästet blå',
+        melody: 'När månen vandrar på fästet blå',
         lyrics: '''Och JASen styrde mot Västerbron,
  men styrsystemet var trasigt.
  Piloten utsköt sig med kanon
@@ -1842,7 +1842,7 @@ Skål!''',
       Song(
         title: 'I Norrland',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''I Norrland växer det tallar höga,
  att de är höga det båtar föga.
  För en gång faller de än' omkull,
@@ -1852,7 +1852,7 @@ Skål!''',
       Song(
         title: 'Mera brännvin',
         author: '',
-        melody: 'Melodi: Internationalen',
+        melody: 'Internationalen',
         lyrics: '''Nu är det dags att taga supen,
  den stärker varje svag fysik.
  Den rinner ner igenom strupen,
@@ -1877,7 +1877,7 @@ Skål!''',
       Song(
         title: 'För brännvin är jädrans gott',
         author: '',
-        melody: 'Melodi: Här kommer Karl-Alfred Boy',
+        melody: 'Här kommer Karl-Alfred Boy',
         lyrics: '''För brännvin är jädrans gott.
  Blir bättre ju mer man fått.
  Men går man i golvet
@@ -1888,7 +1888,7 @@ Skål!''',
       Song(
         title: 'Livet är härligt',
         author: '',
-        melody: 'Melodi: Röda kavalleriet',
+        melody: 'Röda kavalleriet',
         lyrics: '''Livet är härligt!
  Tavaritj, vårt liv är härligt!
  Vi alla våra små bekymmer glömmer
@@ -1908,7 +1908,7 @@ Skål!''',
       Song(
         title: 'När jag kom hem från gärdet',
         author: '',
-        melody: 'Melodi: Gärdesvisan',
+        melody: 'Gärdesvisan',
         lyrics: '''När jag kom hem från gärdet
  så tog jag mig en knorr,
  för kläderna var våta,
@@ -1921,7 +1921,7 @@ Skål!''',
       Song(
         title: 'Ingen har det så bra',
         author: '',
-        melody: 'Melodi: Kväsarevalsen',
+        melody: 'Kväsarevalsen',
         lyrics: '''För ingen har det så bra som jag,
  nej, ingen har det så bra som jag.
  Förutom bror min, så vitt jag vet,
@@ -1952,7 +1952,7 @@ Skål!''',
       Song(
         title: 'Magen brummar',
         author: '',
-        melody: 'Melodi: Broder Jakob',
+        melody: 'Broder Jakob',
         lyrics: '''Magen brummar, jag försummar
  hälla dit mera sprit.
  Nu så ska vi dricka,
@@ -1985,7 +1985,7 @@ Skål!''',
       Song(
         title: 'Supvisa',
         author: '',
-        melody: 'Melodi: Elvira Madigan',
+        melody: 'Elvira Madigan',
         lyrics: '''Vad kan menas då man säger
  livets glädje flyktig är?
  Jo, den jäkeln ångtryck äger,
@@ -2000,7 +2000,7 @@ Skål!''',
       Song(
         title: 'Imbelupet',
         author: '',
-        melody: 'Melodi: Kors på Idas grav',
+        melody: 'Kors på Idas grav',
         lyrics: '''Imbelupet glaset står på bräcklig fot.
  Tomma pilsnerflaskor luta sig därmot.
  Men där nere, miserere,
@@ -2034,8 +2034,8 @@ Skål!''',
       ),
       Song(
         title: 'Än en gång däran',
-        author: 'Text: Evert Taube',
-        melody: 'Melodi: Evert Taube',
+        author: 'Evert Taube',
+        melody: 'Evert Taube',
         lyrics: '''Än en gång däran, bröder! Än en gång däran!
  Följom den urgamla seden!
  Intill sista man, bröder, intill sista man,
@@ -2057,8 +2057,8 @@ Skål!''',
       ),
       Song(
         title: 'Fordom gällde lagen',
-        author: 'Text: Bosse Österberg',
-        melody: 'Melodi: Kors på Idas grav',
+        author: 'Bosse Österberg',
+        melody: 'Kors på Idas grav',
         lyrics: '''Fordom gällde lagen: 'Den som spar, han har!'
  Mottot är för dagen: 'Lämna inget kvar!'
  Töm i botten fyllda måtten,
@@ -2069,7 +2069,7 @@ Skål!''',
       Song(
         title: 'Vikingen',
         author: '',
-        melody: 'Melodi: When Johnny comes marching home',
+        melody: 'When Johnny comes marching home',
         lyrics: '''En viking älskar livets vann,
  hurra, hurra!
  Den hastigt i mitt svalg försvann,
@@ -2090,7 +2090,7 @@ Skål!''',
       Song(
         title: 'En gång i måna\'n',
         author: '',
-        melody: 'Melodi: Mors lille Olle',
+        melody: 'Mors lille Olle',
         lyrics: '''En gång i måna'n är månen full,
  aldrig jag sett honom ramla omkull.
  Stum av beundran hur mycket han tål,
@@ -2105,7 +2105,7 @@ Skål!''',
       Song(
         title: 'Törsten rasar',
         author: '',
-        melody: 'Melodi: Längtan till landet',
+        melody: 'Längtan till landet',
         lyrics: '''Törsten rasar uti våra strupar.
  Tungan hänger torr och styv och stel.
  Men snart vankas stora långa supar
@@ -2137,7 +2137,7 @@ Skål!''',
       Song(
         title: 'Får jag lov?',
         author: '',
-        melody: 'Melodi: Räven raskar över isen',
+        melody: 'Räven raskar över isen',
         lyrics: '''Han: ||: Första snapsen heter göken :||
  Säg, får jag lov? Säg, får jag lov,
  att byta byxor med fröken?
@@ -2156,7 +2156,7 @@ Skål!''',
       Song(
         title: 'En visa till septen',
         author: '',
-        melody: 'Melodi: Nu skall vi skörda linet idag',
+        melody: 'Nu skall vi skörda linet idag',
         lyrics: '''Nuskaviklämmaseptengutår,
  sjungaentrudeluttomdetgår,
  tjosanmohammedsnartärdetvår,
@@ -2170,7 +2170,7 @@ Skål!''',
       Song(
         title: 'Venngarn',
         author: '',
-        melody: 'Melodi: Kors på Idas grav',
+        melody: 'Kors på Idas grav',
         lyrics: '''Säg, vad vore livet utan alkohol?
  För ju mer man dricker, desto mer man tål.
  Venngarn väntar på oss alla,
@@ -2187,7 +2187,7 @@ Skål!''',
       Song(
         title: 'Denna thaft',
         author: '',
-        melody: 'Melodi: Helan går',
+        melody: 'Helan går',
         lyrics: '''Denna thaft, den bästa thaft thythtemet haft.
  Denna thaft är den bätha thaft dom haft.
  Och den thom inte har nån kraft
@@ -2198,7 +2198,7 @@ Skål!''',
       Song(
         title: 'Amanda',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''Amanda gångar sig ner i lunden,
  där får hon se att en ko står bunden.
  Amanda gångar sig hem igen,
@@ -2208,7 +2208,7 @@ Skål!''',
       Song(
         title: 'Fillibrännvinbom',
         author: '',
-        melody: 'Melodi: Ritsch, ratsch, fillibom',
+        melody: 'Ritsch, ratsch, fillibom',
         lyrics: '''Brännvin fillibom-bom-bom
  är en härlig dryck för en törstig gom.
  Brännvin fillibom-bom-bom
@@ -2225,7 +2225,7 @@ Skål!''',
       Song(
         title: 'Mitt lilla lån',
         author: '',
-        melody: 'Melodi: Hej, tomtegubbar',
+        melody: 'Hej, tomtegubbar',
         lyrics: '''||: Mitt lilla lån det räcker inte
  det går till öl och till brännvin. :||
  Till öl och brännvin går det åt,
@@ -2236,7 +2236,7 @@ Skål!''',
       Song(
         title: 'Till supen tager man sill',
         author: '',
-        melody: 'Melodi: Vi gå över daggstänkta berg',
+        melody: 'Vi gå över daggstänkta berg',
         lyrics: '''Till supen så tager man sill, fallera,
  men också ansjovis, om man vill, fallera.
  ||: Och om man är oviss, om sillen är ansjovis,
@@ -2246,7 +2246,7 @@ Skål!''',
       Song(
         title: 'Vodka, vodka',
         author: '',
-        melody: 'Melodi: Stenka Razin',
+        melody: 'Stenka Razin',
         lyrics: '''Vodka, vodka vill jag dricka,
  jag vill äta kaviar.
  ||: Jag vill älska russkij flicka.
@@ -2267,7 +2267,7 @@ Skål!''',
       Song(
         title: 'Humlorna',
         author: '',
-        melody: 'Melodi: Här kommer Karl-Alfred Boy',
+        melody: 'Här kommer Karl-Alfred Boy',
         lyrics: '''||: Vi äro små humlor vi, bzz-bzz, :||
  vi äro små humlor som tar oss en geting.
  Vi äro små humlor vi, bzz-bzz!
@@ -2283,8 +2283,8 @@ Skål!''',
       ),
       Song(
         title: 'Om cykling med mera',
-        author: 'Text: Povel Ramel',
-        melody: 'Melodi: Väva vadmal',
+        author: 'Povel Ramel',
+        melody: 'Väva vadmal',
         lyrics: '''Man cyklar för lite',
  man röker för mycke'
  och man är fasen så liberal
@@ -2321,7 +2321,7 @@ Skål!''',
       Song(
         title: 'Tjugotre',
         author: '',
-        melody: 'Melodi: Amanda Lundbom',
+        melody: 'Amanda Lundbom',
         lyrics: '''Tjugotre är Beska Droppar,
  bomfaderi, bomfaderaderalla.
  Skänker liv åt döda kroppar,
@@ -2345,7 +2345,7 @@ Skål!''',
       Song(
         title: 'Nu hoppar laxen',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''Nu hoppar laxen, nu blommar häggen
  nu lyfter taxen sitt ben mot väggen.
  
@@ -2358,7 +2358,7 @@ Skål!''',
       Song(
         title: 'Toj hemtegubbar',
         author: '',
-        melody: 'Melodi: Hej, tomtegubbar',
+        melody: 'Hej, tomtegubbar',
         lyrics: '''||: Toj hemtegubbar gla i slåsen,
  och loss tå vastiga lura! :||
  En tiden lid vi heva lär
@@ -2370,7 +2370,7 @@ Skål!''',
       Song(
         title: 'Helan gick i vänstra foten',
         author: '',
-        melody: 'Melodi: Amanda Lundbom',
+        melody: 'Amanda Lundbom',
         lyrics: '''Helan gick i vänstra foten,
  bomfaderi, bomfaderaderalla.
  Gudskelov så vet vi boten,
@@ -2384,7 +2384,7 @@ Skål!''',
       Song(
         title: 'Fans hämnd',
         author: '',
-        melody: 'Melodi: Där som sädesfälten',
+        melody: 'Där som sädesfälten',
         lyrics: '''När som sädesfälten böja sig för vinden...
  står nån djävul där och böjer dem tillbaks!''',
         about: '',
@@ -2399,7 +2399,7 @@ Skål!''',
       Song(
         title: 'O.P. river',
         author: '',
-        melody: 'Melodi: Ol\' man river',
+        melody: 'Ol\' man river',
         lyrics: '''O.P. river
  ja, O.P. river
  var gång jag lenat
@@ -2422,7 +2422,7 @@ Skål!''',
       Song(
         title: 'Ekorr\'n satt i tallen',
         author: '',
-        melody: 'Melodi: Ekorr\'n satt i granen',
+        melody: 'Ekorr\'n satt i granen',
         lyrics: '''Ekorr'n satt i tallen,
  bryggde lite planksaft.
  Därav blev han knall, men
@@ -2435,7 +2435,7 @@ Skål!''',
       Song(
         title: 'Den gamla apparaten',
         author: '',
-        melody: 'Melodi: Där som sädesfälten',
+        melody: 'Där som sädesfälten',
         lyrics: '''Där som sädesbrännvin rann igenom strupen,
  och en flaska dunder väntar bakom den.
  Stod den gamla apparaten uppå spisen,
@@ -2449,7 +2449,7 @@ Skål!''',
       Song(
         title: 'Tänk om man hade',
         author: '',
-        melody: 'Melodi: Hej, tomtegubbar',
+        melody: 'Hej, tomtegubbar',
         lyrics: '''||: Tänk om man hade lilla nubben
  uppå ett snöre i halsen. :||
  Man kunde dra den upp och ner
@@ -2460,8 +2460,8 @@ Skål!''',
       ),
       Song(
         title: 'Barndom',
-        author: 'Text: Magnus Jönsson',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        author: 'Magnus Jönsson',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''När jag var liten i skolmatsalen,
  all djävla lever gjorde mig galen.
  Nu tar jag hämnd på detta organ...
@@ -2471,7 +2471,7 @@ Skål!''',
       Song(
         title: 'För att människan',
         author: '',
-        melody: 'Melodi: Bä bä, vita lamm',
+        melody: 'Bä bä, vita lamm',
         lyrics: '''För att människan
  skall trivas på vår jord
  bör hon ständigt ha
@@ -2485,7 +2485,7 @@ Skål!''',
       Song(
         title: 'Då verka lätt',
         author: '',
-        melody: 'Melodi: Dover Calais',
+        melody: 'Dover Calais',
         lyrics: '''När jag tar mig en sup
  blir jag intressant och djup.
  Allting som är svårt kan då verka lätt.
@@ -2497,7 +2497,7 @@ Skål!''',
       Song(
         title: 'Pärlan',
         author: '',
-        melody: 'Melodi: Mors lille Olle',
+        melody: 'Mors lille Olle',
         lyrics: '''Sup kallas pärla, det kan man förstå,
  öppnar ju skalet hos män'skan också.
  I glaset den lovande, glittrande bor,
@@ -2506,8 +2506,8 @@ Skål!''',
       ),
       Song(
         title: '\'rännvinskokaren',
-        author: 'Text: Lars T. Johansson, Ehrling Eliasson',
-        melody: 'Melodi: En sockerbagare här bor i staden',
+        author: 'Lars T. Johansson, Ehrling Eliasson',
+        melody: 'En sockerbagare här bor i staden',
         lyrics: '''En 'rännvinskokare
  här bor i skogen.
  Han säljer 'rännvinet
@@ -2521,7 +2521,7 @@ Skål!''',
       Song(
         title: 'Vi går över ån',
         author: '',
-        melody: 'Melodi: Vi gå över daggstänkta berg',
+        melody: 'Vi gå över daggstänkta berg',
         lyrics: '''Vi går över ån efter sprit, fallera,
  men efter vatten går vi ej en bit, fallera,
  ja, sup kära bröder
@@ -2531,8 +2531,8 @@ Skål!''',
       ),
       Song(
         title: 'Dalarna',
-        author: 'Text: Magnus Jönsson',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        author: 'Magnus Jönsson',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''En sträng, ny präst i en by i Dalom,
  han sa att sprit blir det inte tal om.
  Istället tar vi, det tycker jag,
@@ -2542,7 +2542,7 @@ Skål!''',
       Song(
         title: 'Vem sade ordet skål?',
         author: '',
-        melody: 'Melodi: Vårvindar friska',
+        melody: 'Vårvindar friska',
         lyrics: '''Vem sade ordet skål här vid bordet,
  viskande for det sällskapet kring.
  Fattom kristallen, nubben är kall den,
@@ -2556,7 +2556,7 @@ Skål!''',
       Song(
         title: 'I Frankrike dricks det viner',
         author: '',
-        melody: 'Melodi: Te Deum (Eurovisions-signaturen)',
+        melody: 'Te Deum (Eurovisions-signaturen)',
         lyrics: '''I Frankrike dricks det viner,
  när tyskarna dricker öl
  underbart de mår.
@@ -2568,7 +2568,7 @@ Skål!''',
       Song(
         title: 'Vad säger svenska folket',
         author: '',
-        melody: 'Melodi: Kungliga Södermanlands regementes paradmarsch',
+        melody: 'Kungliga Södermanlands regementes paradmarsch',
         lyrics: '''Vad säger svenska folket
  när dom får en sup?
  Jo, jag tackar!''',
@@ -2577,7 +2577,7 @@ Skål!''',
       Song(
         title: 'Jag tror, jag tror',
         author: '',
-        melody: 'Melodi: Jag tror, jag tror på sommaren',
+        melody: 'Jag tror, jag tror på sommaren',
         lyrics: '''Jag tror, jag tror på akvavit,
  jag tror, jag tror på dynamit,
  den ger en kraft att sjunga ut
@@ -2591,7 +2591,7 @@ Skål!''',
       Song(
         title: 'Nu har vi ljus',
         author: '',
-        melody: 'Melodi: Julpolska',
+        melody: 'Julpolska',
         lyrics: '''Nu har vi ljus här i vårt hus.
  Far han har tagit sig ett kraftigt rus.
  Mor hon är full, dansar omkull, välter ett ljus. Hej!
@@ -2604,7 +2604,7 @@ Skål!''',
       Song(
         title: 'Tussan lull',
         author: '',
-        melody: 'Melodi: Byssan lull',
+        melody: 'Byssan lull',
         lyrics: '''||: Tussan lull, utav brännvin blir man full,
  och slipsen man doppar i smöret. :||
  Och näsan den blir röd,
@@ -2615,7 +2615,7 @@ Skål!''',
       Song(
         title: 'När helan man tagit',
         author: '',
-        melody: 'Melodi: Skånska slott och herresäten',
+        melody: 'Skånska slott och herresäten',
         lyrics: '''När helan man tagit och halvan skall dricka(s),
  det är som att kyssa en nymornad flicka(s).
  Ju mera man får desto mer vill man ha(s).
@@ -2626,7 +2626,7 @@ Skål!''',
       Song(
         title: 'En liten fyllhund',
         author: '',
-        melody: 'Melodi: Mors lille Olle',
+        melody: 'Mors lille Olle',
         lyrics: '''En liten fyllhund på krogen satt,
  rosor på kinden men blicken var matt,
  Läpparna små, liksom näsan var blå.
@@ -2636,7 +2636,7 @@ Skål!''',
       Song(
         title: 'Det var en tvilling',
         author: '',
-        melody: 'Melodi: Petter Jönssons resa till Amerika',
+        melody: 'Petter Jönssons resa till Amerika',
         lyrics: '''Det var en tvilling av det siamesiska slaget
  som ej tog färre än tvenne supar i taget.
  Han Helan tog för att därmed hedra sin moder,
@@ -2655,7 +2655,7 @@ Skål!''',
       Song(
         title: 'Magen skriker',
         author: '',
-        melody: 'Melodi: Kors på Idas grav',
+        melody: 'Kors på Idas grav',
         lyrics: '''Magen skriker, strupen brinner efter mer.
  Därför tar vi tersen, sen så tar vi fler.
  Ingen olja kan som brännvin få maskinen i funktion.
@@ -2665,7 +2665,7 @@ Skål!''',
       Song(
         title: 'Brännvin hit',
         author: '',
-        melody: 'Melodi: Skära havre',
+        melody: 'Skära havre',
         lyrics: '''Brännvin hit och brännvin dit,
  och brännvin är det bästa.
  Och fan ta den som brännvin har
@@ -2675,7 +2675,7 @@ Skål!''',
       Song(
         title: 'Invers aptit',
         author: '',
-        melody: 'Melodi: Nu tändas tusen juleljus',
+        melody: 'Nu tändas tusen juleljus',
         lyrics: '''Nu fyllas många magar små
  av iskall renad sprit.
  Men några kastar åter opp.
@@ -2685,7 +2685,7 @@ Skål!''',
       Song(
         title: 'Ner med supen',
         author: '',
-        melody: 'Melodi: Broder Jakob',
+        melody: 'Broder Jakob',
         lyrics: '''Ner med supen, genom strupen,
  drick blott till, om du vill.
  Spotta ej i glaset, säger fylleaset,
@@ -2702,7 +2702,7 @@ Skål!''',
       Song(
         title: 'Sista supen',
         author: '',
-        melody: 'Melodi: Väva vadmal',
+        melody: 'Väva vadmal',
         lyrics: '''Krök armen i vinkel! 
  Här vankas det finkel. 
  Och finka vankel och vanka finkel, 
@@ -2720,7 +2720,7 @@ Skål!''',
       Song(
         title: 'Farväl, farväl',
         author: '',
-        melody: 'Melodi: En sjöman älskar havets våg',
+        melody: 'En sjöman älskar havets våg',
         lyrics: '''Farväl, farväl, förtjusande sup,
  men kom inte upp igen!''',
         about: '',
@@ -2738,15 +2738,15 @@ Skål!''',
       Song(
         title: 'Jag äter inte klockor',
         author: '',
-        melody: 'Melodi: Det var en lørdag aften',
+        melody: 'Det var en lørdag aften',
         lyrics: '''Jag äter inte klockor,
  men dricker gärna ur.''',
         about: '',
       ),
       Song(
         title: 'Gräv ur tundran',
-        author: 'Text: Kenneth Hagås',
-        melody: 'Melodi: Katjuscha',
+        author: 'Kenneth Hagås',
+        melody: 'Katjuscha',
         lyrics: '''Gräv ur tundran två dussin potäter,
  låt dem jäsa uti fjorton dar.
  ||: Modersmjölken för ryssar och sovjeter
@@ -2801,7 +2801,7 @@ Skål!''',
       Song(
         title: 'Ölvisan',
         author: '',
-        melody: 'Melodi: SJ, SJ gamle vän',
+        melody: 'SJ, SJ gamle vän',
         lyrics: '''Dricka pilsner varje da'
  det är kul å det e bra.
  Ja, det borde alla ha,
@@ -2836,7 +2836,7 @@ Skål!''',
       Song(
         title: 'Min pilsner',
         author: '',
-        melody: 'Melodi: My Bonnie',
+        melody: 'My Bonnie',
         lyrics: '''Min pilsner ska svalka min tunga,
  min pilsner ska duscha min gom.
  Min pilsner ska få mig att sjunga,
@@ -2850,7 +2850,7 @@ Skål!''',
       Song(
         title: 'Ode till ölet',
         author: '',
-        melody: 'Melodi: Trampa på gasen',
+        melody: 'Trampa på gasen',
         lyrics: '''Tu tu tu Tuborg och ca ca ca Carlsberg,
  det är den bästa pi pi pi pilsnern som jag vet.
  
@@ -2864,7 +2864,7 @@ Skål!''',
       Song(
         title: 'When I get drunker',
         author: '',
-        melody: 'Melodi: When I\'m 64',
+        melody: 'When I\'m 64',
         lyrics: '''When I get drunker, losing my mind
  many beers from now.
  Will I still be having me a jolly good time,
@@ -2879,7 +2879,7 @@ Skål!''',
       Song(
         title: 'En pilsnerdrickare',
         author: '',
-        melody: 'Melodi: En sockerbagare här bor i staden',
+        melody: 'En sockerbagare här bor i staden',
         lyrics: '''En pilsnerdrickare här bor i staden,
  han dricker pilsner mest hela dagen,
  han dricker gröna, han dricker blå,
@@ -2894,7 +2894,7 @@ Skål!''',
       Song(
         title: 'Vi älskar öl',
         author: '',
-        melody: 'Melodi: Ser du stjärnan i det blå?',
+        melody: 'Ser du stjärnan i det blå?',
         lyrics: '''Täckt av silver sejdeln full
  gnistrar mot oss med sitt guld.
  Humle, malt är livets salt, vi älskar öl.
@@ -2911,7 +2911,7 @@ Skål!''',
       Song(
         title: 'Sanningen om ölet',
         author: '',
-        melody: 'Melodi: Här är gudagott att vara',
+        melody: 'Här är gudagott att vara',
         lyrics: '''Öl är gudagott att dricka.
  O, vad öldrycken dock är skön.
  Dricka öl med älskad flicka
@@ -2925,7 +2925,7 @@ Skål!''',
       Song(
         title: 'Drömmen om ölen',
         author: '',
-        melody: 'Melodi: Drömmen om Elin',
+        melody: 'Drömmen om Elin',
         lyrics: '''Nu så har vi fest.
  Det går sång ur alla strupar.
  Ölen är vår gäst,
@@ -2946,7 +2946,7 @@ Skål!''',
       Song(
         title: 'La oss dricke',
         author: '',
-        melody: 'Melodi: Änkevalsen ur Glada änkan',
+        melody: 'Änkevalsen ur Glada änkan',
         lyrics: '''Gamle venner halsen brenner
  Øl - øl - øl.
  Hvilken väske kan oss leske?
@@ -2959,7 +2959,7 @@ Skål!''',
       Song(
         title: 'Ju mera öl vi dricker',
         author: '',
-        melody: 'Melodi: Ju mer vi är tillsammans',
+        melody: 'Ju mer vi är tillsammans',
         lyrics: '''Ju mera öl vi dricker,
  vi dricker, vi dricker,
  ju mera öl vi dricker,
@@ -2973,7 +2973,7 @@ Skål!''',
       Song(
         title: 'Ölet som försvann',
         author: '',
-        melody: 'Melodi: Elvira Madigan',
+        melody: 'Elvira Madigan',
         lyrics: '''Sorgeliga saker hända,
  än i våra dar minsann.
  Sorgeligast är dock denna,
@@ -2993,7 +2993,7 @@ Skål!''',
       Song(
         title: 'Feta fransyskor',
         author: '',
-        melody: 'Melodi: Schuberts Marche Militaire',
+        melody: 'Schuberts Marche Militaire',
         lyrics: '''Feta fransyskor som svettas om fötterna
  de trampa druvor som sedan ska jäsas till vin.
  Transpirationen viktig e'
@@ -3024,7 +3024,7 @@ Skål!''',
       Song(
         title: 'Bordeaux, bordeaux',
         author: '',
-        melody: 'Melodi: I sommarens soliga dagar',
+        melody: 'I sommarens soliga dagar',
         lyrics: '''Jag minns än idag hur min fader
  kom hem ifrån staden så glader
  och rada' upp flaskor i rader
@@ -3042,7 +3042,7 @@ Skål!''',
       Song(
         title: 'Pussvisa',
         author: '',
-        melody: 'Melodi: Längtan till landet',
+        melody: 'Längtan till landet',
         lyrics: '''Vintern rasat enligt alla källor
  våren kommer när den nu får tid.
  Men vi har ju vin och vackra fjällor
@@ -3058,8 +3058,8 @@ Skål!''',
       ),
       Song(
         title: 'Rhenvinets lov',
-        author: 'Text: R Palmé',
-        melody: 'Melodi: Strömt herbei, ihr Völkerscharen',
+        author: 'R Palmé',
+        melody: 'Strömt herbei, ihr Völkerscharen',
         lyrics: '''Ställ nu fram i källarsalen
  av den dunkelgröna färg
  härligt glänsande pokalen,
@@ -3091,7 +3091,7 @@ Skål!''',
       Song(
         title: 'Röd vitamin',
         author: '',
-        melody: 'Melodi: My Bonnie',
+        melody: 'My Bonnie',
         lyrics: '''Hur badar man bäst på en kurort?
  Jo, om man har fyllt en bassäng
  med vätskan som snart skall besjungas
@@ -3113,7 +3113,7 @@ Skål!''',
       Song(
         title: 'Till vinet',
         author: '',
-        melody: 'Melodi: Flickan i Havanna',
+        melody: 'Flickan i Havanna',
         lyrics: '''Flickan vid din sida,
  hon har ännu vinet kvar.
  Sitter nu och väntar
@@ -3127,7 +3127,7 @@ Skål!''',
       Song(
         title: 'Festen kan börja',
         author: '',
-        melody: 'Melodi: Vårvindar friska',
+        melody: 'Vårvindar friska',
         lyrics: '''Festen kan börja, ingen får sörja
  här finns ju både rödvin och mat.
  Vinet skall tömmas, sorgerna glömmas,
@@ -3142,7 +3142,7 @@ Skål!''',
       Song(
         title: 'Se vinet väntar',
         author: '',
-        melody: 'Melodi: Svarte Rudolf',
+        melody: 'Svarte Rudolf',
         lyrics: '''Se vinet väntar i glaset,
  men väntan skall inte bli lång.
  För skall det bli sprätt på kalaset
@@ -3156,7 +3156,7 @@ Skål!''',
       Song(
         title: 'Kvinnans skål',
         author: '',
-        melody: 'Melodi: Fjäriln vingad',
+        melody: 'Fjäriln vingad',
         lyrics: '''Skål för kvinnan vill vi dricka,
  hon som har oss alla i hand.
  Vad är pojken utan flicka?
@@ -3170,7 +3170,7 @@ Skål!''',
       Song(
         title: 'Mannens skål',
         author: '',
-        melody: 'Melodi: Fritiof och Carmencita',
+        melody: 'Fritiof och Carmencita',
         lyrics: '''Kvinnor gemensamt tar en skål här nu vid bordet
  riktad till mannen, han som nästan jämt har ordet.
  Fast han är härlig, om än lite besvärlig,
@@ -3188,7 +3188,7 @@ Skål!''',
       Song(
         title: 'Så länge rösten är mild',
         author: '',
-        melody: 'Melodi: Så länge skutan kan gå',
+        melody: 'Så länge skutan kan gå',
         lyrics: '''Så länge rösten är mild,
  så länge ingen är vild.
  Så länge spegeln på väggen
@@ -3207,7 +3207,7 @@ Skål!''',
       Song(
         title: 'Till rödvinet',
         author: '',
-        melody: 'Melodi: En gång jag seglar i hamn',
+        melody: 'En gång jag seglar i hamn',
         lyrics: '''En sång, det är ingen sång
  om inte på samma gång
  man tar ett glas i sin hand
@@ -3222,7 +3222,7 @@ Skål!''',
       Song(
         title: 'Damernas skål',
         author: '',
-        melody: 'Melodi: Svarte Rudolf',
+        melody: 'Svarte Rudolf',
         lyrics: '''Nu rödvin gnistrar i bägar'n,
  jag lyfter den sakta och ler.
  Och blicken liksom vilde jägarn
@@ -3245,7 +3245,7 @@ Skål!''',
       Song(
         title: 'När det strålar uti salen',
         author: '',
-        melody: 'Melodi: Fjäriln vingad',
+        melody: 'Fjäriln vingad',
         lyrics: '''När det strålar uti salen
  utav glädje, glans och färg.
  När det gnistrar i pokalen
@@ -3275,7 +3275,7 @@ Skål!''',
       Song(
         title: 'Punschen kommer (kall)',
         author: '',
-        melody: 'Melodi: Änkevalsen ur Glada änkan',
+        melody: 'Änkevalsen ur Glada änkan',
         lyrics: '''Punschen kommer, 
  punschen kommer,
  ljuv och sval.
@@ -3290,7 +3290,7 @@ Skål!''',
       Song(
         title: 'Punschen kommer (varm)',
         author: '',
-        melody: 'Melodi: Änkevalsen ur Glada änkan',
+        melody: 'Änkevalsen ur Glada änkan',
         lyrics: '''Punschen kommer,
  punschen kommer,
  god och varm.
@@ -3305,7 +3305,7 @@ Skål!''',
       Song(
         title: 'Djungelpunsch',
         author: '',
-        melody: 'Melodi: Var nöjd med allt som livet ger',
+        melody: 'Var nöjd med allt som livet ger',
         lyrics: '''Jag gillar alla tiders punsch.
  Punsch till frukost, punsch till lunch,
  en punsch till förrätt, varmrätt och dessert.
@@ -3330,7 +3330,7 @@ Skål!''',
       Song(
         title: 'Studiemedelsrondo',
         author: '',
-        melody: 'Melodi: Vi lossa sand',
+        melody: 'Vi lossa sand',
         lyrics: '''||: Vi dricker punsch
  till lunch,
  när vi har fått avin.
@@ -3341,7 +3341,7 @@ Skål!''',
       Song(
         title: 'Gul lyser solen',
         author: '',
-        melody: 'Melodi: Lili Marlene',
+        melody: 'Lili Marlene',
         lyrics: '''Gul lyser solen,
  gult är flaggans kors,
  gul vajar säden
@@ -3400,7 +3400,7 @@ Skål!''',
       Song(
         title: 'Änglapunsch',
         author: '',
-        melody: 'Melodi: Änglamark',
+        melody: 'Änglamark',
         lyrics: '''Kalla den gudagåva eller himlanektar,
  vad du vill.
  Punschen den gyllne, de gamle oss skänkte.
@@ -3426,7 +3426,7 @@ Skål!''',
       Song(
         title: 'Härlig är punschen',
         author: '',
-        melody: 'Melodi: Härlig är jorden',
+        melody: 'Härlig är jorden',
         lyrics: '''Härlig är punschen,
  härlig är dess konsistens.
  Skönt är att taga den än en gång.
@@ -3437,7 +3437,7 @@ Skål!''',
       Song(
         title: 'Punsch, punsch',
         author: '',
-        melody: 'Melodi: Ritsch, ratsch, fillibom',
+        melody: 'Ritsch, ratsch, fillibom',
         lyrics: '''Punsch, punsch fillibom-bom-bom,
  fillibom-bom-bom, fillibom-bom-bom.
  Punsch, punsch fillibom-bom-bom,
@@ -3453,7 +3453,7 @@ Skål!''',
       Song(
         title: 'Punschens lov',
         author: '',
-        melody: 'Melodi: Rövarna i Kamomilla stad',
+        melody: 'Rövarna i Kamomilla stad',
         lyrics: '''Ja, punschen är och punschen var
  och punschen skall förbliva
  en lidelse vi alla har
@@ -3468,7 +3468,7 @@ Skål!''',
       Song(
         title: 'Punschvisa',
         author: '',
-        melody: 'Melodi: Med en enkel tulipan',
+        melody: 'Med en enkel tulipan',
         lyrics: '''Nu med en ny och stadig krök
  med armen gör vi försök
  att lyfta koppen, att lyfta koppen
@@ -3490,7 +3490,7 @@ Skål!''',
       Song(
         title: 'Giv oss vår punsch',
         author: '',
-        melody: 'Melodi: God save the Queen',
+        melody: 'God save the Queen',
         lyrics: '''Giv oss vår punsch idag,
  den som är sval och bra,
  eller väl värmd.
@@ -3503,7 +3503,7 @@ Skål!''',
       Song(
         title: 'Min älskling',
         author: '',
-        melody: 'Melodi: Min älskling du är som en ros',
+        melody: 'Min älskling du är som en ros',
         lyrics: '''Min älskling du är som en punsch,
  en nyupphälld och kall.
  Ack, som en Cederlunds så ljuv,
@@ -3528,7 +3528,7 @@ Skål!''',
       Song(
         title: 'FestUs punschvisa',
         author: '',
-        melody: 'Melodi: Tomtarnas julnatt',
+        melody: 'Tomtarnas julnatt',
         lyrics: '''Punschen, punschen rinner genom strupen,
  ner i djupen.
  Blandas, konfronteras där med supen,
@@ -3540,7 +3540,7 @@ Skål!''',
       Song(
         title: 'Kaffe, kaffe, kaffe',
         author: '',
-        melody: 'Melodi: Du ska få min gamla cykel när jag dör',
+        melody: 'Du ska få min gamla cykel när jag dör',
         lyrics: '''Vi har ätit och vi mår så väldans bra
  och nu vill nog alla säkert kaffe ha.
  Snart så får vi höra stönen
@@ -3581,7 +3581,7 @@ Skål!''',
       Song(
         title: 'Tvekan inför punschen',
         author: '',
-        melody: 'Melodi: Rosa på bal',
+        melody: 'Rosa på bal',
         lyrics: '''Jag borde nog inte dricka mer
  varken öl eller vin eller brännevin.
  En kaffetår blott, men såvitt jag ser
@@ -3606,7 +3606,7 @@ Skål!''',
       Song(
         title: 'Nya punschvisan',
         author: '',
-        melody: 'Melodi: Mjölnarens dotter',
+        melody: 'Mjölnarens dotter',
         lyrics: '''Vad ger dig din sisu, vad håller dig varm?
  Skororompompej!
  Jo, punschen som upptas i mage och tarm.
@@ -3625,7 +3625,7 @@ Skål!''',
       Song(
         title: 'Vädjan till punschen',
         author: '',
-        melody: 'Melodi: Sov du lilla videung',
+        melody: 'Sov du lilla videung',
         lyrics: '''Kom nu lilla punschen min,
  följ nu efter supen. 
  Snart så skall du åka in
@@ -3639,7 +3639,7 @@ Skål!''',
       Song(
         title: 'Johansson är ful',
         author: '',
-        melody: 'Melodi: Kostervalsen',
+        melody: 'Kostervalsen',
         lyrics: '''Johansson är ful,
  han får gömma sig i ett skjul.
  Ful är Perssons bror,
@@ -3655,7 +3655,7 @@ Skål!''',
       Song(
         title: 'Punschschottis',
         author: '',
-        melody: 'Melodi: Schottis på Valhall',
+        melody: 'Schottis på Valhall',
         lyrics: '''Uppå bordet står nu en liten tår,
  den har lyster precis som kristall.
  Den är lockande, den är pockande,
@@ -3670,7 +3670,7 @@ Skål!''',
       Song(
         title: 'Ärter och punsch',
         author: '',
-        melody: 'Melodi: Fritiof och Carmencita',
+        melody: 'Fritiof och Carmencita',
         lyrics: '''Ärter och punsch, en liten rätt med traditioner.
  Den smakar bra och väcker många sensationer.
  Blekgul till färgen, smaken går in till märgen,
@@ -3691,7 +3691,7 @@ Skål!''',
       Song(
         title: 'Visa vid torsdagskväll',
         author: '',
-        melody: 'Melodi: Visa vid midsommartid',
+        melody: 'Visa vid midsommartid',
         lyrics: '''Du häller ur flaskan en gyllene tår,
  av punsch ifrån Cederlunds.
  Du lyfter se'n bägar'n och väl du förstår,
@@ -3705,7 +3705,7 @@ Skål!''',
       Song(
         title: 'Sista punschvisan',
         author: '',
-        melody: 'Melodi: Auld lang syne',
+        melody: 'Auld lang syne',
         lyrics: '''När punschen småningom är slut
  och vår flaska blivit tom,
  då vänder vi den upp och ner
@@ -3725,7 +3725,7 @@ Skål!''',
       Song(
         title: 'Kräftvisa',
         author: '',
-        melody: 'Melodi: Studentsången',
+        melody: 'Studentsången',
         lyrics: '''Nykokta kräftor, nyslagen dill,
  fem liter brännvin och sjuhundra pilsner.
  Rödaste skal är ju bättre än sill.
@@ -3743,7 +3743,7 @@ Skål!''',
       Song(
         title: 'Små nubbarna',
         author: '',
-        melody: 'Melodi: Små grodorna',
+        melody: 'Små grodorna',
         lyrics: '''Små nubbarna,
  små nubbarna,
  är lustiga att ta.
@@ -3782,7 +3782,7 @@ Skål!''',
       Song(
         title: 'Kräfta, kräfta prydd med dill',
         author: '',
-        melody: 'Melodi: Blinka lilla stjärna',
+        melody: 'Blinka lilla stjärna',
         lyrics: '''Kräfta, kräfta prydd med dill
  och en immig sup därtill,
  bröd och smör och ost och sill,
@@ -3794,7 +3794,7 @@ Skål!''',
       Song(
         title: 'Kräftorna sköna',
         author: '',
-        melody: 'Melodi: Vårvindar friska',
+        melody: 'Vårvindar friska',
         lyrics: '''Kräftorna sköna,
  dillkronor gröna,
  lysa så grant bland blommor och bla'r.
@@ -3813,7 +3813,7 @@ Skål!''',
       Song(
         title: 'Stänk utav sälta',
         author: '',
-        melody: 'Melodi: Mors lille Olle',
+        melody: 'Mors lille Olle',
         lyrics: '''Stänk utav sälta och doft utav dill,
  lyktor som lysa i höstkvällen still.
  Sorl utav röster och klirr utav glas,
@@ -3828,7 +3828,7 @@ Skål!''',
       Song(
         title: 'Kräftor kräva dessa drycker',
         author: '',
-        melody: 'Melodi: Räven raskar över isen',
+        melody: 'Räven raskar över isen',
         lyrics: '''Kräftor kräva dessa drycker.
  Kräftor kräva dessa drycker.
  En liten snaps till varje klo,
@@ -3842,7 +3842,7 @@ Skål!''',
       Song(
         title: 'Kvällens klo',
         author: '',
-        melody: 'Melodi: Milord',
+        melody: 'Milord',
         lyrics: '''Oh, vilken klo, milord,
  den är så stor och hård.
  Vi hoppas alla att den aldrig ska ta slut.
@@ -3854,7 +3854,7 @@ Skål!''',
       Song(
         title: 'Kräftklon',
         author: '',
-        melody: 'Melodi: Vi gå över daggstänkta berg',
+        melody: 'Vi gå över daggstänkta berg',
         lyrics: '''Till kräftklon man tager en sup - sup - sup,
  som letar sig ner i magens djup - djup - djup.
  Och den som börjar tveka,
@@ -3865,7 +3865,7 @@ Skål!''',
       Song(
         title: 'Vi går mot de dillprydda berg',
         author: '',
-        melody: 'Melodi: Vi gå över daggstänkta berg',
+        melody: 'Vi gå över daggstänkta berg',
         lyrics: '''Vi går mot de dillprydda berg, fallera,
 som lånat av rubinerna sin färg, fallera.
 Så skön på stora faten
@@ -3900,7 +3900,7 @@ ty vi måste ju festa ibland, fallera!''',
       Song(
         title: 'Kräftan kommer, kräftan går',
         author: '',
-        melody: 'Melodi: Kovan kommer, kovan går',
+        melody: 'Kovan kommer, kovan går',
         lyrics: '''Kräftan fordrar nubbar små,
 nubbar små, nubbar små.
 Annars börjar den att gå,
@@ -3932,7 +3932,7 @@ gott det är med lite mat.''',
       Song(
         title: 'Våran kräfta',
         author: '',
-        melody: 'Melodi: Gubben Noak',
+        melody: 'Gubben Noak',
         lyrics: '''Våran kräfta,
 våran kräfta,
 har båd' klo och stjärt.
@@ -3946,7 +3946,7 @@ häller vi så tvärt.''',
       Song(
         title: 'Å kräftan å ja',
         author: '',
-        melody: 'Melodi: Jänta å ja',
+        melody: 'Jänta å ja',
         lyrics: '''Å kräftan å ja', å kräftan å ja',
 vi trivas så bra tillsammans, å ja.
 Ja kräftan å ja', ja kräftan å ja',
@@ -3960,7 +3960,7 @@ av glädje man faller samman.''',
       Song(
         title: 'Å detta brännvin',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''Å detta brännvin som alltid jäklas
 för framåt natten man måste kräkas.
 För kräftor har ju så hårda skal,
@@ -3975,7 +3975,7 @@ de kan ju fastna i ens anal!''',
       Song(
         title: 'Treo-Comp',
         author: '',
-        melody: 'Melodi: Längtan till landet',
+        melody: 'Längtan till landet',
         lyrics: '''Morgonstund med smak av döda bävrar,
 frukostmorgonen är över oss.
 Hur vi stretar, hur vi alla vägrar,
@@ -3989,7 +3989,7 @@ Treo-Comp, vår frälsare och vän.''',
       Song(
         title: 'Dränkta lucia',
         author: '',
-        melody: 'Melodi: Natten går tunga fjät',
+        melody: 'Natten går tunga fjät',
         lyrics: '''Huvet slår kopparslag,
 ögonen svider,
 magen i obehag,
@@ -4003,7 +4003,7 @@ vördat vårt brännvin''',
       Song(
         title: 'Strömmar av whisky',
         author: '',
-        melody: 'Melodi: Drömmar av silver',
+        melody: 'Drömmar av silver',
         lyrics: '''Strömmar av whisky, strömmar av gin.
 Vaknar på morgon' full som ett svin.
 Stiger ur sängen, faller omkull,
@@ -4013,7 +4013,7 @@ sjutusan djävlar, vad jag är full.''',
       Song(
         title: 'Var var jag igår?',
         author: '',
-        melody: 'Melodi: Bei mir bist du schö',
+        melody: 'Bei mir bist du schö',
         lyrics: '''||: Bär ner mig till sjön! :||
 Jag känner att jag måste i.
 Och när du badat mig,
@@ -4045,7 +4045,7 @@ Jag undrar var jag var igår.''',
       Song(
         title: 'Mjölk, mjölk',
         author: '',
-        melody: 'Melodi: Trink, trink, brüderlein trink',
+        melody: 'Trink, trink, brüderlein trink',
         lyrics: '''Mjölk, mjölk, vi vill ha mjölk.
 Det är en underbar dryck!
 Mjölk, mjölk, vi vill ha mjölk.
@@ -4059,7 +4059,7 @@ Mjölk är det bästa vi vet!''',
       Song(
         title: 'Bakfyllesång',
         author: '',
-        melody: 'Melodi: Änglamark',
+        melody: 'Änglamark',
         lyrics: '''Huvudvärk, svettningar, darrningar och diarré.
 Ge mig en isblåsa och en gul Jaffa.
 B-vitaminer, apelsinjuice och lite te.
@@ -4073,7 +4073,7 @@ No concentration, men mycket vomering.''',
       Song(
         title: 'Drömmar om sillis',
         author: '',
-        melody: 'Melodi: Drömmar av silver',
+        melody: 'Drömmar av silver',
         lyrics: '''Drömmar om sillis, drömmar av gull,
 tag lilla nubben, snart är du full.
 Morgonen randas: tomglas, kapsyl.
@@ -4083,7 +4083,7 @@ Drömmen blev vatten och två magnecyl.''',
       Song(
         title: 'När mitt rus har tagit slut',
         author: '',
-        melody: 'Melodi: I ett hus vid skogens slut',
+        melody: 'I ett hus vid skogens slut',
         lyrics: '''När mitt rus har tagit slut
 svullen tunga tittar ut.
 Hjärtat skuttar fram så fort,
@@ -4098,7 +4098,7 @@ in i munnen min.''',
       Song(
         title: 'Antisnapsvisa',
         author: '',
-        melody: 'Melodi: Sjösala vals',
+        melody: 'Sjösala vals',
         lyrics: '''Huvudet vi lyfter med ett stön ur vår säng,
 diskmaskin i buken, kanoner i huvudet.
 Tungan som en plyschsoffa och yrseln i sväng,
@@ -4113,7 +4113,7 @@ Renat och Skåne, Svartvinbär och fager Bäsk!''',
       Song(
         title: 'Sämre och sämre',
         author: '',
-        melody: 'Melodi: Bättre och bättre, dag för dag',
+        melody: 'Bättre och bättre, dag för dag',
         lyrics: '''Sämre och sämre da'n därpå.
 Säg mig, vad gjorde jag igår?
 Många namn för hur man mår sen
@@ -4128,7 +4128,7 @@ men jag mår sämre och sämre da'n därpå!''',
       Song(
         title: 'Vit vecka',
         author: '',
-        melody: 'Melodi: White Christmas',
+        melody: 'White Christmas',
         lyrics: '''Jag drömmer om en vit vecka.
 Sju dagar utan alkohol. 
 Tänk att bara skåla 
@@ -4143,8 +4143,8 @@ så låt nästa vecka vara vit.''',
       ),
       Song(
         title: 'Minnet',
-        author: 'Text: Bosse Österberg',
-        melody: 'Melodi: Memory',
+        author: 'Bosse Österberg',
+        melody: 'Memory',
         lyrics: '''Minne, jag har tappat mitt minne.
 Är jag svensk eller finne?
 Kommer inte ihåg.
@@ -4159,7 +4159,7 @@ fastän minnet och helan går.''',
       Song(
         title: 'Hjärnan som klister',
         author: '',
-        melody: 'Melodi: Lili Marlene',
+        melody: 'Lili Marlene',
         lyrics: '''Hjärnan som klister,
 handen skakar lätt.
 Levern är som ister,
@@ -4172,7 +4172,7 @@ mitt öga lyser som Aldebaran.
       Song(
         title: 'Krognota',
         author: '',
-        melody: 'Melodi: Lysmaskidyll',
+        melody: 'Lysmaskidyll',
         lyrics: '''Tag dig en sup fast din plånbok bantar.
 Räkningen här går på feta slantar:
 
@@ -4188,7 +4188,7 @@ Någonting att tänka på.''',
       Song(
         title: 'Botvisa',
         author: '',
-        melody: 'Melodi: I fjol så gick jag med herrarna i hagen',
+        melody: 'I fjol så gick jag med herrarna i hagen',
         lyrics: '''Igår så drack jag punsch hela dagen,
 aj, aj, punsch hela dagen, ja, punsch hela dagen.
 Idag har jag huvudvärk och ont uti magen,
@@ -4208,7 +4208,7 @@ aj, aj, fri som ärla, ja, fri som en ärla.''',
       Song(
         title: 'Kopparslagaren',
         author: '',
-        melody: 'Melodi: En sockerbagare här bor i staden',
+        melody: 'En sockerbagare här bor i staden',
         lyrics: '''Små kopparslagare här bor i staden,
 de är ett otyg för varje glad en.
 De plågar stora, de plågar små,
@@ -4238,7 +4238,7 @@ vi stiger opp och tar oss en sup.''',
       Song(
         title: 'Buller och trätor',
         author: '',
-        melody: 'Melodi: Ja, må han leva',
+        melody: 'Ja, må han leva',
         lyrics: '''Buller och trätor och slagsmål och fasor,
 stölder och rån, även mordbrand och död.
 Drunkning, förfrysning och armod och trasor,
@@ -4263,7 +4263,7 @@ säg vill du pröva allt detta så drick.''',
       Song(
         title: 'Full just idag',
         author: '',
-        melody: 'Melodi: Rosen (refrängen)',
+        melody: 'Rosen (refrängen)',
         lyrics: '''Full just idag, men imorgon ska jag
 bli nykterist för jag mår inte bra.
 Den sista jag tog fick mig att få nog,
@@ -4277,8 +4277,8 @@ fick mig att spy i min grannes sko!''',
     songs: [
       Song(
         title: 'Om Emacs',
-        author: 'Text: Ingemar Ragnemalm',
-        melody: 'Melodi: Kovan kommer, kovan går',
+        author: 'Ingemar Ragnemalm',
+        melody: 'Kovan kommer, kovan går',
         lyrics: '''Emacs är en stor koloss.
 Tugga på, tugga på.
 Verkar aldrig komma loss.
@@ -4310,7 +4310,7 @@ Klart att det går trögt ibland!''',
       Song(
         title: 'Länka lilla dator där',
         author: '',
-        melody: 'Melodi: Blinka lilla stjärna',
+        melody: 'Blinka lilla stjärna',
         lyrics: '''Länka lilla dator där,
 hur jag undrar hur du är.
 Ständigt frestar du mitt mod,
@@ -4329,7 +4329,7 @@ jag undrar vad klockan är.''',
       Song(
         title: 'Système International',
         author: '',
-        melody: 'Melodi: Studentsången',
+        melody: 'Studentsången',
         lyrics: '''W kg m Wb s
 Ω m T A rad
 Cd S N s
@@ -4345,7 +4345,7 @@ F!''',
       Song(
         title: 'Bring back my dump tape to me',
         author: '',
-        melody: 'Melodi: My Bonnie',
+        melody: 'My Bonnie',
         lyrics: '''His first day our new operator
 knew not what root's powers might be.
 One 'rm -rf /' later... ('r m dash r f slash')
@@ -4396,7 +4396,7 @@ Fix one bug, compile it again,
       Song(
         title: 'Mors lilla dator',
         author: '',
-        melody: 'Melodi: Mors lille Olle',
+        melody: 'Mors lille Olle',
         lyrics: '''Mors lilla dator åt skogen gick,
 mitt i programmet sade det klick.
 Svart bidde skärmen och minnet försvann,
@@ -4416,7 +4416,7 @@ jag tror att jag snart hemåt skall gå.''',
       Song(
         title: 'The BASIC Song',
         author: '',
-        melody: 'Melodi: Mors lille Olle',
+        melody: 'Mors lille Olle',
         lyrics: '''10 LET oss nu fatta i våra glas
 20 INPUT en klunk utav det som där has
 30 IF du fått nog THEN till 50 min vän
@@ -4449,7 +4449,7 @@ UNIX.''',
       Song(
         title: 'Write in C',
         author: '',
-        melody: 'Melodi: Let it be',
+        melody: 'Let it be',
         lyrics: '''When I find my code in tons of trouble,
 friends and colleagues come to me,
 speaking words of wisdom:
@@ -4518,8 +4518,8 @@ write in C.''',
     songs: [
       Song(
         title: 'Fredmans epistel N:o 81',
-        author: 'Text: Carl Michael Bellman',
-        melody: 'Melodi: Carl Michael Bellman',
+        author: 'Carl Michael Bellman',
+        melody: 'Carl Michael Bellman',
         lyrics: '''Märk hur' vår skugga, märk Movitz Mon Frere!
 Innom et mörker sig slutar,
 Hur Guld och Purpur i Skåfveln, den där,
@@ -4563,8 +4563,8 @@ Vi ä torstiga alla.''',
       ),
       Song(
         title: 'Fredmans sång N:o 64',
-        author: 'Text: Carl Michael Bellman',
-        melody: 'Melodi: Carl Michael Bellman',
+        author: 'Carl Michael Bellman',
+        melody: 'Carl Michael Bellman',
         lyrics: '''Fjäriln vingad syns på Haga,
 Mellan dimmors frost och dun,
 Sig sitt gröna skjul tillaga,
@@ -4604,7 +4604,7 @@ Sjelf den trumpne glädtig går.''',
       ),
       Song(
         title: 'Fredmans sång N:o 21',
-        author: 'Text: Carl Michael Bellman',
+        author: 'Carl Michael Bellman',
         melody: '',
         lyrics: '''Så lunka vi så småningom
 Från Bacchi buller och tumult,
@@ -4692,8 +4692,8 @@ Tycker du...''',
       ),
       Song(
         title: 'Fredmans sång N:o 35',
-        author: 'Text: Carl Michael Bellman',
-        melody: 'Melodi: Carl Michael Bellman',
+        author: 'Carl Michael Bellman',
+        melody: 'Carl Michael Bellman',
         lyrics: '''||: Gubben Noach, Gubben Noach
 Var en hedersman, :||
 När han gick ur arken
@@ -4753,7 +4753,7 @@ Drack man ur så här.''',
       ),
       Song(
         title: 'Bort alt hvad oro gör',
-        author: 'Text: Carl Michael Bellman',
+        author: 'Carl Michael Bellman',
         melody: '',
         lyrics: '''Bort alt hvad oro gör, 
 bort alt hvad hjertat qväljer!
@@ -4786,7 +4786,7 @@ Mallaga - ja.''',
       Song(
         title: 'Porros visa – pojkarnas',
         author: '',
-        melody: 'Melodi: Portos visa',
+        melody: 'Portos visa',
         lyrics: '''Jag vill börja schlicka,
 var fan är min flicka,
 vem i helvete stal min modell?
@@ -4809,7 +4809,7 @@ för att sätta på rubb och stubb!''',
       Song(
         title: 'Porros visa – flickornas',
         author: '',
-        melody: 'Melodi: Portos visa',
+        melody: 'Portos visa',
         lyrics: '''Jag vill runka pille,
 va' fan är min kille,
 vem i helvete stal min massagestav.
@@ -4832,7 +4832,7 @@ för att sätta på rubb och stubb!''',
       Song(
         title: 'Det satt en mus',
         author: '',
-        melody: 'Melodi: När månen vandrar på fästet blå',
+        melody: 'När månen vandrar på fästet blå',
         lyrics: '''Det satt en mus på en klyvarbom
 och torr i fittan var kräket,
 och tungan hängde från skepparns gom,
@@ -4845,7 +4845,7 @@ ska du få fläns, pumpa läns!"''',
       Song(
         title: 'Drömmar om plåt',
         author: '',
-        melody: 'Melodi: Drömmar av ',
+        melody: 'Drömmar av ',
         lyrics: '''Drömmar om silver, drömmar om plåt, 
 vakna nu älskling, för nu är jag kåt. 
 Lägg dig på sängen, slappna nu av, 
@@ -4885,7 +4885,7 @@ Dinah, Dinah …''',
       Song(
         title: 'Bastuvisan',
         author: '',
-        melody: 'Melodi: Vårat gäng ',
+        melody: 'Vårat gäng ',
         lyrics: '''Här i våran bastu känns
 torra värmen, som ej bränns,
 som en smekning, ljuv och skön.
@@ -4904,7 +4904,7 @@ och kom snart igen.''',
       Song(
         title: 'Mossbelupen',
         author: '',
-        melody: 'Melodi: Imbelupet',
+        melody: 'Imbelupet',
         lyrics: '''Mossbelupen fitta under skrynklig buk.
 Den ser ut att rymma minst en tolvtumskuk.
 I dess kanter hänga slamsor, gonorré och annan skit,
@@ -4949,7 +4949,7 @@ Sjörövarna bögar på sitt skepp.''',
       Song(
         title: 'Blottarkärlek',
         author: '',
-        melody: 'Melodi: Flottarkärlek',
+        melody: 'Flottarkärlek',
         lyrics: '''Jag var ung en gång för länge se’n
 en blottare på stan
 och dessutom var jag traktens nymfoman.
@@ -4972,7 +4972,7 @@ Om du ringer mig så sätter jag på dig.''',
       Song(
         title: 'Åh Carola',
         author: '',
-        melody: 'Melodi: Någonstans i Sverige ',
+        melody: 'Någonstans i Sverige ',
         lyrics: '''Hennes ben är för korta, 
 hennes kjol är för lång.
 Hennes bröst är för stora, 
@@ -4985,7 +4985,7 @@ för hon är vår idol.
       Song(
         title: 'Bluff och spark',
         author: '',
-        melody: 'Melodi: Lingonben',
+        melody: 'Lingonben',
         lyrics: '''Bluff och Spark och Tork och Kvark
 voro sex små dvärgar.
 En var ful och en var kåt
@@ -5030,7 +5030,7 @@ Hur ska Lillan orka?''',
       Song(
         title: 'Bondvisa',
         author: '',
-        melody: 'Melodi: När månen vandrar ',
+        melody: 'När månen vandrar ',
         lyrics: '''Och drängen han satt i vån,
 i kammaren, i kammaren.
 Han banka kuken sin gul och blå.
@@ -5051,7 +5051,7 @@ din djävel, din djävel.''',
       Song(
         title: 'Allmänna obdusången',
         author: '',
-        melody: 'Melodi: Askungens klänning',
+        melody: 'Askungens klänning',
         lyrics: '''Nekrofiler är vi båda och vi sitter här och knådar.
 Vi tar ju dem i häcken och slänger den i bäcken.
 Vi styckar alla liken och slänger dem i diken.
@@ -5080,7 +5080,7 @@ undviker man att alla hinnor brister.''',
       Song(
         title: 'Calypso pervers',
         author: '',
-        melody: 'Melodi: En glad calypso om våren',
+        melody: 'En glad calypso om våren',
         lyrics: '''Ack den som vore i dina kläder.
 Jag blir så vansinnigt kåt på läder.
 För att ej tala om gummi se’n
@@ -5105,7 +5105,7 @@ Tralalalalalala, tralalalalalala...''',
       Song(
         title: 'Sillesalteriet',
         author: '',
-        melody: 'Melodi: Skörda linet idag ',
+        melody: 'Skörda linet idag ',
         lyrics: '''Förr jobba´ vi i sillesalteri
 men va finge vi för detta?
 Jo, trasiga böxer, loppbetna lår
@@ -5115,7 +5115,7 @@ Jo, trasiga böxer, loppbetna lår
       Song(
         title: 'Det var en gång en flicka',
         author: '',
-        melody: 'Melodi: Jag gick mig ut en afton',
+        melody: 'Jag gick mig ut en afton',
         lyrics: '''Det var en gång en flicka som red uppå ett svin
 och flickan hon var naken men glad var hennes min.
 Den borsten, den borsten
@@ -5162,7 +5162,7 @@ Svälj!''',
       Song(
         title: 'Fido',
         author: '',
-        melody: 'Melodi: Flottarkärlek ',
+        melody: 'Flottarkärlek ',
         lyrics: '''Har du sett en? Har du sett den?
 Har du haft den i din mun?
 Har du sett den? Har du haft den i din mun?
@@ -5181,7 +5181,7 @@ Jag har sett den. Jag har haft den i min mun.''',
       Song(
         title: 'En flicka ung och fager',
         author: '',
-        melody: 'Melodi: Gällivarevisa',
+        melody: 'Gällivarevisa',
         lyrics: '''En flicka ung och fager, en gosse stor och stark
 omfamnade varandra uti en lummig park.
 Men bäst de båda njöto, så kom där en polis,
@@ -5216,7 +5216,7 @@ de voro fast beslutna att knulla eller dö.''',
       Song(
         title: 'Hon var så ensam',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''Flickorna: 
 Hon var så liten.
 Hon var så frusen.
@@ -5235,7 +5235,7 @@ DONG DONGE DONG''',
       Song(
         title: 'Äldre män',
         author: '',
-        melody: 'Melodi: I Appladalen i Värnamo',
+        melody: 'I Appladalen i Värnamo',
         lyrics: '''Äldre män ska man ej förakta.
 De gör det noga, de gör det sakta.
 Yngre män däremot är skit,
@@ -5245,7 +5245,7 @@ det är ju knappt att de hinner dit!''',
       Song(
         title: 'Gamle Niklas',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''Åh gamle Niklas tog fram kodongen.
 Ja den han använt för sjunde gången.
 Han sa till Hulda "Jag har dig kär,
@@ -5306,8 +5306,8 @@ upp i Brittas fitta, kom får ni titta!''',
       ),
       Song(
         title: 'Horhuset',
-        author: 'Text: Roger Melander',
-        melody: 'Melodi: Du käre lille snickebo',
+        author: 'Roger Melander',
+        melody: 'Du käre lille snickebo',
         lyrics: '''Till bygdens horhus ränner jag när frugan min ej vill.
 För kärringfan där hemma hon vill bara ligga still.
 Flickorna ska hoppa omkring 
@@ -5326,7 +5326,7 @@ Ja lyckos mig, hopp fallerej.''',
       Song(
         title: 'Horan och Idioten',
         author: '',
-        melody: 'Melodi: Amanda Lundblom',
+        melody: 'Amanda Lundblom',
         lyrics: '''Det satt en hora på himmelsberge’,
 Bom-fadderi fadderullan-berge’.
 Och visa fittan för hela Sverige,
@@ -5342,7 +5342,7 @@ Bom-fadderi fadderullan-lej.
       Song(
         title: 'Gorkaleken',
         author: '',
-        melody: 'Melodi: Om man inte har för stora pretentioner',
+        melody: 'Om man inte har för stora pretentioner',
         lyrics: '''Nu jag sjunga vill en sång, om när jag var ung en gång
 och besökte finska mässan uti Purkka.
 Uti glada vänners lag, lekte vi en lek ett slag,
@@ -5375,7 +5375,7 @@ och som tröstpris fick jag äta våran gorka.
       Song(
         title: 'Inlandsbanan',
         author: '',
-        melody: 'Melodi: Amanda Lundbom ',
+        melody: 'Amanda Lundbom ',
         lyrics: '''När dom byggde inlandsbanan,
 Bom-fadderi fadderallan-banan,
 då blev alla flickor galna.
@@ -5408,7 +5408,7 @@ Så pippa du, så vaggar jag. Hej bom...  ''',
       Song(
         title: 'Sven Ludvig Task',
         author: '',
-        melody: 'Melodi: Kovan kommer',
+        melody: 'Kovan kommer',
         lyrics: '''Känner du Sven Ludvig Task?
 Sven Ludvig Task, Sven Ludvig Task.
 Kuken hans är som en mask.
@@ -5422,7 +5422,7 @@ blir det oftast knut på snör’t.''',
       Song(
         title: 'Louisa Rask',
         author: '',
-        melody: 'Melodi: Kovan kommer',
+        melody: 'Kovan kommer',
         lyrics: '''Har du sett Louisa Rask,
 Louisa Rask, Louisa Rask.
 Hon har fittan full med mask, 
@@ -5444,7 +5444,7 @@ slukar hon den största fläns.''',
       Song(
         title: 'Märta',
         author: '',
-        melody: 'Melodi: I Apladalen i Värnamo',
+        melody: 'I Apladalen i Värnamo',
         lyrics: '''Hon var min fröjd och hon var min smärta
 hon bar det klingande namnet Märta.
 Vi bruka träffas nå’n gång ibland,
@@ -5479,7 +5479,7 @@ och har väl ändå minst hälften kvar.''',
       Song(
         title: 'I ett fönster',
         author: '',
-        melody: 'Melodi: Säj inte nej säj kanske, kanske',
+        melody: 'Säj inte nej säj kanske, kanske',
         lyrics: '''I ett fönster satt en flicka
 Och onanerade så glatt
 Hon hade uppkört en vibrerande
@@ -5500,7 +5500,7 @@ Så ska jag knulla dig jag är så kåt …''',
       Song(
         title: 'Sir Charlie',
         author: '',
-        melody: 'Melodi: Glory Glory',
+        melody: 'Glory Glory',
         lyrics: '''||: Oh, Sir Charlie do not touch me :||
 Said the girl in the bed with nothing on at all.''',
         about: '',
@@ -5508,7 +5508,7 @@ Said the girl in the bed with nothing on at all.''',
       Song(
         title: 'In kommer far',
         author: '',
-        melody: 'Melodi: Å jänta å jag',
+        melody: 'Å jänta å jag',
         lyrics: '''In kommer far, full som han var.
 Drämde sin task i bordet.
 Efter kommer mor, gorma och svor,
@@ -5545,7 +5545,7 @@ och luktar brännevin.''',
       Song(
         title: 'Pisksnärtar friska',
         author: '',
-        melody: 'Melodi: Vårvindar friska',
+        melody: 'Vårvindar friska',
         lyrics: '''Pisksnärtar friska
 vina och smiska,
 sprider behag i hela min kropp.
@@ -5574,7 +5574,7 @@ säkert blir du min död.''',
       Song(
         title: 'Sadistaria',
         author: '',
-        melody: 'Melodi: Chaplins manschettvisa',
+        melody: 'Chaplins manschettvisa',
         lyrics: '''Jag föddes av min faster,
 båd’ far och mor pedraster.
 Jag levt mitt liv i laster.
@@ -5634,7 +5634,7 @@ Je suis Marquis de Sade.''',
       Song(
         title: 'Samborombon',
         author: '',
-        melody: 'Melodi: Fritiof och Carmensita',
+        melody: 'Fritiof och Carmensita',
         lyrics: '''Samborombon, en liten by förutan gata.
 Har ändå flickor som med dig ej blott vill prata.
 Nästan i kanten av den blåa Atlanten,
@@ -5693,7 +5693,7 @@ som kan rida ranka.''',
       Song(
         title: 'Snorkråkan',
         author: '',
-        melody: 'Melodi: Vi på saltkråkan  ',
+        melody: 'Vi på saltkråkan  ',
         lyrics: '''Vad det är skönt att stå här ner vid sjön och dra kuk.
 Melker står och runkar. 
 Båtsman, Båtsman har en djävla jätttekuk!
@@ -5738,7 +5738,7 @@ Skiten sprutar när den åker in och ut.''',
       Song(
         title: 'Än en gång därin',
         author: '',
-        melody: 'Melodi: Än en gång däran',
+        melody: 'Än en gång däran',
         lyrics: '''Än en gång därin, bröder, än en gång därin.
 Följom den urgamla säden!
 Intill sista tum, bröder, intill sista tum,
@@ -5752,7 +5752,7 @@ Svenska fittors djup, här är din kuk!''',
       Song(
         title: 'Far och mor ',
         author: '',
-        melody: 'Melodi: Hallå du gamle indian',
+        melody: 'Hallå du gamle indian',
         lyrics: '''Har du sett min far,
 en så’n kuk han har.
 Han kör posten i klippiga bergen.
@@ -5796,7 +5796,7 @@ Jag skiter i sperman, för nu tar jag Herman...''',
       Song(
         title: 'Dra ollon',
         author: '',
-        melody: 'Melodi: Frukostklubben ',
+        melody: 'Frukostklubben ',
         lyrics: '''Innan vi går ut i stadens jäkt och jobb 
 så sjunger vi en enkel sång 
 i våran runkarklubb: 
@@ -5823,7 +5823,7 @@ dra ollon, dra ollon, hej då!''',
       Song(
         title: 'The engineer song ',
         author: '',
-        melody: 'Melodi: Ghost rider',
+        melody: 'Ghost rider',
         lyrics: '''An engineer told me before he died, 
 Ah hum, titty bum, titty bum, titty bum
 An engineer told me before he died, 
@@ -5876,7 +5876,7 @@ Never trust a fucking machine. ''',
       Song(
         title: 'Kyrkvisa',
         author: '',
-        melody: 'Melodi: Tryggare kan ingen vara ',
+        melody: 'Tryggare kan ingen vara ',
         lyrics: '''Han som samla upp kollekten 
 gick åstad och sket i fläkten. 
 De som hade bra placering, 
@@ -6017,7 +6017,7 @@ Although they liked the music, the fucking was the best!''',
       Song(
         title: 'När gräset gror',
         author: '',
-        melody: 'Melodi: När gäddorna leker',
+        melody: 'När gäddorna leker',
         lyrics: '''När gräset gror på ängarna
 går pigorna till drängarna. 
 Ja då är det vår, 
@@ -6032,7 +6032,7 @@ men brännvin ger tröst.''',
       Song(
         title: '69:an',
         author: '',
-        melody: 'Melodi: 34:an',
+        melody: '34:an',
         lyrics: '''Denna ställning har vi prövat uti många herrans år.
 Denna ställning har vi kört å den är inte särskilt svår.
 Men så plötsligt häromdan bak i en bil så sa det knäck.
@@ -6050,7 +6050,7 @@ vi går i 69:an i himlen in. :||''',
       Song(
         title: 'Välkomstvisan',
         author: '',
-        melody: 'Melodi: Räven raskar över isen',
+        melody: 'Räven raskar över isen',
         lyrics: '''Sperman rinner genom strupen.
 Sperman rinner genom strupen.
 Samlar sig, samlar sig
@@ -6064,7 +6064,7 @@ så vill jag knulla dig i röven.''',
       Song(
         title: 'Satsen kommer',
         author: '',
-        melody: 'Melodi: Glada änkan',
+        melody: 'Glada änkan',
         lyrics: '''Satsen kommer, satsen kommer
 god och varm.
 Kvinnor kvider när jag gnider
@@ -6078,7 +6078,7 @@ för att få ett skjut.''',
       Song(
         title: 'Katten den har fyra ben ',
         author: '',
-        melody: 'Melodi: Mitt lilla face och jag',
+        melody: 'Mitt lilla face och jag',
         lyrics: '''Katten den har fyra ben.
 Tuppen den har två
 Snoppen den har inga alls,
@@ -6088,7 +6088,7 @@ men den kan stå ändå!''',
       Song(
         title: 'En liten marsipanvisa',
         author: '',
-        melody: 'Melodi: Vi sätter oss i ringen.',
+        melody: 'Vi sätter oss i ringen.',
         lyrics: '''Vi sätter oss i ringen
 och tar nånting i hand.
 Vi är en massa syskon
@@ -6102,7 +6102,7 @@ de smakar marsipan. ''',
       Song(
         title: 'Int\' för jag har',
         author: '',
-        melody: 'Melodi: Å jänta å ja ',
+        melody: 'Å jänta å ja ',
         lyrics: '''Int’ för jag har så stor pitt som far,
 men jag drar på med stumpen jag har.
 Hej hopp i tak, stor mus har jag,
@@ -6126,7 +6126,7 @@ sen jag gängade dig.  ''',
       Song(
         title: 'Prostata',
         author: '',
-        melody: 'Melodi: Ratata',
+        melody: 'Ratata',
         lyrics: '''En afton uppå Stureplan 
 gick Agda av och an.
 Med purpurblod på läpparna, 
@@ -6176,7 +6176,7 @@ en sista tapper stöt.  ''',
       Song(
         title: 'Ekorren satt i tallen',
         author: '',
-        melody: 'Melodi: Ekorren satt i granen',
+        melody: 'Ekorren satt i granen',
         lyrics: '''Ekorrn satt i granen
 bryggde lite planksaft.
 Därav blev han knall, men
@@ -6189,7 +6189,7 @@ med den långa ludna svansen.''',
       Song(
         title: 'Den är för liten',
         author: '',
-        melody: 'Melodi: Någonstans i Sverige ',
+        melody: 'Någonstans i Sverige ',
         lyrics: '''Hans axlar är för smala
 Och hans stjärt är för stor.
 Hans ben är rätt skrala,
@@ -6208,7 +6208,7 @@ för jag har en annan.''',
       Song(
         title: 'Lilla Lisa',
         author: '',
-        melody: 'Melodi: Där som sädesfälten',
+        melody: 'Där som sädesfälten',
         lyrics: '''När som sädesvätskan rinner ner för magen, 
 lilla Lisa hon var bara fjorton år.
 Jag kan se att hon är ganska så betagen
@@ -6224,7 +6224,7 @@ i vars fitta man får in ett matsalsbord.
       Song(
         title: 'Ovan där',
         author: '',
-        melody: 'Melodi: Ovan där',
+        melody: 'Ovan där',
         lyrics: '''Frestelser man stöter på, när på gatorna man går, 
 för där möter man ju flickor, som utan BH går. 
 När en flick är så bar, är det svårt att vara karl, 
@@ -6256,7 +6256,7 @@ särskilt om man är så ovan vid sånt där. ''',
       Song(
         title: 'Lilla vackra Anna',
         author: '',
-        melody: 'Melodi: Lilla vackra Anna ',
+        melody: 'Lilla vackra Anna ',
         lyrics: '''Lilla vackra Anna om du vill 
 släppa hela stora fittan till. 
 Så ska vi försöka 
@@ -6273,7 +6273,7 @@ Lilla vackra Anna om du vill.''',
       Song(
         title: 'Ponny',
         author: '',
-        melody: 'Melodi: Min kära lilla ponny',
+        melody: 'Min kära lilla ponny',
         lyrics: '''Vad du är åh! Min kära lilla ponny.
 Vad du är åh! Min kära lilla häst.
 Du kommer aldrig först, min kära lilla ponny,
@@ -6288,7 +6288,7 @@ Allt med en säker invand gest.''',
       Song(
         title: 'Amanda',
         author: '',
-        melody: 'Melodi: I apladalen i Värnamo',
+        melody: 'I apladalen i Värnamo',
         lyrics: '''Amanda gångar sig ut i lunden
 där får hon se att en ko står bunden.
 Amanda gångar sig hem igen
@@ -6364,7 +6364,7 @@ om man snurrar och svänger sin kuk ''',
       Song(
         title: 'I röva',
         author: '',
-        melody: 'Melodi: Viggen',
+        melody: 'Viggen',
         lyrics: '''I röva på en gris,
 där växer lingonris,
 i röva på en gammal tant
@@ -6377,8 +6377,8 @@ där växa kånkelbär.''',
       ),
       Song(
         title: 'Jannes snuskvisa',
-        author: 'Text: Janne Weijnitz, Djurmästeriet, DISK KM',
-        melody: 'Melodi: My bonnie',
+        author: 'Janne Weijnitz, Djurmästeriet, DISK KM',
+        melody: 'My bonnie',
         lyrics: '''Pojke: Min förhud är röd och den svider.
 Flicka: Min framstjärt är öm och gör ont.
 Båda:   Vi har ju haft kul hela natten,
@@ -6392,7 +6392,7 @@ Pojke:  Samlag, samlag, då kör jag dig med
       Song(
         title: 'Intellektuell visa',
         author: '',
-        melody: 'Melodi: Räven raska över isen',
+        melody: 'Räven raska över isen',
         lyrics: '''Räven raska röva riset.
 Riset raska renar räven.
 Å röva ris, å röva rös.
@@ -6410,7 +6410,7 @@ Ludvig längtar Lisa lära.
       Song(
         title: 'Jul på Saltkråkan',
         author: '',
-        melody: 'Melodi: Vi på Saltkråkan',
+        melody: 'Vi på Saltkråkan',
         lyrics: '''Det är så vackert när det ligger snö på vår sjö.
 Melkers står och metar.
 Båtsman, Båtsman han har is uti sin päls.
@@ -6439,7 +6439,7 @@ Skummet sprutar när den in i disken far.''',
       Song(
         title: 'Trasig marskalk',
         author: '',
-        melody: 'Melodi: Jag är fattig bonddräng',
+        melody: 'Jag är fattig bonddräng',
         lyrics: '''Jag är trasig marskalk men jag lever ändå.
 Pubar går och kommer medan jag knogar på.
 Svabbar, går och tömmer, sköljer, torkar och bär.
@@ -6468,8 +6468,8 @@ Nu du trasig marskalk, nu får du vila ut.”''',
       ),
       Song(
         title: 'Horungen',
-        author: 'Text: Åhlen & Brumma',
-        melody: 'Melodi: Muslåten i askungen',
+        author: 'Åhlen & Brumma',
+        melody: 'Muslåten i askungen',
         lyrics: '''Förteater:
 'Horungen, horungen!!'
 
@@ -6532,8 +6532,8 @@ och anuset bleks av en sol''',
       ),
       Song(
         title: 'Tidelag',
-        author: 'Text: Åhlen',
-        melody: 'Melodi: Djingis Khan med gruppen Djingis Khan',
+        author: 'Åhlen',
+        melody: 'Djingis Khan med gruppen Djingis Khan',
         lyrics: '''Den stackars lille mården är den siste kvar... av sitt slag HA HU HA!
 Den enda jungfru här på gården han väntar på... tidelag HA HU
 
@@ -6571,8 +6571,8 @@ Refr: Tid-tid-tidelag...''',
       ),
       Song(
         title: 'Jag vill ha samlag',
-        author: 'Text: Åhlen',
-        melody: 'Melodi: Man ska ha husvagn',
+        author: 'Åhlen',
+        melody: 'Man ska ha husvagn',
         lyrics: '''Jag har knullat nästan allt som finns att sätta på
 känt mig rätt så tuff och liksom bara festat å
 men nu känns det som något saknas i mitt hem
@@ -6618,8 +6618,8 @@ hoppas att du vill''',
       ),
       Song(
         title: 'Saltkodarn',
-        author: 'Text: Åhlen',
-        melody: 'Melodi: Saltkråkan',
+        author: 'Åhlen',
+        melody: 'Saltkråkan',
         lyrics: '''Jag skulle koda mig en liten app häromdan
 Jag skulle koda mig en liten app häromdan
 i Cobol, C och Fortran

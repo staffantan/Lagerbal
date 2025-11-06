@@ -90,10 +90,10 @@ class _SongListScreenState extends State<SongListScreen> {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Added "${song.title}" to Egna visor'),
+                content: Text('Lagt till "${song.title}" i Egna visor'),
                 duration: const Duration(seconds: 3),
                 action: SnackBarAction(
-                  label: 'View',
+                  label: 'Visa',
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -114,7 +114,7 @@ class _SongListScreenState extends State<SongListScreen> {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Song "${song.title}" already exists'),
+                content: Text('Låt "${song.title}" finns redan'),
                 duration: const Duration(seconds: 2),
               ),
             );
@@ -124,7 +124,7 @@ class _SongListScreenState extends State<SongListScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Error importing song: $e'),
+              content: Text('Fel vid import av låt: $e'),
               duration: const Duration(seconds: 3),
             ),
           );
@@ -192,7 +192,7 @@ class _SongListScreenState extends State<SongListScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Added "${newSong.title}" to Egna visor'),
+            content: Text('Lagt till "${newSong.title}" i Egna visor'),
             duration: const Duration(seconds: 2),
           ),
         );
@@ -209,10 +209,10 @@ class _SongListScreenState extends State<SongListScreen> {
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Deleted "${song.title}"'),
+          content: Text('Raderade "${song.title}"'),
           duration: const Duration(seconds: 2),
           action: SnackBarAction(
-            label: 'Undo',
+            label: 'Ångra',
             onPressed: () {
               setState(() {
                 _customSongs.add(song);
@@ -292,7 +292,7 @@ class _SongListScreenState extends State<SongListScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
-            tooltip: 'Settings',
+            tooltip: 'Inställningar',
             onPressed: () {
               Navigator.push(
                 context,
@@ -315,7 +315,7 @@ class _SongListScreenState extends State<SongListScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'Search songs by title, lyrics, author, or melody...',
+                hintText: 'Sök låtar efter titel, text, författare eller melodi...',
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: _searchQuery.isNotEmpty
                     ? IconButton(
@@ -354,12 +354,12 @@ class _SongListScreenState extends State<SongListScreen> {
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          'No songs found',
+                          'Inga låtar hittades',
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Try a different search term',
+                          'Prova en annan sökterm',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                 color: Theme.of(context).colorScheme.onSurfaceVariant,
                               ),
@@ -387,7 +387,7 @@ class _SongListScreenState extends State<SongListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addCustomSong,
-        tooltip: 'Add Custom Song',
+        tooltip: 'Lägg till egen låt',
         child: const Icon(Icons.add),
       ),
     );

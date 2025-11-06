@@ -20,7 +20,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const Text('Inställningar'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SafeArea(
@@ -30,8 +30,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           // Show Adult Songs
           Card(
             child: SwitchListTile(
-              title: const Text('Show Adult Songs'),
-              subtitle: const Text('Display Ekivoka category songs'),
+              title: const Text('Visa ekivoka låtar'),
+              subtitle: const Text('Visa låtar i ekivoka kategorin'),
               secondary: const Icon(Icons.warning_amber),
               value: widget.settings.showAdultSongs,
               onChanged: (value) {
@@ -47,8 +47,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           // Show Custom Songs
           Card(
             child: SwitchListTile(
-              title: const Text('Show Custom Songs'),
-              subtitle: const Text('Display user-created custom songs'),
+              title: const Text('Visa egna låtar'),
+              subtitle: const Text('Visa användarskapade egna låtar'),
               secondary: const Icon(Icons.edit_note),
               value: widget.settings.showCustomSongs,
               onChanged: (value) {

@@ -20,12 +20,12 @@ class SongDetailScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Delete Song'),
-          content: Text('Are you sure you want to delete "${song.title}"?'),
+          title: const Text('Radera låt'),
+          content: Text('Är du säker på att du vill radera "${song.title}"?'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel'),
+              child: const Text('Avbryt'),
             ),
             FilledButton(
               onPressed: () {
@@ -36,7 +36,7 @@ class SongDetailScreen extends StatelessWidget {
               style: FilledButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.error,
               ),
-              child: const Text('Delete'),
+              child: const Text('Radera'),
             ),
           ],
         );
@@ -56,20 +56,20 @@ class SongDetailScreen extends StatelessWidget {
     // Show confirmation
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: const Text('Share link copied to clipboard!'),
+        content: const Text('Delbar länk kopierad till urklipp!'),
         duration: const Duration(seconds: 2),
         action: SnackBarAction(
-          label: 'View',
+          label: 'Visa',
           onPressed: () {
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
-                title: const Text('Share Link'),
+                title: const Text('Dela länk'),
                 content: SelectableText(shareLink),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: const Text('Close'),
+                    child: const Text('Stäng'),
                   ),
                 ],
               ),
@@ -90,12 +90,12 @@ class SongDetailScreen extends StatelessWidget {
             ? [
                 IconButton(
                   icon: const Icon(Icons.share),
-                  tooltip: 'Share Song',
+                  tooltip: 'Dela låt',
                   onPressed: () => _shareSong(context),
                 ),
                 IconButton(
                   icon: const Icon(Icons.delete),
-                  tooltip: 'Delete Song',
+                  tooltip: 'Radera låt',
                   onPressed: () => _confirmDelete(context),
                 ),
               ]
@@ -116,21 +116,21 @@ class SongDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             
-            // Melody
+            // Melodi
             _InfoRow(
-              label: 'Melody:',
+              label: 'Melodi:',
               value: song.melody,
             ),
             const SizedBox(height: 8),
-            
-            // Author
+
+            // Författare
             _InfoRow(
-              label: 'Author:',
+              label: 'Författare:',
               value: song.author,
             ),
             const SizedBox(height: 24),
-            
-            // Lyrics
+
+            // Text
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16.0),
