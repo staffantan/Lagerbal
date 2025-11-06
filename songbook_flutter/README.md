@@ -17,10 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## TODO
 
- * Add a search feature to find songs quickly
  * Implement favorites/bookmarks
- * Add the ability to create custom songbooks
- * Support for importing/exporting songs
- * Add chord diagrams or sheet music
- * Implement transposition for different keys
- * Hide Ekivoka category and show with a hidden searchterm
