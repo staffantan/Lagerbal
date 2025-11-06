@@ -282,7 +282,12 @@ class _SongListScreenState extends State<SongListScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Image.asset(
+          'logo.png', 
+          height: 72
+        ),
         title: const Text('DISK KMs sångbok'),
+        titleSpacing: 0,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
           IconButton(
