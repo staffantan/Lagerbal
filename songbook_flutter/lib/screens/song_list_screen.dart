@@ -320,7 +320,7 @@ class _SongListScreenState extends State<SongListScreen> {
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 filled: true,
-                fillColor: Theme.of(context).colorScheme.surfaceVariant,
+                fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
               ),
               onChanged: (value) {
                 setState(() {
