@@ -69,6 +69,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'DISK KMs sångbok',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(

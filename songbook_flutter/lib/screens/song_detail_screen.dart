@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/song.dart';
 
-class SongDetailScreen extends StatelessWidget {
+class SongDetailScreen extends StatefulWidget {
   final Song song;
   final bool isCustomSong;
   final VoidCallback? onDelete;
@@ -19,13 +19,33 @@ class SongDetailScreen extends StatelessWidget {
     this.onToggleFavorite,
   });
 
+  @override
+  State<SongDetailScreen> createState() => _SongDetailScreenState();
+}
+
+class _SongDetailScreenState extends State<SongDetailScreen> {
+  late bool _isFavorite;
+
+  @override
+  void initState() {
+    super.initState();
+    _isFavorite = widget.isFavorite;
+  }
+
+  void _toggleFavorite() {
+    setState(() {
+      _isFavorite = !_isFavorite;
+    });
+    widget.onToggleFavorite?.call();
+  }
+
   void _confirmDelete(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Radera låt'),
-          content: Text('Är du säker på att du vill radera "${song.title}"?'),
+          content: Text('Är du säker på att du vill radera "${widget.song.title}"?'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -35,7 +55,7 @@ class SongDetailScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context); // Close dialog
                 Navigator.pop(context); // Close detail screen
-                onDelete?.call(); // Call delete callback
+                widget.onDelete?.call(); // Call delete callback
               },
               style: FilledButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.error,
@@ -50,7 +70,7 @@ class SongDetailScreen extends StatelessWidget {
 
   void _shareSong(BuildContext context) {
     // Convert song to JSON and encode to base64
-    final songJson = jsonEncode(song.toJson());
+    final songJson = jsonEncode(widget.song.toJson());
     final base64Data = base64Encode(utf8.encode(songJson));
     final shareLink = 'http://www.ahlvik.se/sangbok/?data=$base64Data';
 
@@ -88,17 +108,17 @@ class SongDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(song.title),
+        title: Text(widget.song.title),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
           // Favorite button (always visible)
           IconButton(
-            icon: Icon(isFavorite ? Icons.star : Icons.star_border),
-            tooltip: isFavorite ? 'Ta bort från favoriter' : 'Lägg till i favoriter',
-            onPressed: onToggleFavorite,
+            icon: Icon(_isFavorite ? Icons.star : Icons.star_border),
+            tooltip: _isFavorite ? 'Ta bort från favoriter' : 'Lägg till i favoriter',
+            onPressed: _toggleFavorite,
           ),
           // Share and delete buttons (only for custom songs)
-          if (isCustomSong && onDelete != null) ...[
+          if (widget.isCustomSong && widget.onDelete != null) ...[
             IconButton(
               icon: const Icon(Icons.share),
               tooltip: 'Dela låt',
@@ -120,7 +140,7 @@ class SongDetailScreen extends StatelessWidget {
           children: [
             // Title
             Text(
-              song.title,
+              widget.song.title,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -130,14 +150,14 @@ class SongDetailScreen extends StatelessWidget {
             // Melodi
             _InfoRow(
               label: 'Melodi:',
-              value: song.melody,
+              value: widget.song.melody,
             ),
             const SizedBox(height: 8),
 
             // Författare
             _InfoRow(
               label: 'Författare:',
-              value: song.author,
+              value: widget.song.author,
             ),
             const SizedBox(height: 24),
 
@@ -150,7 +170,7 @@ class SongDetailScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Text(
-                song.lyrics,
+                widget.song.lyrics,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       height: 1.5,
                     ),
