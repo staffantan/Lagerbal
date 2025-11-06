@@ -76,6 +76,49 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SizedBox(height: 8),
 
+          // Font Size Setting
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.text_fields),
+                    title: const Text('Textstorlek'),
+                    subtitle: Text('${(widget.settings.fontSize * 100).round()}%'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.text_decrease, size: 20),
+                        Expanded(
+                          child: Slider(
+                            value: widget.settings.fontSize,
+                            min: 0.8,
+                            max: 1.5,
+                            divisions: 14,
+                            label: '${(widget.settings.fontSize * 100).round()}%',
+                            onChanged: (value) {
+                              final updatedSettings = widget.settings.copyWith(
+                                fontSize: value,
+                              );
+                              widget.onSettingsChanged(updatedSettings);
+                            },
+                          ),
+                        ),
+                        const Icon(Icons.text_increase, size: 20),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+
           // Show Adult Songs
           Card(
             child: SwitchListTile(

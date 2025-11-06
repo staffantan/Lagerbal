@@ -9,6 +9,7 @@ class SongDetailScreen extends StatefulWidget {
   final VoidCallback? onDelete;
   final bool isFavorite;
   final VoidCallback? onToggleFavorite;
+  final double fontSize;
 
   const SongDetailScreen({
     super.key,
@@ -17,6 +18,7 @@ class SongDetailScreen extends StatefulWidget {
     this.onDelete,
     this.isFavorite = false,
     this.onToggleFavorite,
+    this.fontSize = 1.0,
   });
 
   @override
@@ -173,6 +175,7 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
                 widget.song.lyrics,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       height: 1.5,
+                      fontSize: (Theme.of(context).textTheme.bodyLarge?.fontSize ?? 16) * widget.fontSize,
                     ),
               ),
             ),

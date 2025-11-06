@@ -107,6 +107,7 @@ class _SongListScreenState extends State<SongListScreen> {
                           onDelete: () => _deleteCustomSong(song),
                           isFavorite: _isFavorite(song),
                           onToggleFavorite: () => _toggleFavorite(song),
+                          fontSize: widget.settings.fontSize,
                         ),
                       ),
                     );
@@ -447,6 +448,7 @@ class _SongListScreenState extends State<SongListScreen> {
                         onDeleteSong: category.name == 'Egna visor' ? _deleteCustomSong : null,
                         isFavorite: _isFavorite,
                         onToggleFavorite: _toggleFavorite,
+                        fontSize: widget.settings.fontSize,
                       );
                     },
                   ),
@@ -470,6 +472,7 @@ class _CategorySection extends StatelessWidget {
   final Function(Song)? onDeleteSong;
   final bool Function(Song) isFavorite;
   final Function(Song) onToggleFavorite;
+  final double fontSize;
 
   const _CategorySection({
     required this.category,
@@ -478,6 +481,7 @@ class _CategorySection extends StatelessWidget {
     this.onDeleteSong,
     required this.isFavorite,
     required this.onToggleFavorite,
+    required this.fontSize,
   });
 
   @override
@@ -507,6 +511,7 @@ class _CategorySection extends StatelessWidget {
                   : null,
               isFavorite: isFavorite(song),
               onToggleFavorite: () => onToggleFavorite(song),
+              fontSize: fontSize,
             )),
         const Divider(height: 1),
       ],
@@ -520,6 +525,7 @@ class _SongListTile extends StatelessWidget {
   final VoidCallback? onDelete;
   final bool isFavorite;
   final VoidCallback onToggleFavorite;
+  final double fontSize;
 
   const _SongListTile({
     required this.song,
@@ -527,6 +533,7 @@ class _SongListTile extends StatelessWidget {
     this.onDelete,
     required this.isFavorite,
     required this.onToggleFavorite,
+    required this.fontSize,
   });
 
   @override
@@ -544,6 +551,7 @@ class _SongListTile extends StatelessWidget {
               onDelete: onDelete,
               isFavorite: isFavorite,
               onToggleFavorite: onToggleFavorite,
+              fontSize: fontSize,
             ),
           ),
         );
