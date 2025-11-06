@@ -24,12 +24,21 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <!-- Deep link intent filter for sangbok:// URLs -->
+            <!-- Deep link intent filter for sangbok:// URLs (legacy) -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="sangbok"/>
+            </intent-filter>
+            <!-- Deep link intent filter for http://www.ahlvik.se/sangbok/ URLs -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"
+                      android:host="www.ahlvik.se"
+                      android:path="/sangbok/"/>
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

@@ -60,68 +60,74 @@ class _SongListScreenState extends State<SongListScreen> {
   }
 
   void _handleDeepLink(Uri uri) {
+    // Handle both old sangbok:// and new http://www.ahlvik.se/sangbok/ formats
+    String? songData;
+    
     if (uri.scheme == 'sangbok') {
-      final songData = uri.queryParameters['sang'];
-      if (songData != null) {
-        try {
-          // Decode base64 to JSON
-          final jsonString = utf8.decode(base64Decode(songData));
-          final songJson = jsonDecode(jsonString) as Map<String, dynamic>;
-          final song = Song.fromJson(songJson);
+      songData = uri.queryParameters['sang'];
+    } else if (uri.host == 'www.ahlvik.se' && uri.path == '/sangbok/') {
+      songData = uri.queryParameters['data'];
+    }
+    
+    if (songData != null) {
+      try {
+        // Decode base64 to JSON
+        final jsonString = utf8.decode(base64Decode(songData));
+        final songJson = jsonDecode(jsonString) as Map<String, dynamic>;
+        final song = Song.fromJson(songJson);
 
-          // Check if song already exists
-          final exists = _customSongs.any((s) => 
-            s.title == song.title && s.lyrics == song.lyrics
-          );
+        // Check if song already exists
+        final exists = _customSongs.any((s) => 
+          s.title == song.title && s.lyrics == song.lyrics
+        );
 
-          if (!exists) {
-            setState(() {
-              _customSongs.add(song);
-            });
-            _saveCustomSongs();
+        if (!exists) {
+          setState(() {
+            _customSongs.add(song);
+          });
+          _saveCustomSongs();
 
-            if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Added "${song.title}" to Egna visor'),
-                  duration: const Duration(seconds: 3),
-                  action: SnackBarAction(
-                    label: 'View',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SongDetailScreen(
-                            song: song,
-                            isCustomSong: true,
-                            onDelete: () => _deleteCustomSong(song),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              );
-            }
-          } else {
-            if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Song "${song.title}" already exists'),
-                  duration: const Duration(seconds: 2),
-                ),
-              );
-            }
-          }
-        } catch (e) {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Error importing song: $e'),
+                content: Text('Added "${song.title}" to Egna visor'),
                 duration: const Duration(seconds: 3),
+                action: SnackBarAction(
+                  label: 'View',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SongDetailScreen(
+                          song: song,
+                          isCustomSong: true,
+                          onDelete: () => _deleteCustomSong(song),
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
             );
           }
+        } else {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Song "${song.title}" already exists'),
+                duration: const Duration(seconds: 2),
+              ),
+            );
+          }
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Error importing song: $e'),
+              duration: const Duration(seconds: 3),
+            ),
+          );
         }
       }
     }
@@ -405,8 +411,8 @@ class _CategorySection extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
           child: Text(
             showCount
-                ? 'Category: ${category.name} (${songs.length} ${songs.length == 1 ? 'song' : 'songs'})'
-                : 'Category: ${category.name}',
+                ? '${category.name} (${songs.length} ${songs.length == 1 ? 'song' : 'songs'})'
+                : category.name,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).colorScheme.primary,

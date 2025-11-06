@@ -1,4 +1,4 @@
-package com.example.songbook_flutter
+package se.ahlvik.songbook_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 

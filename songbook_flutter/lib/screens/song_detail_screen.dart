@@ -48,7 +48,7 @@ class SongDetailScreen extends StatelessWidget {
     // Convert song to JSON and encode to base64
     final songJson = jsonEncode(song.toJson());
     final base64Data = base64Encode(utf8.encode(songJson));
-    final shareLink = 'sangbok://?sang=$base64Data';
+    final shareLink = 'http://www.ahlvik.se/sangbok/?data=$base64Data';
 
     // Copy to clipboard
     Clipboard.setData(ClipboardData(text: shareLink));
