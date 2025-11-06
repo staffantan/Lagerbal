@@ -1,0 +1,1506 @@
+import '../models/category.dart';
+import '../models/song.dart';
+
+final List<Category> sampleSongbook = [
+  Category(
+    name: 'Klassiskt',
+    songs: [
+      Song(
+        title: 'Nationalsången',
+        author: 'Richard Dybeck',
+        melody: 'Så rider jag mig över tolvmilan skog',
+        lyrics: '''Du gamla, Du fria, Du fjällhöga nord
+Du tysta, Du glädjerika sköna!
+Jag hälsar Dig, vänaste land uppå jord,
+||: Din sol, Din himmel, Dina ängder gröna. :||
+
+Du tronar på minnen från fornstora dar,
+då ärat Ditt namn flög över jorden.
+Jag vet att Du är och Du blir vad Du var.
+||: Ja, jag vill leva jag vill dö i Norden. :||
+
+Jag städs vill Dig tjäna mitt älskade land,
+Din trohet till döden vill jag svära.
+Din rätt, skall jag värna, med håg och med hand,
+||: Din fana, högt den bragderika bära. :||
+
+Med Gud skall jag kämpa, för hem och för härd,
+för Sverige, den kära fosterjorden.
+Jag byter Dig ej, mot allt i en värld.
+||: Nej, jag vill leva jag vill dö i Norden. :||''',
+        about: 'Sången är skriven till den västmanländska folkmelodin \'Så rider jag mig över tolvmilan skog...\' och framfördes första gången vid Dybecks första \'aftonunderhållning med nordisk folkmusik\' i Stockholm den 18 november 1844. Då började sången \'Du gamla, Du friska\' men detta ändrades senare. Sången kom med tiden att betraktas som Sveriges nationalsång.',
+      ),
+      Song(
+        title: 'Kungssången',
+        author: 'Carl Vilhelm August Strandberg',
+        melody: 'Otto Lindblad',
+        lyrics: '''Ur svenska hjärtans djup en gång
+en samfälld och en enkel sång,
+som går till kungen fram!
+Var honom trofast och hans ätt,
+gör kronan på hans hjässa lätt,
+och all din tro till honom sätt,
+du folk av frejdad stam!
+
+O konung, folkets majestät
+är även ditt. Beskärma det
+och värna det från fall!
+Stå oss all världens härar mot,
+vi blinka ej för deras hot,
+vi lägga dem inför din fot,
+en kunglig fotapall.
+
+Men stundar ock vårt fall en dag,
+från dina skuldror purpurn tag,
+lyft av dig kronans tvång
+och drag de kära färger på,
+det gamla gula och det blå,
+och med ett svärd i handen gå
+till kamp och undergång!
+
+Och grip vår sista fana du
+och dristeliga för ännu
+i döden dina män!
+Ditt trogna folk med hjältemod
+skall sömma av sitt bästa blod
+en kunglig purpur varm och god,
+och svepa dig i den.
+
+Du himlens herre, med oss var,
+som förr du med oss varit har,
+och liva på vår strand
+det gamla lynnets art igen
+hos sveakungen och hans män.
+Och låt din ande vila än
+utöver nordanland!''',
+        about: 'Framfördes första gången i Lund den 5 december 1844.',
+      ),
+      Song(
+        title: 'Studentsången',
+        author: 'Herman Sätherberg',
+        melody: 'Prins Gustaf',
+        lyrics: '''Sjung om studentens lyckliga dag
+låtom oss fröjdas i ungdomens vår!
+än klappar hjärtat med friska slag,
+och den ljusnande framtid är vår.
+Inga stormar än,
+i våra sinnen bo.
+Hoppet är vår vän,
+och vi dess löften tro,
+när vi knyta förbund i den lund,
+där de härliga lagrarna gro,
+där de härliga lagrarna gro!
+
+Svea, vår moder, hugstor och skön,
+manar till bragd som i forntida dagar.
+Vinkar med segerns och ärans lön,
+men den skörd utan strid man ej tar.
+Aldrig slockne då,
+känslornas rene brand.
+Aldrig brista må,
+vår trohets helga band,
+så i gyllene frid som i strid:
+Liv och blod för vårt fädernesland!
+Liv och blod för vårt fädernesland!''',
+        about: 'Marschen komponerades troligen 1851, året innan sångarprinsen dog. Texten skrevs något år senare.',
+      ),
+      Song(
+        title: 'De brevitate vitae',
+        author: 'Christian Wilhelm Kindleben',
+        melody: '',
+        lyrics: '''||: Gaudeamus igitur, juvenes dum sumus! :||
+Post jucundam juventutem,
+post molestam senectutem
+||: nos habebit humus. :||
+||: Ubi sunt, qui ante nos in mundo fuere? :||
+Vadite ad superos,
+transite ad inferos!
+||: Ubi jam? Fuere! :||
+||: Vita nostra brevis est brevi finietur. :||
+Venit mors velociter,
+rapit nos atrociter,
+||: nemini parcetur. :||
+||: Vivat academia, vavant professores, :||
+Vivat membrum quodlibet,
+vivant membra quaelibet,
+||: semper sin in flore! :||
+||: Vivant omnes virgines faciles, formosae! :||
+Vivant et mulieres
+tenerae, amabiles,
+||: bonae, loboriosae! :||
+||: Vivat et respublica et qui illam regit! :||
+Vivat nostra civitas,
+maecenatum caritas,
+||: quae nos hic protegit! :||
+||: Pereat tristia, pereant osores! :||
+Pereat diabolus,
+quivis antiburschius,
+||: atque irrisores! :||''',
+        about: 'Återgår på en redan 1267 känd visa, tillskriven biskop Strada i Bologna. Sin nuvarande form har sången fått av studentskalden Kindleben i Halle 1781.',
+      ),
+      Song(
+        title: 'Vårvindar friska',
+        author: 'Julia Kristina Nyberg alias Euphrosyne',
+        melody: '',
+        lyrics: '''Vårvindar friska, leka och viska
+lunderna kring, likt älskande par.
+Strömmarna ila, finna ej vila,
+förrän i havet störtvågen far.
+Klappa mitt hjärta, klaga och hör,
+vallhornets klang bland klipporna dör.
+Strömkarlen spelar, sorgerna delar
+vakan kring berg och dal.
+
+Hjärtat vill brista, ack, när den sista
+gången jag hörde kärlekens röst.
+Ögonens låga, avskedets plåga,
+mun emot mun och klappande bröst.
+Fjälldalen stod i grönskande skrud.
+Trasten slog drill på drill för sin brud.
+Strömkarlen spelar, sorgerna delar
+vakan kring berg och dal.''',
+        about: 'Ursprunglig titel \'Den stackars Anna eller Moll-toner från Norrland\'. Originalet har ytterligare fyra verser och skrevs på 1830-talet.',
+      ),
+      Song(
+        title: 'Gustafs Skål',
+        author: 'Carl Michael Bellman',
+        melody: '',
+        lyrics: '''||: Gustafs skål!
+Den bäste Kung, som Norden äger: 
+Han ej tål,
+At vigtskåln ojämt väger. :|| 
+||: God och glad,
+
+Han Ilskans röst föraktar 
+Samt afvaktar
+Och betraktar
+Dårskap i sin grad. :||
+
+||: Sådan Kung
+är värd att styra Sveriges öden:
+Rask och ung,
+Ej rådlös uti nöden. :||
+
+||: Wasa ätt
+Har aldrig lärt att svika, 
+Aldrig tvika,
+Men at fika
+Till at göra rätt. :||''',
+        about: 'Sveriges första nationalsång. Blev allmänt känd efter Gustaf III:s statskupp den 19 augusti 1772, men komponerades sannolikt tidigare.',
+      ),
+      Song(
+        title: 'Här är gudagott att vara',
+        author: 'Gunnar Wennerberg',
+        melody: '',
+        lyrics: '''Här är gudagott att vara.
+O, vad livet dock är skönt.
+Hör vad fröjd från fåglars skara,
+Se vad gräset lyser grönt.
+Humlan surrar, fjäriln prålar,
+Lärkan slår i skyn sin drill
+Och ur nektarfyllda skålar
+Dricka oss små blommor till.''',
+        about: 'Glunt nr 25. Ur \'Examens-sexa på Eklundshof\', skriven 1848 när Glunten slutligen tog examen.',
+      ),
+      Song(
+        title: 'Sveriges flagga',
+        author: 'Karl Gustav Ossiannilsson',
+        melody: 'Hugo Alfvén',
+        lyrics: '''Flamma stolt mot dunkla skyar
+lik en glimt av sommarens sol!
+över Sveriges skogar, berg och byar,
+över vatten av viol!
+Du som sjunger, när Du bredes
+som vår gamla lyckas tolk.
+Solen lyser! Solen lyser! 
+Ingen vredes åska slog vårt tappra folk! 
+
+Flamma högt vårt kärlekstecken!
+Värm oss, när det blåser kallt!
+Stråla ut de blåa vecken
+kärlek mera stark än allt!
+Sveriges flagga! Sveriges ära!
+Fornklenod och framtidstolk!
+Gud är med oss! Gud är med oss!
+Han skall bära stark vårt fria svenska folk!''',
+        about: 'Framfördes första gången på Stockholms Stadion den 6 juni 1916, under ledning av Hugo Alfvén.',
+      ),
+      Song(
+        title: 'Frans Mikael Franzéns dryckesvisa',
+        author: 'Biskop Frans Mikael Franzén',
+        melody: 'Olof Åhlström',
+        lyrics: '''När skämtet tar ordet vid vänskapens bord
+med fingret kring glasen som dofta.
+Så drick och var glad, på vår sorgliga jord
+man gläder sig aldrig för ofta.
+Ty en blomma är glädjen, i dag slår hon ut,
+i morgon förvissnar hon redan.
+Just nu, när du kan, hav en lycklig minut,
+och tänk på det kommande sedan.
+
+Vem drog ej en suck över tidernas lopp?
+Dock sitt ej och dröm på kalaset!
+Här lev i sekunden och hela ditt hopp
+se fyllas och tömmas i glaset.
+Här sörj ej för glaset, om fullt, så drick ut.
+Om tomt, så försänd det att fyllas!
+Och minns allt det sköna och goda förut
+sen gädjen och nöjet må hyllas.
+
+Ty ägne vi först åt värdinnan en skål:
+vad vore vår fröjd utan henne?
+Sen prise vi värden och särskilt hans bål:
+vad vore vårt mod utan denne?
+Dem båda förene ett glas och en sång,
+de själva så skönt sig förente.
+Med druvorna myrten blev skapt på en gång:
+vem ser ej, vad himmelen mente?
+
+För övrigt må värden ge alltid nytt skäl
+till ständig omsättning av glasen
+och visa att rangen är nyttig likväl
+till skålarnas mängd vid kalasen.
+Men förr'n han är färdig med klang och harang
+vi skynde att självmante dricka
+och helge ett glas, som är över all rang
+i tysthet en var åt sin flicka.''',
+        about: 'Texten publicerades den 4 februari 1807 i Åbo Tidning, året innan Franzén valdes in i Svenska Akademien.',
+      ),
+      Song(
+        title: 'Sverige',
+        author: 'Verner von Heidenstam',
+        melody: 'Wilhelm Stenhammar',
+        lyrics: '''Sverige, Sverige, Sverige fosterland
+Vår längtans bygd, vårt hem på jorden.
+Nu spelar källorna, där härar lysts av brand,
+och dåd blev saga, men med hand vid hand
+svär än ditt folk som förr de gamla trohetsorden.
+Fall julesnö och susa djupa mo!
+Brinn österstjärna genom junikvällen!
+
+Sveige, moder! Bliv vår strid, vår ro,
+du land där våra barn en gång få bo
+och våra fäder sova under kyrkohällen!''',
+        about: 'Komponerad 1905.',
+      ),
+      Song(
+        title: 'O gamla klang- och jubeltid',
+        author: 'August Lindh',
+        melody: 'O alte Burschenherrlichkeit',
+        lyrics: '''O gamla klang- och jubeltid
+ditt minne skall förbliva
+och än åt livets bistra strid,
+ett rosigt skimmer giva.
+Snart tystnar allt vårt yra skämt,
+vår sång blir stum, vårt glam förstämt.
+O, jerum, jerum, jerum.
+O, quae mutatio rerum!
+
+Var äro de som kunde allt,
+blott ej sin ära svika.
+Som voro män av äkta halt
+och världens herrar lika?
+De drogo bort från vin och sång
+till vardagslivets tråk och tvång.
+O, jerum...
+
+Den ene vetenskap och vett
+in i scholares mänger,
+Den andre i sitt anlets svett
+på paragrafer vränger,
+en plåstrar själen, som är skral,
+en lappar hop dess trasiga fodral;
+O, jerum...
+
+Men hjärtat i en sann student,
+kan ingen tid förfrysa.
+Den glädjeeld, som där han tänt,
+hans hela liv skall lysa.
+Det gamla skalet brustit har
+men kärnan finnes frisk dock kvar,
+och vad han än må mista,
+den skall dock aldrig brista!
+
+Så sluten, bröder, fast vår krets,
+till glädjens värn och ära!
+Trots allt vi tryggt och väl tillfreds
+vår vänskap trohet svära.
+Lyft bägarn högt och klinga vän!
+De gamla gudar leva än
+bland skålar och pokaler,
+bland skålar och pokaler!''',
+        about: 'Melodin och refrängen \'O, jerum...\' är ursprungligen från den tyska visan \'Was fang ich armer Teufel an\' skriven av Jenaer Blatt 1763. Till denna melodi skrev Eugen Höfling sin nya text 1825, vilken den tidigare uppsalastudenten August Lindh översatte till Västmanlands-Dala nations första sångbok 1921. Angående refrängen: Jerum är en omskrivning för Jesus. Quae mutatio rerum betyder \'vilken sakernas förändring\', alltså betyder refrängen \'O jösses, vilken förändring!\' Den latinska diftongen ae, som romarna uttalade \'aj\', har under medeltiden och framåt vanligen har uttalats som \'ä\'. Sjungen av svenskar bör ordet quae uttalas \'kvä\'.',
+      ),
+      Song(
+        title: 'O alte Burschenherrlichkeit',
+        author: 'Eugen Höfling',
+        melody: '',
+        lyrics: '''O alte Burschenherrlichkeit,
+Wohin bist du entschwunden,
+Nie kehrst du wieder gold'ne Zeit,
+So froh und ungebunden!
+Vergebens spähe ich umher,
+Ich finde deine Spur nicht mehr.
+O jerum, jerum, jerum,
+O quae mutatio rerum.
+
+Den Burschenhut bedeckt der Staub,
+Es sank der Flaus in Trümmer,
+Der Schläger ward des Rostes Raub,
+Erblichen ist sein Schimmer.
+Verklungen der Kommersgesang,
+Verhallt Rapier- und Sporenklang.
+O jerum...
+
+Wo sind sie, die vom breiten Stein
+Nicht wankten und nicht wichen,
+Die ohne Moos bei Scherz und Wein,
+Dem Herrn der Erde glichen?
+Sie zogen mit gesenktem Blick
+In das Philisterland zurück.
+O jerum...
+
+Da schreibt mit finsterem Amtsgesicht
+Der eine Relationen.
+Der andere seufzt beim Untericht,
+Und der macht Rezensionen;
+Der schilt die sünd'ge Seele aus
+Und der flickt ihr verfallnes Haus.
+O jerum...
+
+Auf öder Strecke schraubt und spannt
+Das Fadenkreuz der eine,
+Der andre seufzt beim Blockverband,
+Und der setzt Ziegelsteine;
+Der kocht aus Rüben Zuckersaft
+Und der aus Wasser Pferdekraft.
+O jerum...
+
+Zur Börse schnell der eine rennt,
+Zu tät'gem Geschäfte,
+Der andre sitzt beim Kontokorrent
+Und der nützt fremde Kräfte;
+Der importiert aus Turkestan
+Und der bohrt seine Schuldner an.
+O jerum...
+
+Allein das rechte Burschenherz
+Kann nimmermehr erkalten,
+Im Ernste wird, wie hier im Scherz,
+Der rechte Sinn stehts walten;
+Die alte Schale nur ist fern,
+Geblieben ist uns doch der Kern,
+Und den lasst fest uns halten, 
+Und den lasst fest uns halten.
+
+D'rum Freunde reichet euch die Hand,
+Damit es sich erneue,
+Der alten Freundschaft heil'ges Band,
+Das alte Band der Treue.
+Klingt an und hebt die Gläser hoch,
+Die alten Burschen leben noch,
+Noch lebt die alte Treue,
+Noch lebt die alte Treue.''',
+        about: '',
+      ),
+      Song(
+        title: 'Nu grönskar det',
+        author: 'Evelyn Lindström',
+        melody: 'Johann Sebastian Bach, ur Bondekantaten',
+        lyrics: '''Nu grönskar det i dalens famn
+nu doftar äng och lid.
+Kom med, kom med på vandringsfärd
+i vårens glada tid!
+Var dag är som en gyllne skål
+till brädden fylld med vin.
+Så drick, min vän, drick sol och
+doft, ty dagen, den är din!
+
+Långt bort från stadens gråa hus
+vi glatt vår kosa styr
+och följer vägens vita band
+mot ljusa äventyr.
+Med öppna ögon låt oss se
+på livets rikedom,
+som gror och sjuder överallt
+där våren går i blom.''',
+        about: '',
+      ),
+      Song(
+        title: 'Den blomstertid nu kommer',
+        author: 'Israel Kolmodin',
+        melody: '',
+        lyrics: '''Den blomstertid nu kommer
+med lust och fägring stor.
+Du nalkas ljuva sommar,
+då gräs och gröda gror.
+Med blid och livlig värma
+till allt, som varit dött.
+Sig solens strålar närma,
+och allt blir återfött.
+
+De fagra blomsterängar
+och åkerns ädla säd,
+de rika örtesängar
+och lundens gröna träd.
+De skola oss påminna
+Guds godhets rikedom,
+att vi den nåd besinna,
+som räcker året om.
+
+Man hörer fåglar sjunga
+med mångahanda ljud,
+skall icke då vår tunga
+lovsäga Herren Gud?
+Min själ, upphöj Guds ära
+stäm upp din glädjesång
+till den som vill oss nära
+och fröjda på en gång.''',
+        about: 'Psalm 199. Skrevs 1694 under Kolmodins tid som biskop i Visby och hette från början \'En sommarwisa\'.',
+      ),
+      Song(
+        title: 'Längtan till landet',
+        author: 'Herman Sätherberg',
+        melody: 'Otto Lindblad',
+        lyrics: '''Vintern rasat ut bland våra fjällar,
+drivans blommor smälta ner och dö.
+Himlen ler i vårens ljusa kvällar,
+solen kysser liv i skog och sjö.
+Snart är sommarn här i purpurvågor,
+guldbelagda, azurskiftande
+ligga ängarne i dagens lågor
+och i lunden dansa källorne.
+
+Ja, jag kommer! Hälsen, glada vindar,
+ut till landet, ut till fåglarne,
+att jag älskar dem till björk och lindar,
+sjö och berg, jag vill dem återse.
+Se dem än som i min barndoms stunder,
+följa bäckens dans till klarnad sjö,
+trastens sång i furuskogens lunder,
+vattenfågelns lek kring fjärd och ö.''',
+        about: 'Från \'Jägarens hvila. Poetiska bilder från skogen, fältet och sjön\', 1838. Har egentligen ytterligare fyra verser.',
+      ),
+      Song(
+        title: 'Uti vår hage',
+        author: '',
+        melody: '',
+        lyrics: '''Uti vår hage där växa blå bär.
+Kom hjärtans fröjd!
+Vill du mig något, så träffas vi där.
+Kom liljor och akvileja,
+kom rosor och saliveja,
+kom ljuva krusmynta,
+kom hjärtans fröjd!
+
+Fagra små blommor där bjuda till dans.
+Kom hjärtans fröjd!
+Vill du så binder jag åt dig en krans.
+Kom liljor...
+
+Kransen den sätter jag sen i ditt hår.
+Kom hjärtans fröjd!
+Solen den dalar men hoppet uppgår.
+Kom liljor...
+
+Uti vår hage finns blommor och bär.
+Kom hjärtans fröjd!
+Men utav alla du kärast mig är.
+Kom liljor...''',
+        about: 'Text och melodi av traditionellt gotländskt ursprung Växterna som nämns har eventuellt ingått i ett medeltida abortmedel. Sången blev allmänt känd genom Hugo Alfvén vars arrangemang framfördes första gången vid en Orphei Drängar-konsert i Stockholm 1918.',
+      ),
+      Song(
+        title: 'Majsång',
+        author: 'Johan Ludvig Runeberg',
+        melody: 'Lars Magnus Béen',
+        lyrics: '''Sköna maj, välkommen
+till vår bygd igen!
+Sköna maj, välkommen,
+våra lekars vän!
+Känslans gudaflamma
+väcktes vid din ljusning;
+jord och skyar stamma
+kärlek och förtjusning;
+sorgen flyr för våren,
+glädje ler ur tåren,
+morgonrodnad ur bekymrens moln.
+
+Blomman låg förkolnad
+under frost och snö;
+höstens bleka vålnad,
+gick hon nöjd att dö.
+Vintern, härjarns like,
+som föröder nejden
+och i skövlat rike
+tronar efter fejden,
+satt med isad glaven
+segrande på graven,
+dyster själv och mörk och kall som den.
+
+Inga strålar sänktes
+på vår morgon ner,
+ningen daggtår skänktes
+nordens afton mer,
+tills, av svaner dragen,
+maj med blomsterhatten
+göt sitt guld i dagen,
+purpurklädde natten,
+vinterns spira bräckte
+och ur lossat häkte
+kallade den väna Flora fram.
+
+Nu ur lundens sköte
+och ur blommans knopp
+stiga dig till möte
+glada offer opp.
+Blott ditt lov de susa,
+dessa rosenhäckar,
+till din ära brusa
+våra silverbäckar,
+och med tacksam tunga
+tusen fåglar sjunga
+liksom vi: Välkommen, sköna maj!''',
+        about: '',
+      ),
+      Song(
+        title: 'En vänlig grönskas rika dräkt',
+        author: 'Carl David af Wirsén',
+        melody: 'Waldemar Åhlén',
+        lyrics: '''En vänlig grönskas rika dräkt
+har smyckat dal och ängar.
+Nu smeker vindens ljumma fläkt
+de fagra örtesängar,
+och solens ljus och lundens sus
+och vågens sorl bland viden
+förkunna sommartiden.
+
+Sin lycka och sin sommarro
+de yra fåglar prisa.
+Ur skogen snår, ur stilla bo
+framklingar deras visa.
+En hymn går opp, med fröjd och hopp
+från deras glada kväden,
+bland blommorna och träden.
+
+Men du, o Gud som gör vår jord
+så skön i sommarns stunder,
+Giv, att jag aktar främst ditt ord
+och dina nådestunder.
+Allt kött är hö, och blomstren dö
+och tiden allt fördriver.
+Blott Herrens ord förbliver.''',
+        about: 'Psalm 201. Publicerades urprungligen i \'Kristna högtids- och helgdagar\' 1889. Tonsattes 1933 inför en skolavslutning.',
+      ),
+    ],
+  ),
+  Category(
+    name: 'Nubbe',
+    songs: [
+      Song(
+        title: 'Portos visa',
+        author: 'Tord Andrén',
+        melody: 'You can\'t get a man with a gun',
+        lyrics: '''Jag vill börja gasqua
+var fan är min flaska?
+Vem i helvete stal min butelj?
+Skall törsten mig tvinga
+en TT börja svinga?
+Nej, för fan, bara blunda och svälj.
+Vilken smörja!
+Får jag spörja:
+Vem, för fan, tror att jag är en älg?
+
+Till England vi rider,
+och sedan vad det lider
+träffar vi välan på någon pub.
+Och där skall vi festa,
+blott dricka av det bästa
+utav whisky och portvin.
+Jag tänker gå hårt in
+för att pröva på rubb och stubb.''',
+        about: 'Från Bergsspexet \'De fyra musketörerna\' 1959. Bestämda bergsmän hävdar att visan ursprungligen hette \'Athos visa\'.',
+      ),
+      Song(
+        title: 'Gums visa',
+        author: '',
+        melody: '',
+        lyrics: '''||: Skål kamrater, ty livet är glatt,
+och snart förgäta vi sorgen.
+Vi söpo igår, vi supa idag
+och vi tar en sjujävel i morgon. :||
+Skål, skål, skål, skååål.''',
+        about: '',
+      ),
+      Song(
+        title: 'Helan går',
+        author: '',
+        melody: '',
+        lyrics: '''Helan går,
+sjung hopp, faderallanlallanlej.
+Helan går,
+sjung hopp, faderallanlej.
+Och den som inte helan tar
+han heller inte halvan får
+Helan går!
+Sjung hopp, faderallanlej!''',
+        about: '',
+      ),
+      Song(
+        title: 'Auld Lang Syne',
+        author: 'Robert Burns',
+        melody: 'Scottish Air',
+        lyrics: '''Should auld acquaintance be forgot,
+and never brought to mind?
+Should auld acquaintance be forgot,
+and days of auld lang syne?
+
+||: For auld lang syne my dear,
+for auld lang syne:
+We'll take a cup o'kindness yet,
+for auld lang syne. :||
+
+And there's a hand my trusty friend,
+and gie's a hand o'thine.
+We'll take a right gude willing draught,
+for auld lang syne.
+
+||: For auld... :||''',
+        about: '',
+      ),
+      Song(
+        title: 'Härjarevisan',
+        author: 'Hans Alfredson',
+        melody: 'Gärdebylåten',
+        lyrics: '''Liksom våra fäder, vikingarna i Norden
+drar vi landet runt och super oss under borden.
+Brännvinet har blitt ett elixir för kropp såväl som själ.
+Känner du dig liten och ynklig på jorden,
+växer du med supen och blir stor uti orden,
+slår dig för ditt håriga bröst och blir en man från hår till häl.
+
+Ja, nu skall vi ut och härja,
+supa och slåss och svärja,
+bränna röda stugor, slå små barn och säga fula ord:
+Fy fan! (Alternativt 'KTH!' eller så.)
+Med blod skall vi stäppen färga,
+nu änteligen lär jag
+kunna dra nån verklig nytta av
+min Hermodskurs i mord.
+
+Hurra, nu ska vi äntligen få röra på benen
+hela stammen jublar och det spritter i grenen.
+Tänk, att än en gång få spränga fram på Brunte i galopp.
+Din doft, o kära Brunte, är trots brist i hygienen
+för en vild mongol minst lika ljuv som syrenen.
+Tänk att på din rygg få rida runt i stan och spela topp.
+
+Ja, nu skall vi ut och härja...
+
+Ja, mordbränder är klämmiga, ta fram fotogenen,
+eftersläckningen tillhör just de fenomenen
+inom brandmansyrket som jag tycker det är nån nytta med.
+Jag målar för mitt inre upp den härliga scenen:
+blodrött mitt i brandgult. Ej ens prins Eugen en
+lika mustig vy kan måla, ens om han målade med sked.
+
+Ja, nu skall vi ut och härja...''',
+        about: 'Ur Lundaspexet \'Djinghis Khan\' 1954.',
+      ),
+      Song(
+        title: 'Nu vill jag supa',
+        author: '',
+        melody: '',
+        lyrics: '''||: Nu vill jag supa nu me'ns jag lever,
+när jag är död så kan jag inte mer. :||
+När jag väl en gång ligger i mull,
+kan jag väl inte supa mig full.
+När jag väl en gång ligger i mull,
+kan jag väl inte supa.''',
+        about: '',
+      ),
+      Song(
+        title: 'Uti min mage',
+        author: '',
+        melody: 'Uti vår hage',
+        lyrics: '''Uti min mage en längtan mig tär,
+kom hjärtans fröjd.
+Där råder en hunger som ropar så här:
+kom kryddsill och kall potatis,
+kom brännvin och quantum satis,
+kom allt som kan drickas,
+kom hjärtans fröjd.
+
+Uti min mage där växa begär,
+kom hjärtans kär.
+Vill du mig något så har jag det där.
+Kom Renat och Aqua Vitae,
+kom OP och allt vad sprit e',
+kom ljuva Genever,
+kom Överste.
+
+Uti mitt hjärta en längtan mig tär,
+kom hjärtans fröjd.
+Där råder en hunger som ropar så här:
+kom famnande lena armar,
+kom läppar och sköna barmar,
+kom fagraste kvinnor,
+kom hjärtans fröjd.''',
+        about: '',
+      ),
+      Song(
+        title: 'Jag har aldrig var\'t på snusen',
+        author: '',
+        melody: 'Åh, hur saligt att få vandra',
+        lyrics: '''Jag har aldrig var't på snusen
+aldrig rökat en cigarr, halleluja!
+Mina dygder äro tusen,
+inga syndiga laster jag har.
+Jag har aldrig sett nå't naket,
+inte ens ett litet nyfött barn.
+Mina blickar går mot taket,
+därmed undgår jag frestarens garn.
+
+||: Halleluja, halleluja. :||
+
+Bacchus spelar på gitarren,
+Satan spelar på sitt handklaver.
+Alla djävlar dansar tango,
+säg, vad kan man väl önska sig mer?
+Jo, att alla bäckar vore brännvin,
+Riddarfjärden full av bayerskt öl,
+konjak i varenda rännsten
+och punsch i varendaste pöl.
+
+||: Och mera öl, och mera öl. :||''',
+        about: '',
+      ),
+      Song(
+        title: 'Handelsvisa',
+        author: '',
+        melody: 'Åh, hur saligt att få vandra',
+        lyrics: '''Jag vill aldrig gå på Handels,
+aldrig tenta företagsekonomi.
+Deras IQ den e' Mandels
+och förståndet, det har gjort sorti.
+Dom har jätteusla snören,
+till sitt jättefula draperi.
+Dom kan bara räkna ören,
+hela Handels e' ett djävla aperi!
+
+||: Handels är skit, jag vill ej dit. :||
+
+Mammons gossar är dom alla,
+pappas flickor är dom likaså,
+går och tror att dom är balla,
+fastän dom inget alls kan förstå.
+Hela Handels borde rivas,
+detta tycker hela vårat lag.
+Då så skulle Razor trivas
+uppå denna Handels ljuva domedag!
+
+||: Åh, vilket drag, på denna dag. :||''',
+        about: 'Skriven av Team kangaroo till Gerhards-gasque, Fysik KTH, 1977',
+      ),
+      Song(
+        title: 'Jag vill inte gå på Fysik',
+        author: '',
+        melody: 'Åh, hur saligt att få vandra',
+        lyrics: '''Jag vill inte gå på Fysik,
+aldrig tenta termometerdynamik.
+Jag vill inte höra syntmusik,
+inte festa som en tråkig mattegeek.
+Vi ser ut som Televerket
+i vår jättefula overall.
+vi kan bara räkna kvarkar,
+och nu hyllar vi Data med en skål!
+
+||: Fysik är torrt, jag vill ju bort. :||
+
+Einsteins gossar är vi alla,
+Handels flickor kan vi aldrig få.
+Går och tror att vi har ballar,
+men det får bli för egen hand om det ska gå.
+Nu ska hela Sing-Sing rivas,
+arkitekt är med på Datas lag,
+Televerket ska fördrivas
+uppå Konsulatets ljuva domedag
+
+||: Å nubbedrag, på denna dag. :||''',
+        about: 'Gemensamt förkör inför en marskalkssittning på Lärarhögskolan hösten 2000 ledde till att Datasektionen skrev spexet som Fysiksektionen sedan framförde.',
+      ),
+      Song(
+        title: 'Our Family',
+        author: '',
+        melody: 'My Bonnie',
+        lyrics: '''My father makes counterfeit money.
+My mother brews synthetic gin.
+My sister sells kisses to sailors.
+My God how the money rolls in.
+||: Rolls in, rolls in, my God how the money rolls in, rolls in :||
+
+My aunt keeps a girls seminary.
+She's teaching young girls to begin.
+She doesn't say when they shall finish.
+My God how the money rolls in.
+||: Rolls in... :||
+
+My brother's a slum missionary.
+He's saving young girls from the sin.
+He'll save you a blond for a shilling.
+My God how the money rolls in.
+||: Rolls in... :||
+
+My uncle's a Harley Street surgeon.
+With instruments long, sharp and thin.
+He only knows one operation.
+My God how the money rolls in.
+||: Rolls in... :||
+
+I've spent all the counterfeit money,
+I've drunk all the synthetic gin,
+I've been making love to my sister.
+My God, what a mess I am in!
+||: I'm in, I'm in, my God what a mess I am in, I'm in :||''',
+        about: '',
+      ),
+      Song(
+        title: 'Spritbolaget',
+        author: '',
+        melody: 'Snickerboa',
+        lyrics: '''Till spritbolaget ränner jag
+och bankar på dess port.
+Jag vill ha nåt som bränner bra
+och gör mig skitfull fort.
+Expediten sade goddag,
+hur gammal kan min herre va?
+Har du nåt leg, ditt fula drägg,
+kom hit igen när du fått skägg.
+
+Men detta var ju inte bra,
+jag vill bli full i kväll.
+Då plötsligt en idé fick jag,
+de har ju sprit på Shell.
+Flaskorna de stod där på rad,
+så nu kan jag bli full och glad.
+Den röda drycken rinner ner...
+
+Drycken intages.
+
+...nu kan jag inte se nåt mer.''',
+        about: '',
+      ),
+      Song(
+        title: 'Jag var full en gång',
+        author: '',
+        melody: 'Flottarkärlek',
+        lyrics: '''Jag var full en gång för länge sen,
+på knäna kröp jag hem.
+Varje dike var för mig ett vilohem.
+I varje hörn och varje vrå
+hade jag en liten vän,
+ifrån renat upp till 96 procent, hemmabränt.
+
+Jag var full en gång för länge sen,
+på knäna kröp jag hem,
+och i sällskap hade jag en elefant.
+Elefanten spruta' vatten,
+men jag trodde det var vin,
+sedan dess har alla kallat mig för svin, mera vin!
+
+Jag var full en gång för länge sen
+på knäna kröp jag hem,
+och i sällskap hade jag en elefant.
+Elefanten spruta' vatten,
+men jag trodde det var öl,
+sedan dess har alla kallat mig för knöl, mera öl!
+
+Jag var full en gång för länge sen,
+på knäna kröp jag hem,
+och i sällskap hade jag en elefant.
+Elefanten spruta' vatten,
+men jag trodde det var sprit
+sedan dess har alla kallat mig för skit, mera sprit!''',
+        about: '',
+      ),
+      Song(
+        title: 'Bamsesången',
+        author: 'D-LTH, Sångarstriden 1987',
+        melody: 'Signaturmelodin till Bamse',
+        lyrics: '''Jag skall festa, ta det lugnt med spriten.
+Ha det roligt utan att va' full.
+Inte krypa runt med festeliten,
+ta det varligt för min egen skull.
+
+Först en öl i torra strupen,
+efter det så kommer supen,
+i med vinet, ner med punschen,
+sist en groggbuffé.
+
+Jag är skitfull, däckar först av alla,
+missar festen men vad gör väl de'.
+Blandar hejdlöst öl och gammal filmjölk,
+kastar upp på bordsdamen bredve'.
+
+Först en öl...''',
+        about: '',
+      ),
+      Song(
+        title: 'Det var länge sen',
+        author: '',
+        melody: 'Det var länge sen jag plocka\' några blommor',
+        lyrics: '''Det var länge sen jag plocka' några tentor.
+Det var länge sen jag tog några poäng.
+Det var länge sen jag handla' på Systemet.
+Det var länge sen jag fick en grabb i säng.
+Men å andra sidan bränner jag ju hemma,
+och klarar kärleken alldeles för mig själv.
+Det var länge sen jag plocka' några tentor,
+men å andra sidan går de om igen.''',
+        about: '',
+      ),
+      Song(
+        title: 'Dance macabre',
+        author: '',
+        melody: 'Vårvindar friska',
+        lyrics: '''Runt kring vår stuga, smådjävlar sluga
+dansa så tyst med bockfot och svans.
+Varulvar yla, isande kyla
+sveper i dimman fanstygens dans.
+Bäva o broder, lyssna och hör
+vrålen från gast, som osalig dör.
+Satan han skrattar, flaskan han fattar,
+super tills dagen gryr.
+
+Gastar och spöken, skymtar i kröken,
+dödingar släpa ruttnande lik.
+Benrangel skramla, spökhänder famla,
+kväva din strupes rosslande skrik.
+Helvetes alla fasor släpps loss.
+Fan rider här med hela sin tross.
+Göm dig i stugan, du har fått flugan.
+Dille det blir din lott.''',
+        about: '',
+      ),
+      Song(
+        title: 'Var rädd om din fyrfota vän',
+        author: '',
+        melody: '',
+        lyrics: '''Var rädd om din fyrfota vän,
+för en anka kan vara dess mamma.
+Som simmar omkring i en damm
+just när solen tittar fram,
+och nu tror du att visan är slut
+och det är den!
+(Inte!)''',
+        about: 'Kan upprepas nästan hur många gånger som helst...',
+      ),
+      Song(
+        title: 'Född i Norge',
+        author: '',
+        melody: 'Oh my darling Clementine',
+        lyrics: '''Född i Norge, bor i Sverige,
+Danmark är mitt fosterland,
+talar spanska som en jude,
+för jag är en engelsman.
+
+Full idag och full imorgon,
+så ser livet ut för mig.
+Jag ska aldrig svika flaskan,
+jag skall aldrig gifta mig.
+
+Och på min gravsten, på min gravsten,
+ska det ristas på latin
+att i kistan vilar stoftet
+av ett jävla fyllesvin
+
+Och alla maskar, alla maskar
+de skall krypa i min kropp.
+Och de ska bli så djävla fulla
+att de aldrig hittar opp.''',
+        about: '',
+      ),
+      Song(
+        title: 'De som är nyktra',
+        author: '',
+        melody: 'Du är den ende',
+        lyrics: '''De som är nyktra
+de har inget roligt,
+de har bara ansvar
+och inte nå't tjolitt-
+anlej faderulla.
+Men vi som är fulla
+vi har bara kul, nästan jämt.
+
+Det sägs att en mänska
+kan va utan brännvin
+det stämmer måhända
+men se blott på den min
+som pryder en absolutist
+den är jävligt trist
+därför så sjunger vi så,
+liksom så:
+
+De som är nyktra...''',
+        about: '',
+      ),
+      Song(
+        title: 'Eno',
+        author: '',
+        melody: 'Staffan stalledräng',
+        lyrics: '''Eno är en masochist,
+vi slår honom så gärna.
+Motorsåg och giftig kvist,
+allt för den sjuka hjärna.
+Inga skador synes än,
+spikarna i huvudet de blänka''',
+        about: '',
+      ),
+      Song(
+        title: 'Siffervisan',
+        author: '',
+        melody: 'Ritsch, ratsch, fillibom',
+        lyrics: '''||: 1, 2, 75, 6, 7, 75, 6, 7, 75, 6, 7,
+1, 2, 75, 6, 7, 75, 6, 7, 73,
+107, 103, 102, 107, 6, 19, 27,
+17, 18, 16, 15, 13, 19, 14, 17,
+19, 16, 15, 11, 8, 47. :||''',
+        about: 'Upprepas allt snabbare tills alla gett upp.',
+      ),
+      Song(
+        title: 'Pelle Jöns',
+        author: 'Britt G. Hallqvist',
+        melody: 'Moster Ingeborg',
+        lyrics: '''Det var en gång en daggmask som hette Pelle Jöns.
+Han var så rädd för skator, han var så rädd för höns.
+Han var så rädd för metare och letare med burk.
+'Den som tar mask på kroken, den kallar jag en skurk!'
+
+Så sa den lilla masken och borrade sig ner,
+en meter under jorden och syntes inte mer.
+I trädgården går metare och letare och höns.
+De hittar många maskar, men ingen Pelle Jöns.''',
+        about: '',
+      ),
+      Song(
+        title: 'Moralvisa',
+        author: '',
+        melody: 'Vem kan segla',
+        lyrics: '''Den som dricker mer än han tål,
+strax runt badrummet crawlar,
+i sitt surplus av får i kål,
+bland roll-onnar och tvålar.''',
+        about: '',
+      ),
+      Song(
+        title: 'Kalmarevisan',
+        author: '',
+        melody: '',
+        lyrics: '''Uti Kalmare stad
+ja, där finns det ingen kvast
+förrän lördagen.
+Hej dick
+Hej dack,
+jag slog i
+och vi drack,
+Hej dickom dickom dack,
+hej dickom dickom dack.
+För uti Kalmare stad,
+ja, där finns det ingen kvast
+förrän lördagen.
+
+||: När som bonden kommer hem
+kommer bondekvinnan ut :||
+är så stor i sin trut.
+Hej...
+
+||: Var är pengarna du fått?
+Jo, dom har jag supit opp :||
+uppå Kalmare slott.
+Hej...
+
+||: Jag ska mäla dej an
+för vår kronbefallningsman :||
+och du ska få skam.
+Hej...
+
+||: Kronbefallningsmannen vår
+satt på krogen igår :||
+och var full som ett får.
+Hej...''',
+        about: '',
+      ),
+      Song(
+        title: 'Drunken sailor',
+        author: '',
+        melody: '',
+        lyrics: '''What shall we do with the drunken sailor,
+what shall we do with the drunken sailor,
+what shall we do with the drunken sailor,
+early in the morning?
+Hooray, up she rises,
+hooray, up she rises,
+hooray, up she rises,
+early in the morning.
+
+Put him in the longboat till he's sober...
+
+Pull out the plug and wet him all over...
+
+Put him in the bilge and make him drink it...
+
+Put him in a leaky boat and make him bale it...
+
+Put him in the scrubbers with the hosepipe on him...
+
+Shave his legs with a rusty razor...
+
+Keel haul him until he's sober...
+
+Put him in a bed with the captains daughter...
+
+That's what we'll do with the drunken sailor...''',
+        about: '',
+      ),
+      Song(
+        title: 'Balladen om den onyktre',
+        author: '',
+        melody: 'När månen vandrar på fästet blå',
+        lyrics: '''När jag är fuller då är jag glad,
+fan vet om jag ej är vacker.
+Jag vandrar kring i vår lilla stad,
+ibland lyxhus och baracker.
+Jag sjunger ljuvligt en serenad,
+det gör jag bara när jag är glad
+och full och vacker, och full och vacker.
+
+När jag är fuller då är jag stark,
+fan vet om jag ej är modig.
+Då kan jag slå vem som helst i mark,
+så han blir trasig och blodig.
+Jag välter träden i våran park,
+det gör jag bara när jag är stark
+och full och modig, och full och modig.
+
+När jag är fuller då är jag rik,
+fan vet om jag ej är snille.
+Och dör jag blir jag ett vackert lik,
+begravs med gravöl och gille.
+I himlen möts jag av hornmusik,
+det gör man bara när man är rik
+och är ett snille, och är ett snille.
+
+Men när jag vaknar upp nästa dag,
+uppå ett enkelrum med galler.
+Då känner jag mig så rysligt svag,
+och hatar bråk och kravaller.
+min mage krånglar och är ur lag,
+nog fan så vet jag att jag idag
+är bakom galler, är bakom galler.
+
+Damernas extravers: (Text: Emma Wibom)
+
+När jag är fuller då är jag snygg,
+fan vet om jag ej är stilig.
+Då kan jag få vem som helst på rygg,
+då kan jag få vemhelst villig!
+Ja, alla gossarna får jag omkull,
+det får jag bara när jag är full
+och snygg och stilig, och snygg och stilig.''',
+        about: '',
+      ),
+      Song(
+        title: 'Vi som oss för att glupa satt',
+        author: '',
+        melody: 'Vi gå över daggstänkta berg',
+        lyrics: '''Vi som oss för att glupa satt, supa glatt,
+ity den som försmå sin första tår, törsta får.
+Av längtan vi tryckas,
+av trängtan att lyckas,
+vi nu med bravur häller ur, eller hur?
+
+Vi ge titt och tätt strupen sitt, supen stritt
+skall forsa och snart får tarmen vår, varm en tår.
+Er öven i seder
+och söven ned Eder.
+På denna protestbullerfest, full är bäst.''',
+        about: '',
+      ),
+      Song(
+        title: 'Störthärligt full',
+        author: '',
+        melody: 'Fat Mammy Brown',
+        lyrics: '''Nu har alla lämnat festen
+och jag sitter ensam kvar
+ibland groggar, pilsnerflaskor
+i en sönderslagen bar.
+Sista pilsnerflaskan tog jag
+till min frukost klockan fem
+och nu sitter jag och väntar
+på att få bli buren hem.
+
+För jag är störthärligt full
+och jag ramlar mest omkull.
+Jag ser skära elefanter
+som har jättekonstig ull.
+Ja, jag är störthärligt full
+och jag ramlar mest omkull.
+Det är präktigt, härligt,
+supa och va' full.
+
+Ifrån festen minns jag inget,
+men mitt öga blev visst blått.
+Och det måste jag ha fått
+när någon kastat en karott
+full med vispgrädde och fimpar
+och en okammad peruk,
+eller också när jag stod
+i moraklockan och var sjuk.
+
+För jag är...
+
+Nästa morgon när jag vaknar
+med en bergsborr i min kropp.
+Sandpapper på tungan
+och jag vill ej stiga opp.
+Mina armar dom känns tunga
+och min näsa den är sne'.
+Så jag raglar ut till köket
+för en återställare.
+
+För jag är...''',
+        about: '',
+      ),
+      Song(
+        title: 'Lyft ditt välförsedda glas',
+        author: '',
+        melody: 'Ding Dong Merrily on High',
+        lyrics: '''Lyft ditt välförsedda glas
+det är en ljuvlig börda,
+nu har grabbarna kalas,
+och vi skall segern skörda!
+Ding, dinge-dinge-ding
+dinge-dinge-ding
+dinge-dinge-ding, dong-dong,
+i morgon är det lördag.
+
+Lyft nu glaset till din mun,
+se, döden på dig väntar!
+Nu har grabbarna kalas,
+hör, liemannen flämtar!
+Ding, dinge-dinge-ding
+dinge-dinge-ding
+dinge-dinge-ding, dong-dong.
+Begravningsklockor klämtar.''',
+        about: '',
+      ),
+      Song(
+        title: 'Sakta det går med banan',
+        author: 'Torbjörn H, Mats T, Peo K och Lennart H.',
+        melody: 'Sakta vi gå genom stan',
+        lyrics: '''Å, det är skönt
+att med frukter och grönt
+uppnå ett djupare plan.
+Jag vet ett sätt
+då man inte blir mätt,
+men ändå rätt nöjd med banan.
+Det finns dom som säger
+att endast vi tjejer
+kan uppskatta morotens form.
+Men grönsaker kan
+vara svåra ibland,
+ta pumpan - den är ju enorm!
+
+Jag har gjort försök
+med kålrot och lök,
+men det kliar och svider som fan.
+En ärta, javisst,
+men det blir rätt trist,
+nej, ingenting slår min banan!
+
+En köttkorv är nog
+både nyttig och god,
+men såsen gör magen så rund...
+Nej, grönt ska det va',
+tänk, så skönt att få ha
+med gurka en ljuv herdestund!
+
+Jag har testat kiwi,
+men den var för rivig,
+nej, ta av bananen dess skal!
+För då har jag känt
+att dess friktionsko'ff'cient
+har blivit för mig optima-al!
+
+Banan, vilken grej!
+Bra för mig som är tjej!
+Jag är ju ve-ge-tarian!
+Med skal eller ej,
+jag vill ha den i mig.
+Sakta det går med banan...
+Sakta det går med banan...''',
+        about: 'Lantmäterisektionens bidrag i Sångartäflan 1987.',
+      ),
+      Song(
+        title: 'Nikolajevs längtan',
+        author: '',
+        melody: 'Ryska nationalsången',
+        lyrics: '''Mitt namn är Nikolajev, kosmonaut ifrån Sovjet.
+Jag åker runt jorden i min rymdraket,
+men drabbats jag har av en olycka stor,
+för jag glömde gå på muggen innan jag for
+
+Jag längtar hem, till mitt fosterland igen,
+till mor och far uti Sovjetien,
+men mest utav allt så längtar jag till
+en röd liten stuga med hjärta på dörr'n!
+Jag längtar hem!''',
+        about: '11-15 augusti 1962 flög Andrian Nikolajev 64 varv runt jorden i Vostok 3.',
+      ),
+      Song(
+        title: 'Sista dansen',
+        author: '',
+        melody: '',
+        lyrics: '''Om han skulle dansa sista dansen med mig,
+som jag tror att han gör,
+han har gjort så en gång förr,
+så får han inte följa mig till porten i kväll.
+Det lovar jag dig,
+det lovar jag min mamma och det lovar jag dig.
+
+Men om han skulle följa mig till porten i kväll...
+så får han inte följa mig på rummet i kväll...
+
+Men om han skulle följa mig på rummet i kväll...
+så får han inte sätta sig på sängen med mig...
+
+Men om han skulle sätta sig på sängen med mig...
+så får han inte krypa under fällen med mig...
+
+Men om han skulle krypa under fällen med mig...
+så får han inte röra kussimurran på mig...
+
+Men om han skulle röra kussimurran på mig...
+så får han inte ränna sturske Laban i mig...
+
+Men om han skulle stoppa sturske Laban i mig...
+så får han inte släppa stora satsen i mig...
+
+Men om han skulle släppa hela satsen i mig...
+så får han inte göra små små flickebarn med mig...
+
+Men om han skulle göra små små flickebarn med mig...
+så får det inte bli någon 25-örestjej...
+
+Men om det skulle bli någon 25-örestjej...
+så får hon inte kallas kåta Lisa efter mig...
+
+Men om hon skulle kallas kåta Lisa efter mig...
+så får hon inte stjäla några kunder av mig...
+
+Men om hon skulle stjäla några kunder av mig...
+så får hon inte dansa sista dansen med dig...''',
+        about: '',
+      ),
+      Song(
+        title: 'Somnarvisa',
+        author: '',
+        melody: 'Idas sommarvisa',
+        lyrics: '''Du ska inte tro du får somna
+när spriten har satt lite fart.
+Om armar och ben börjar domna
+så börjar vi dansa såklart!
+Och när jag har fångat dig i min famn
+så släpper jag inte mitt grepp.
+Jag älskar dig, fast jag har glömt ditt namn
+jag håller, fast du skriker \'Släpp!\'''',
+        about: '',
+      ),
+      Song(
+        title: 'I ett hus vid skogens slut',
+        author: '',
+        melody: '',
+        lyrics: '''I ett hus vid skogens slut,
+liten tomte tittar ut.
+Haren skuttar fram så fort,
+klappar på dess port.
+Hjälp ack, hjälp ack, hjälp du mig,
+annars skjuter jägarn mig.
+Kom, ja, kom i stugan in,
+räck mig handen din.''',
+        about: '',
+      ),
+      Song(
+        title: 'Katta vore',
+        author: '',
+        melody: 'Du ska få min gamla cykel när jag dör',
+        lyrics: '''Katta vore hon ha onge unner lon, unner lon.
+Katta vore hon ha onge unner lon, unner lon.
+Snälla pappa ta en häschitro
+å peta fram kattonga,
+ta å peta fram kattonga jer du bra, pappa du.
+
+Pappa to en häschjestang å peta fram, allihop.
+Pappa to en häschjestang å peta fram, allihop.
+En var grön å svart å brokut
+å den ann va alldeles tokut,
+tredje ongen han va alldeles kall å slö
+för han va dö.
+
+Pappa han ha hormoslyr å DDT, oppå lon.
+Pappa han ha hormoslyr å DDT, oppå lon.
+He had fyrä jörning golva
+på na konstit märklit vis,
+he jer väl trolit he va därför eint dom vor
+som dom skull''',
+        about: 'Ska sjungas på arvidsjaursbondska.',
+      ),
+      Song(
+        title: 'Min häst',
+        author: 'Lasse Åberg',
+        melody: '',
+        lyrics: '''Min häst den har gula öron,
+och vita små skor av trä.
+Röda strumpor till knät,
+han är ganska fet,
+med blåa små vingar under magen.''',
+        about: '',
+      ),
+      Song(
+        title: 'Jag är en liten undulat',
+        author: '',
+        melody: 'Med en enkel tulipan',
+        lyrics: '''Jag är en liten undulat
+som får så dåligt med mat.
+För dom jag bor hos, för dom jag bor hos
+dom är så snåla.
+Dom äter sill, varenda da',
+det vill jag rakt inte ha.
+Jag vill ha brännvin, jag vill ha brännvin
+så jag får skåla.''',
+        about: '',
+      ),
+      Song(
+        title: 'A long time ago',
+        author: '',
+        melody: 'Schuberts Marche Militaire',
+        lyrics: '''A long time ago in a small town in Germany
+there was a shoemaker, Shoemaker was his name.
+He could play the violin, violin, violin
+he could play the violin, vio-violin.
+
+A long time ago...
+He could play the trombone...
+
+A long time ago...
+He could play the piccolo...
+
+A long time ago...
+He could play the el-guitar...
+
+A long time ago...
+He could play the bloody fool...''',
+        about: '',
+      ),
+    ],
+  ),
+];
