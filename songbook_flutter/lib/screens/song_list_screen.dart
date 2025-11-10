@@ -143,8 +143,7 @@ class _SongListScreenState extends State<SongListScreen> {
   void didUpdateWidget(SongListScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
     // Trigger rebuild when settings change
-    if (oldWidget.settings.showAdultSongs != widget.settings.showAdultSongs ||
-        oldWidget.settings.showCustomSongs != widget.settings.showCustomSongs) {
+    if (oldWidget.settings.showCustomSongs != widget.settings.showCustomSongs) {
       setState(() {
         // Force rebuild with new settings
       });
