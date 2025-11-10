@@ -367,6 +367,7 @@ class _SongListScreenState extends State<SongListScreen> {
                   builder: (context) => SettingsScreen(
                     settings: widget.settings,
                     onSettingsChanged: widget.onSettingsChanged,
+                    songbook: sampleSongbook,
                   ),
                 ),
               );

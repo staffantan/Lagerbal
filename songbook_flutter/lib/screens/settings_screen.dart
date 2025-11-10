@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import '../models/app_settings.dart';
+import '../models/category.dart';
+import 'pdf_export_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   final AppSettings settings;
   final Function(AppSettings) onSettingsChanged;
+  final List<Category> songbook;
 
   const SettingsScreen({
     super.key,
     required this.settings,
     required this.onSettingsChanged,
+    required this.songbook,
   });
 
   @override
@@ -131,6 +135,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   showCustomSongs: value,
                 );
                 widget.onSettingsChanged(updatedSettings);
+              },
+            ),
+          ),
+          const SizedBox(height: 8),
+
+          // PDF Export Button
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.picture_as_pdf),
+              title: const Text('Exportera till PDF'),
+              subtitle: const Text('Skapa en PDF med valda sånger'),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PdfExportScreen(
+                      songbook: widget.songbook,
+                    ),
+                  ),
+                );
               },
             ),
           ),
