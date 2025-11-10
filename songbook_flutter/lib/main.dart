@@ -83,12 +83,12 @@ class _MyAppState extends State<MyApp> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'DISK KMs sångbok',
+      title: 'Lägerbål',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFD4AF37), // Gold color
-          secondary: const Color(0xFFD4AF37), // Gold
-          primary: const Color(0xFF757575), // Grey
+          seedColor: const Color(0xFF003D7A), // Swedish Scout blue
+          primary: const Color(0xFF003D7A), // Scout blue
+          secondary: const Color(0xFFFECB00), // Scout yellow
           surface: const Color(0xFFF5F5F5), // Light grey
           brightness: Brightness.light,
         ),
@@ -96,9 +96,9 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFD4AF37), // Gold color
-          secondary: const Color(0xFFD4AF37), // Gold
-          primary: const Color(0xFFFFD700), // Brighter gold for dark mode
+          seedColor: const Color(0xFF1565C0), // Lighter blue for dark mode
+          primary: const Color(0xFF42A5F5), // Lighter scout blue for dark mode
+          secondary: const Color(0xFFFECB00), // Scout yellow
           surface: const Color(0xFF1E1E1E), // Dark grey
           brightness: Brightness.dark,
         ),

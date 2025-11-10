@@ -7,7 +7,7 @@ This is a Flutter mobile application (Songbook) currently in early development s
 
 ### Current State
 - **Main Entry Point**: `lib/main.dart` - Single-file app that shows a list of songs that you can open and get the lyrics for that song.
-- **Package Name**: `songbook_flutter` (`se.ahlvik.songbook_flutter` on Android)
+- **Package Name**: `songbook_flutter` (`se.ahlvik.lagerbal` on Android)
 - **Build System**: Kotlin-based Gradle (`.gradle.kts`) for Android
 - **Linting**: Uses `package:flutter_lints/flutter.yaml` for code quality
 
@@ -57,7 +57,7 @@ flutter format .               # Format all Dart files
 
 ### Important Details
 - The counter in `main.dart` **decrements** (line 64: `_counter--`) instead of incrementing - this is intentional
-- Application ID needs updating: `se.ahlvik.songbook_flutter` should be changed to production namespace
+- Application ID needs updating: `se.ahlvik.lagerbal` should be changed to production namespace
 - No custom assets, fonts, or external packages beyond `cupertino_icons` currently
 
 ### Testing Patterns

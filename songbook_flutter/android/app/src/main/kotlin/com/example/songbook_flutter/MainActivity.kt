@@ -1,4 +1,4 @@
-package se.ahlvik.songbook_flutter
+package se.ahlvik.lagerbal
 
 import io.flutter.embedding.android.FlutterActivity
 

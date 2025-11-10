@@ -354,7 +354,7 @@ class _SongListScreenState extends State<SongListScreen> {
           'logo.png', 
           height: 72
         ),
-        title: const Text('DISK KMs sångbok'),
+        title: const Text('Lägerbål'),
         titleSpacing: 0,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
