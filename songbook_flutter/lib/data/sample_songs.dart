@@ -26,7 +26,7 @@ med en glad och livad sång.''',
         author: 'J. Nordling',
         melody: 'S. Swedberg',
         lyrics: '''Vi äro svenska scouter vi 
-        och löftet som blev givet.
+och löftet som blev givet.
 En vårdag brusande och fri
 står på vår panna skrivet.
 För Gud för kung och fosterland 
@@ -53,14 +53,17 @@ kring hela Sveriges land.''',
 Sätt inunder pannan fyr (fem, sex)
 Med svällande segel och fyllda tankar
 dra vi ut, dra vi ut, dra vi ut på äventyr.
+
 Är ni med? Vi är med.
 Det ät klart att vi är med.
 Sicket gnat, bara tjat.
 Jag ska doppa dig i spat.
+
 Nej vafalls, inget alls.
 jag har bara skrovlig hals.
 Nageltrång och sånt där
 undra på att man är tvär.
+
 Trampa på bromsen och släpp ner ankar
 Sätt inunder pannan fyr (fem, sex)
 Med slokande segel och tomma tankar
@@ -124,23 +127,31 @@ paraply).''',
 Bort från rök och damm, ut till skog och mark.
 Bort från gatorna, bort från mörka gårdar,
 hets och jäkt och bullrande trafik.
+
 Vad är målet för resan i sommar?
 Vässarö, Vässarö, Vässarö!
 Var så säker att vi återkommer
 Till Vässarö, våran ö, Vässarö.
+
 Till våra drömmars mål, står vår hela längtan
 där vart föremål, är oss lika kärt.
 Tjärnens mörka hål, skogens ljusa glänta,
 vindens sus och bränningarnas brus.
+
 Det är målet för resan i sommar.
 Vässarö, Vässarö, Vässarö!
 Var så säker att vi återkommer
 Till Vässarö, våran ö, Vässarö.
+
 Hem vi far igen, med hjärtat fyllt av minnen,
 i den förvissningen, vi ses ju snart igen.
 Drömmen som vi bär, den fyller våra sinnen
 Att nästa år så sjunger vi igen:
-Var är målet...''',
+
+Vad är målet för resan i sommar?
+Vässarö, Vässarö, Vässarö!
+Var så säker att vi återkommer
+Till Vässarö, våran ö, Vässarö.''',
         about: '',
       ),
       Song(

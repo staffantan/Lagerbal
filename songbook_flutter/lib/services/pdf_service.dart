@@ -14,6 +14,18 @@ class PdfService {
     final boldFont = await PdfGoogleFonts.robotoBold();
     final monoFont = await PdfGoogleFonts.robotoMonoRegular();
 
+    // Load icon image
+    pw.ImageProvider? iconImage;
+    try {
+      final iconFile = File('icon.png');
+      if (await iconFile.exists()) {
+        final bytes = await iconFile.readAsBytes();
+        iconImage = pw.MemoryImage(bytes);
+      }
+    } catch (e) {
+      // Icon not found, continue without it
+    }
+
     // Add cover page
     pdf.addPage(
       pw.Page(
@@ -23,8 +35,12 @@ class PdfService {
             child: pw.Column(
               mainAxisAlignment: pw.MainAxisAlignment.center,
               children: [
+                if (iconImage != null) ...[
+                  pw.Image(iconImage, width: 120, height: 120),
+                  pw.SizedBox(height: 30),
+                ],
                 pw.Text(
-                  'Sångbok',
+                  'Lägerbålssånger',
                   style: pw.TextStyle(
                     font: boldFont,
                     fontSize: 48,
@@ -32,14 +48,6 @@ class PdfService {
                   ),
                 ),
                 pw.SizedBox(height: 20),
-                pw.Text(
-                  '${songs.length} sånger',
-                  style: pw.TextStyle(
-                    font: font,
-                    fontSize: 24,
-                  ),
-                ),
-                pw.SizedBox(height: 40),
                 pw.Text(
                   DateTime.now().toString().split(' ')[0],
                   style: pw.TextStyle(
@@ -109,123 +117,115 @@ class PdfService {
       ),
     );
 
-    // Add each song
-    for (var i = 0; i < songs.length; i++) {
-      final song = songs[i];
+    // Add songs in groups of up to 4 per page (2x2 grid layout)
+    for (var i = 0; i < songs.length; i += 4) {
+      final songsOnPage = songs.skip(i).take(4).toList();
       
       pdf.addPage(
-        pw.MultiPage(
+        pw.Page(
           pageFormat: PdfPageFormat.a4,
-          header: (context) {
-            return pw.Container(
-              alignment: pw.Alignment.centerRight,
-              margin: const pw.EdgeInsets.only(bottom: 20),
-              padding: const pw.EdgeInsets.only(bottom: 10),
-              decoration: const pw.BoxDecoration(
-                border: pw.Border(
-                  bottom: pw.BorderSide(color: PdfColors.grey300),
-                ),
-              ),
-              child: pw.Text(
-                'Sång ${i + 1} av ${songs.length}',
-                style: pw.TextStyle(
-                  font: font,
-                  fontSize: 10,
-                  color: PdfColors.grey700,
-                ),
-              ),
-            );
-          },
           build: (context) {
-            return [
-              // Song title
-              pw.Text(
-                song.title,
-                style: pw.TextStyle(
-                  font: boldFont,
-                  fontSize: 24,
-                  fontWeight: pw.FontWeight.bold,
-                ),
-              ),
-              pw.SizedBox(height: 8),
-
-              // Song metadata
-              if (song.author.isNotEmpty) ...[
-                pw.Row(
-                  children: [
-                    pw.Text(
-                      'Författare: ',
-                      style: pw.TextStyle(
-                        font: boldFont,
-                        fontSize: 12,
-                        fontWeight: pw.FontWeight.bold,
-                      ),
-                    ),
-                    pw.Text(
-                      song.author,
-                      style: pw.TextStyle(font: font, fontSize: 12),
-                    ),
-                  ],
-                ),
-                pw.SizedBox(height: 4),
-              ],
-              if (song.melody.isNotEmpty) ...[
-                pw.Row(
-                  children: [
-                    pw.Text(
-                      'Melodi: ',
-                      style: pw.TextStyle(
-                        font: boldFont,
-                        fontSize: 12,
-                        fontWeight: pw.FontWeight.bold,
-                      ),
-                    ),
-                    pw.Text(
-                      song.melody,
-                      style: pw.TextStyle(font: font, fontSize: 12),
-                    ),
-                  ],
-                ),
-                pw.SizedBox(height: 4),
-              ],
-              
-              // Lyrics with inline tabs (without container to allow page breaks)
-              ..._buildLyricsWidgets(song, font, monoFont),
-
-              // About section (if present)
-              if (song.about.isNotEmpty) ...[
-                pw.SizedBox(height: 16),
-                pw.Container(
-                  padding: const pw.EdgeInsets.all(12),
-                  decoration: pw.BoxDecoration(
-                    border: pw.Border.all(color: PdfColors.grey400),
-                    borderRadius: pw.BorderRadius.circular(4),
-                  ),
-                  child: pw.Column(
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
-                    children: [
-                      pw.Text(
-                        'Om sången',
-                        style: pw.TextStyle(
-                          font: boldFont,
-                          fontSize: 12,
-                          fontWeight: pw.FontWeight.bold,
+            return pw.Column(
+              children: [
+                // Top row (2 songs side by side)
+                if (songsOnPage.isNotEmpty)
+                  pw.Expanded(
+                    child: pw.Row(
+                      crossAxisAlignment: pw.CrossAxisAlignment.start,
+                      children: [
+                        // Song 1 (top left)
+                        pw.Expanded(
+                          child: pw.Container(
+                            padding: const pw.EdgeInsets.all(8),
+                            child: pw.Column(
+                              crossAxisAlignment: pw.CrossAxisAlignment.start,
+                              children: _buildSongWidgets(
+                                songsOnPage[0],
+                                i + 1,
+                                songs.length,
+                                font,
+                                boldFont,
+                                monoFont,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                      pw.SizedBox(height: 8),
-                      pw.Text(
-                        song.about,
-                        style: pw.TextStyle(
-                          font: font,
-                          fontSize: 11,
-                          lineSpacing: 2,
-                        ),
-                      ),
-                    ],
+                        pw.SizedBox(width: 8),
+                        // Song 2 (top right)
+                        if (songsOnPage.length > 1)
+                          pw.Expanded(
+                            child: pw.Container(
+                              padding: const pw.EdgeInsets.all(8),
+                              child: pw.Column(
+                                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                                children: _buildSongWidgets(
+                                  songsOnPage[1],
+                                  i + 2,
+                                  songs.length,
+                                  font,
+                                  boldFont,
+                                  monoFont,
+                                ),
+                              ),
+                            ),
+                          )
+                        else
+                          pw.Expanded(child: pw.Container()),
+                      ],
+                    ),
                   ),
-                ),
+                pw.SizedBox(height: 8),
+                // Bottom row (2 songs side by side)
+                if (songsOnPage.length > 2)
+                  pw.Expanded(
+                    child: pw.Row(
+                      crossAxisAlignment: pw.CrossAxisAlignment.start,
+                      children: [
+                        // Song 3 (bottom left)
+                        pw.Expanded(
+                          child: pw.Container(
+                            padding: const pw.EdgeInsets.all(8),
+                            child: pw.Column(
+                              crossAxisAlignment: pw.CrossAxisAlignment.start,
+                              children: _buildSongWidgets(
+                                songsOnPage[2],
+                                i + 3,
+                                songs.length,
+                                font,
+                                boldFont,
+                                monoFont,
+                              ),
+                            ),
+                          ),
+                        ),
+                        pw.SizedBox(width: 8),
+                        // Song 4 (bottom right)
+                        if (songsOnPage.length > 3)
+                          pw.Expanded(
+                            child: pw.Container(
+                              padding: const pw.EdgeInsets.all(8),
+                              child: pw.Column(
+                                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                                children: _buildSongWidgets(
+                                  songsOnPage[3],
+                                  i + 4,
+                                  songs.length,
+                                  font,
+                                  boldFont,
+                                  monoFont,
+                                ),
+                              ),
+                            ),
+                          )
+                        else
+                          pw.Expanded(child: pw.Container()),
+                      ],
+                    ),
+                  )
+                else
+                  pw.Expanded(child: pw.Container()),
               ],
-            ];
+            );
           },
         ),
       );
@@ -251,31 +251,81 @@ class PdfService {
     }
   }
 
+  static List<pw.Widget> _buildSongWidgets(
+    Song song,
+    int songNumber,
+    int totalSongs,
+    pw.Font font,
+    pw.Font boldFont,
+    pw.Font monoFont,
+  ) {
+    final widgets = <pw.Widget>[];
+
+    // Song title (without numbering)
+    widgets.add(
+      pw.Text(
+        song.title,
+        style: pw.TextStyle(
+          font: boldFont,
+          fontSize: 11,
+          fontWeight: pw.FontWeight.bold,
+        ),
+      ),
+    );
+    widgets.add(pw.SizedBox(height: 3));
+
+    // Song metadata (compact)
+    if (song.author.isNotEmpty || song.melody.isNotEmpty) {
+      final metadata = <String>[];
+      if (song.author.isNotEmpty) metadata.add(song.author);
+      if (song.melody.isNotEmpty) metadata.add('Mel: ${song.melody}');
+      
+      widgets.add(
+        pw.Text(
+          metadata.join(' • '),
+          style: pw.TextStyle(
+            font: font,
+            fontSize: 8,
+            color: PdfColors.grey700,
+          ),
+        ),
+      );
+      widgets.add(pw.SizedBox(height: 3));
+    }
+
+    // Lyrics (compact)
+    widgets.addAll(_buildLyricsWidgets(song, font, monoFont));
+
+    return widgets;
+  }
+
   static List<pw.Widget> _buildLyricsWidgets(Song song, pw.Font font, pw.Font monoFont) {
     final widgets = <pw.Widget>[];
 
     if (song.guitarTabs.isEmpty) {
-      // No tabs, just show lyrics - split into paragraphs for better page breaks
-      final paragraphs = song.lyrics.split('\n\n');
-      for (var paragraph in paragraphs) {
-        if (paragraph.trim().isNotEmpty) {
+      // No tabs, just show lyrics - preserve all lines including empty ones
+      final lines = song.lyrics.split('\n');
+      for (var line in lines) {
+        if (line.isEmpty) {
+          // Use SizedBox for empty lines to preserve spacing
+          widgets.add(pw.SizedBox(height: 20));
+        } else {
           widgets.add(
             pw.Text(
-              paragraph.trim(),
+              line,
               style: pw.TextStyle(
                 font: font,
-                fontSize: 12,
-                lineSpacing: 4,
+                fontSize: 9,
+                lineSpacing: 1,
               ),
             ),
           );
-          widgets.add(pw.SizedBox(height: 12));
         }
       }
       return widgets;
     }
 
-    // Show lyrics with inline tabs
+    // Show lyrics with inline tabs (compact)
     final tabLines = song.guitarTabs.split('\n');
     final lyricLines = song.lyrics.split('\n');
     final maxLines = tabLines.length > lyricLines.length ? tabLines.length : lyricLines.length;
@@ -290,30 +340,26 @@ class PdfService {
             tabLine,
             style: pw.TextStyle(
               font: monoFont,
-              fontSize: 10,
+              fontSize: 8,
               color: PdfColors.blue800,
             ),
           ),
         );
       }
 
-      if (lyricLine.isNotEmpty) {
+      // Add lyric line or spacing if empty
+      if (lyricLine.isEmpty) {
+        widgets.add(pw.SizedBox(height: 10));
+      } else {
         widgets.add(
           pw.Text(
             lyricLine,
             style: pw.TextStyle(
               font: font,
-              fontSize: 12,
+              fontSize: 9,
             ),
           ),
         );
-      }
-
-      // Add spacing between verses
-      if (lyricLine.isEmpty && i < maxLines - 1) {
-        widgets.add(pw.SizedBox(height: 8));
-      } else {
-        widgets.add(pw.SizedBox(height: 2));
       }
     }
 
