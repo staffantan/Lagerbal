@@ -117,119 +117,66 @@ class PdfService {
       ),
     );
 
-    // Add songs in groups of up to 4 per page (2x2 grid layout)
-    for (var i = 0; i < songs.length; i += 4) {
-      final songsOnPage = songs.skip(i).take(4).toList();
+    // Create all song widgets in a single column with smart page breaks
+    final allSongWidgets = <pw.Widget>[];
+    
+    for (var i = 0; i < songs.length; i++) {
+      final song = songs[i];
       
-      pdf.addPage(
-        pw.Page(
-          pageFormat: PdfPageFormat.a4,
-          build: (context) {
-            return pw.Column(
-              children: [
-                // Top row (2 songs side by side)
-                if (songsOnPage.isNotEmpty)
-                  pw.Expanded(
-                    child: pw.Row(
-                      crossAxisAlignment: pw.CrossAxisAlignment.start,
-                      children: [
-                        // Song 1 (top left)
-                        pw.Expanded(
-                          child: pw.Container(
-                            padding: const pw.EdgeInsets.all(8),
-                            child: pw.Column(
-                              crossAxisAlignment: pw.CrossAxisAlignment.start,
-                              children: _buildSongWidgets(
-                                songsOnPage[0],
-                                i + 1,
-                                songs.length,
-                                font,
-                                boldFont,
-                                monoFont,
-                              ),
-                            ),
-                          ),
-                        ),
-                        pw.SizedBox(width: 8),
-                        // Song 2 (top right)
-                        if (songsOnPage.length > 1)
-                          pw.Expanded(
-                            child: pw.Container(
-                              padding: const pw.EdgeInsets.all(8),
-                              child: pw.Column(
-                                crossAxisAlignment: pw.CrossAxisAlignment.start,
-                                children: _buildSongWidgets(
-                                  songsOnPage[1],
-                                  i + 2,
-                                  songs.length,
-                                  font,
-                                  boldFont,
-                                  monoFont,
-                                ),
-                              ),
-                            ),
-                          )
-                        else
-                          pw.Expanded(child: pw.Container()),
-                      ],
-                    ),
-                  ),
-                pw.SizedBox(height: 8),
-                // Bottom row (2 songs side by side)
-                if (songsOnPage.length > 2)
-                  pw.Expanded(
-                    child: pw.Row(
-                      crossAxisAlignment: pw.CrossAxisAlignment.start,
-                      children: [
-                        // Song 3 (bottom left)
-                        pw.Expanded(
-                          child: pw.Container(
-                            padding: const pw.EdgeInsets.all(8),
-                            child: pw.Column(
-                              crossAxisAlignment: pw.CrossAxisAlignment.start,
-                              children: _buildSongWidgets(
-                                songsOnPage[2],
-                                i + 3,
-                                songs.length,
-                                font,
-                                boldFont,
-                                monoFont,
-                              ),
-                            ),
-                          ),
-                        ),
-                        pw.SizedBox(width: 8),
-                        // Song 4 (bottom right)
-                        if (songsOnPage.length > 3)
-                          pw.Expanded(
-                            child: pw.Container(
-                              padding: const pw.EdgeInsets.all(8),
-                              child: pw.Column(
-                                crossAxisAlignment: pw.CrossAxisAlignment.start,
-                                children: _buildSongWidgets(
-                                  songsOnPage[3],
-                                  i + 4,
-                                  songs.length,
-                                  font,
-                                  boldFont,
-                                  monoFont,
-                                ),
-                              ),
-                            ),
-                          )
-                        else
-                          pw.Expanded(child: pw.Container()),
-                      ],
-                    ),
-                  )
-                else
-                  pw.Expanded(child: pw.Container()),
-              ],
-            );
-          },
-        ),
-      );
+      // Calculate song height estimate
+      double songHeight = 27 + 15; // Title + spacing
+      
+      if (song.author.isNotEmpty || song.melody.isNotEmpty) {
+        songHeight += 22 + 15; // Metadata + spacing
+      }
+      
+      // Estimate lyrics height
+      final lyricLines = song.lyrics.split('\n');
+      for (var line in lyricLines) {
+        if (line.isEmpty) {
+          songHeight += 20; // Empty line spacing
+        } else {
+          songHeight += 25; // Text line (22pt font + ~3pt spacing)
+        }
+      }
+      
+      // Calculate 20% threshold for page break decision
+      final threshold = songHeight * 0.2;
+      
+      // Add divider and potential page break before song (except first)
+      if (i > 0) {
+        allSongWidgets.add(pw.SizedBox(height: 20));
+        allSongWidgets.add(pw.Divider(thickness: 1, color: PdfColors.grey400));
+        allSongWidgets.add(pw.SizedBox(height: 20));
+        
+        // Add NewPage widget with threshold - forces new page if insufficient space
+        allSongWidgets.add(
+          pw.Container(
+            height: threshold,
+            child: pw.NewPage(),
+          ),
+        );
+      }
+      
+      // Add song widgets
+      allSongWidgets.addAll(_buildSongWidgets(
+        song,
+        i + 1,
+        songs.length,
+        font,
+        boldFont,
+        monoFont,
+      ));
     }
+    
+    // Create pages with single column layout that maximizes page usage
+    pdf.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4,
+        margin: const pw.EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        build: (context) => allSongWidgets,
+      ),
+    );
 
     // Save and open the PDF
     if (Platform.isAndroid || Platform.isIOS) {
@@ -267,12 +214,12 @@ class PdfService {
         song.title,
         style: pw.TextStyle(
           font: boldFont,
-          fontSize: 11,
+          fontSize: 27,
           fontWeight: pw.FontWeight.bold,
         ),
       ),
     );
-    widgets.add(pw.SizedBox(height: 3));
+    widgets.add(pw.SizedBox(height: 15));
 
     // Song metadata (compact)
     if (song.author.isNotEmpty || song.melody.isNotEmpty) {
@@ -285,12 +232,12 @@ class PdfService {
           metadata.join(' • '),
           style: pw.TextStyle(
             font: font,
-            fontSize: 8,
+            fontSize: 22,
             color: PdfColors.grey700,
           ),
         ),
       );
-      widgets.add(pw.SizedBox(height: 3));
+      widgets.add(pw.SizedBox(height: 15));
     }
 
     // Lyrics (compact)
@@ -315,7 +262,7 @@ class PdfService {
               line,
               style: pw.TextStyle(
                 font: font,
-                fontSize: 9,
+                fontSize: 22,
                 lineSpacing: 1,
               ),
             ),
@@ -340,7 +287,7 @@ class PdfService {
             tabLine,
             style: pw.TextStyle(
               font: monoFont,
-              fontSize: 8,
+              fontSize: 22,
               color: PdfColors.blue800,
             ),
           ),
@@ -349,14 +296,14 @@ class PdfService {
 
       // Add lyric line or spacing if empty
       if (lyricLine.isEmpty) {
-        widgets.add(pw.SizedBox(height: 10));
+        widgets.add(pw.SizedBox(height: 20));
       } else {
         widgets.add(
           pw.Text(
             lyricLine,
             style: pw.TextStyle(
               font: font,
-              fontSize: 9,
+              fontSize: 22,
             ),
           ),
         );
