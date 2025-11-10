@@ -139,11 +139,27 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    'Tillgängliga sånger',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Tillgängliga sånger',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      TextButton.icon(
+                        onPressed: _selectAllSongs,
+                        icon: const Icon(Icons.select_all, size: 18),
+                        label: const Text('Välj alla'),
+                      ),
+                      const SizedBox(width: 8),
+                      TextButton.icon(
+                        onPressed: _deselectAllSongs,
+                        icon: const Icon(Icons.deselect, size: 18),
+                        label: const Text('Avmarkera alla'),
+                      ),
+                    ],
                   ),
                 ),
                 Expanded(
@@ -218,6 +234,22 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
               label: Text(_isGenerating ? 'Genererar...' : 'Skapa PDF'),
             ),
     );
+  }
+
+  void _selectAllSongs() {
+    setState(() {
+      selectedSongs.clear();
+      // Add all songs from all categories
+      for (final category in widget.songbook) {
+        selectedSongs.addAll(category.songs);
+      }
+    });
+  }
+
+  void _deselectAllSongs() {
+    setState(() {
+      selectedSongs.clear();
+    });
   }
 
   Future<void> _generatePdf() async {
