@@ -108,6 +108,8 @@ class _SongListScreenState extends State<SongListScreen> {
                           isFavorite: _isFavorite(song),
                           onToggleFavorite: () => _toggleFavorite(song),
                           fontSize: widget.settings.fontSize,
+                          settings: widget.settings,
+                          onSettingsChanged: widget.onSettingsChanged,
                         ),
                       ),
                     );
@@ -446,6 +448,8 @@ class _SongListScreenState extends State<SongListScreen> {
                         isFavorite: _isFavorite,
                         onToggleFavorite: _toggleFavorite,
                         fontSize: widget.settings.fontSize,
+                        settings: widget.settings,
+                        onSettingsChanged: widget.onSettingsChanged,
                       );
                     },
                   ),
@@ -470,6 +474,8 @@ class _CategorySection extends StatelessWidget {
   final bool Function(Song) isFavorite;
   final Function(Song) onToggleFavorite;
   final double fontSize;
+  final AppSettings settings;
+  final Function(AppSettings) onSettingsChanged;
 
   const _CategorySection({
     required this.category,
@@ -479,6 +485,8 @@ class _CategorySection extends StatelessWidget {
     required this.isFavorite,
     required this.onToggleFavorite,
     required this.fontSize,
+    required this.settings,
+    required this.onSettingsChanged,
   });
 
   @override
@@ -509,6 +517,8 @@ class _CategorySection extends StatelessWidget {
               isFavorite: isFavorite(song),
               onToggleFavorite: () => onToggleFavorite(song),
               fontSize: fontSize,
+              settings: settings,
+              onSettingsChanged: onSettingsChanged,
             )),
         const Divider(height: 1),
       ],
@@ -523,6 +533,8 @@ class _SongListTile extends StatelessWidget {
   final bool isFavorite;
   final VoidCallback onToggleFavorite;
   final double fontSize;
+  final AppSettings settings;
+  final Function(AppSettings) onSettingsChanged;
 
   const _SongListTile({
     required this.song,
@@ -531,6 +543,8 @@ class _SongListTile extends StatelessWidget {
     required this.isFavorite,
     required this.onToggleFavorite,
     required this.fontSize,
+    required this.settings,
+    required this.onSettingsChanged,
   });
 
   @override
@@ -549,6 +563,8 @@ class _SongListTile extends StatelessWidget {
               isFavorite: isFavorite,
               onToggleFavorite: onToggleFavorite,
               fontSize: fontSize,
+              settings: settings,
+              onSettingsChanged: onSettingsChanged,
             ),
           ),
         );

@@ -2,22 +2,26 @@ class AppSettings {
   bool showCustomSongs;
   String themeMode; // 'system', 'light', or 'dark'
   double fontSize; // Font size multiplier (0.8 to 1.5)
+  bool showGuitarTabs; // Show guitar tabs by default
 
   AppSettings({
     this.showCustomSongs = true,
     this.themeMode = 'system',
     this.fontSize = 1.0,
+    this.showGuitarTabs = false,
   });
 
   AppSettings copyWith({
     bool? showCustomSongs,
     String? themeMode,
     double? fontSize,
+    bool? showGuitarTabs,
   }) {
     return AppSettings(
       showCustomSongs: showCustomSongs ?? this.showCustomSongs,
       themeMode: themeMode ?? this.themeMode,
       fontSize: fontSize ?? this.fontSize,
+      showGuitarTabs: showGuitarTabs ?? this.showGuitarTabs,
     );
   }
 
@@ -27,6 +31,7 @@ class AppSettings {
       'showCustomSongs': showCustomSongs,
       'themeMode': themeMode,
       'fontSize': fontSize,
+      'showGuitarTabs': showGuitarTabs,
     };
   }
 
@@ -48,6 +53,7 @@ class AppSettings {
       showCustomSongs: json['showCustomSongs'] as bool? ?? true,
       themeMode: themeModeValue,
       fontSize: fontSizeValue,
+      showGuitarTabs: json['showGuitarTabs'] as bool? ?? false,
     );
   }
 }

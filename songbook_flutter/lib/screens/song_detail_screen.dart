@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/song.dart';
+import '../models/app_settings.dart';
 
 class SongDetailScreen extends StatefulWidget {
   final Song song;
@@ -11,6 +12,8 @@ class SongDetailScreen extends StatefulWidget {
   final bool isFavorite;
   final VoidCallback? onToggleFavorite;
   final double fontSize;
+  final AppSettings settings;
+  final Function(AppSettings)? onSettingsChanged;
 
   const SongDetailScreen({
     super.key,
@@ -20,6 +23,8 @@ class SongDetailScreen extends StatefulWidget {
     this.isFavorite = false,
     this.onToggleFavorite,
     this.fontSize = 1.0,
+    required this.settings,
+    this.onSettingsChanged,
   });
 
   @override
@@ -28,12 +33,23 @@ class SongDetailScreen extends StatefulWidget {
 
 class _SongDetailScreenState extends State<SongDetailScreen> {
   late bool _isFavorite;
-  bool _showGuitarTabs = false;
+  late bool _showGuitarTabs;
 
   @override
   void initState() {
     super.initState();
     _isFavorite = widget.isFavorite;
+    _showGuitarTabs = widget.settings.showGuitarTabs;
+  }
+
+  @override
+  void didUpdateWidget(SongDetailScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.settings.showGuitarTabs != widget.settings.showGuitarTabs) {
+      setState(() {
+        _showGuitarTabs = widget.settings.showGuitarTabs;
+      });
+    }
   }
 
   void _toggleFavorite() {
@@ -47,6 +63,10 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
     setState(() {
       _showGuitarTabs = !_showGuitarTabs;
     });
+    final updatedSettings = widget.settings.copyWith(
+      showGuitarTabs: _showGuitarTabs,
+    );
+    widget.onSettingsChanged?.call(updatedSettings);
   }
 
   void _confirmDelete(BuildContext context) {
