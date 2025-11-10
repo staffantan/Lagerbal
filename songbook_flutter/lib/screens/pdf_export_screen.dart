@@ -45,7 +45,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
           // Selected songs section (reorderable)
           if (selectedItems.isNotEmpty) ...[
             Container(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(8.0),
               color: Theme.of(context).colorScheme.primaryContainer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,11 +106,6 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
-                                Icons.drag_handle,
-                                color: Theme.of(context).colorScheme.secondary,
-                              ),
-                              const SizedBox(width: 8),
-                              Icon(
                                 Icons.space_bar,
                                 color: Theme.of(context).colorScheme.onSecondaryContainer,
                               ),
@@ -147,11 +142,6 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                           leading: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(
-                                Icons.drag_handle,
-                                color: Theme.of(context).colorScheme.secondary,
-                              ),
-                              const SizedBox(width: 8),
                               CircleAvatar(
                                 backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
                                 child: Text(
@@ -211,7 +201,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(6.0),
                   child: Row(
                     children: [
                       Text(
