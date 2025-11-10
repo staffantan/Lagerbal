@@ -39,8 +39,7 @@ if($data->Title){
 echo "<a href='sangbok://?sang=".$_REQUEST['data']."'>importera s&aring;ng till s&aring;ngboksappen</a>";
 ?>
 
-<img src="graphic.png" style="display:inline;" />
-<p><a href="https://play.google.com/store/apps/details?id=se.ahlvik.sangbok2">h&auml;mta appen fr&aring;n google play</a></p>
+<p><a href="https://www.ahlvik.se/apk/get_apk.php?filename=sangbok.apk">h&auml;mta appen</a></p>
 </div>
 </body>
 </html>
