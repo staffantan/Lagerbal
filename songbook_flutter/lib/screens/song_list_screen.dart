@@ -351,11 +351,15 @@ class _SongListScreenState extends State<SongListScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset(
-          'logo.png', 
+          'icon.png', 
           height: 72
         ),
         title: const Text('Lägerbål'),
-        titleSpacing: 0,
+        titleTextStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Theme.of(context).colorScheme.primary,
+        ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
           IconButton(
