@@ -27,6 +27,7 @@ class SongDetailScreen extends StatefulWidget {
 
 class _SongDetailScreenState extends State<SongDetailScreen> {
   late bool _isFavorite;
+  bool _showGuitarTabs = false;
 
   @override
   void initState() {
@@ -39,6 +40,12 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
       _isFavorite = !_isFavorite;
     });
     widget.onToggleFavorite?.call();
+  }
+
+  void _toggleGuitarTabs() {
+    setState(() {
+      _showGuitarTabs = !_showGuitarTabs;
+    });
   }
 
   void _confirmDelete(BuildContext context) {
@@ -113,6 +120,13 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
         title: Text(widget.song.title),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
+          // Guitar tabs toggle button (only if tabs are available)
+          if (widget.song.guitarTabs.isNotEmpty)
+            IconButton(
+              icon: Icon(_showGuitarTabs ? Icons.music_note : Icons.music_note_outlined),
+              tooltip: _showGuitarTabs ? 'Dölj gitarrtabulatur' : 'Visa gitarrtabulatur',
+              onPressed: _toggleGuitarTabs,
+            ),
           // Favorite button (always visible)
           IconButton(
             icon: Icon(_isFavorite ? Icons.star : Icons.star_border),
@@ -162,6 +176,33 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
               value: widget.song.author,
             ),
             const SizedBox(height: 24),
+
+            // Guitar Tabs (if available and toggled on)
+            if (_showGuitarTabs && widget.song.guitarTabs.isNotEmpty) ...[
+              Text(
+                'Gitarrtabulatur:',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(height: 8),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Text(
+                  widget.song.guitarTabs,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        height: 1.5,
+                        fontFamily: 'monospace',
+                      ),
+                ),
+              ),
+              const SizedBox(height: 24),
+            ],
 
             // Text
             Container(

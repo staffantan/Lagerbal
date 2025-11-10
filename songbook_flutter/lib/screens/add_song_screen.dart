@@ -15,6 +15,7 @@ class _AddSongScreenState extends State<AddSongScreen> {
   final _melodyController = TextEditingController();
   final _lyricsController = TextEditingController();
   final _aboutController = TextEditingController();
+  final _guitarTabsController = TextEditingController();
 
   @override
   void dispose() {
@@ -23,6 +24,7 @@ class _AddSongScreenState extends State<AddSongScreen> {
     _melodyController.dispose();
     _lyricsController.dispose();
     _aboutController.dispose();
+    _guitarTabsController.dispose();
     super.dispose();
   }
 
@@ -34,6 +36,7 @@ class _AddSongScreenState extends State<AddSongScreen> {
         melody: _melodyController.text.trim(),
         lyrics: _lyricsController.text.trim(),
         about: _aboutController.text.trim(),
+        guitarTabs: _guitarTabsController.text.trim(),
       );
       Navigator.pop(context, newSong);
     }
@@ -137,6 +140,21 @@ class _AddSongScreenState extends State<AddSongScreen> {
               ),
               maxLines: 3,
               textCapitalization: TextCapitalization.sentences,
+            ),
+            const SizedBox(height: 16),
+
+            // Guitar Tabs
+            TextFormField(
+              controller: _guitarTabsController,
+              decoration: const InputDecoration(
+                labelText: 'Gitarrtabulatur',
+                hintText: 'Ange gitarrtabulatur/ackord',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.music_note),
+                alignLabelWithHint: true,
+              ),
+              maxLines: 8,
+              style: const TextStyle(fontFamily: 'monospace'),
             ),
             const SizedBox(height: 24),
 

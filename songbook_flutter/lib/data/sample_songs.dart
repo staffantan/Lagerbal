@@ -412,6 +412,10 @@ och blickar mot en ny.
 Då våra löften segra skall
 och större tider gry.''',
         about: '',
+        guitarTabs: '''C/G Am Dm G7 C C7 F
+ C Am Dm G7 Am F G7 C
+ C Am Dm G7 C C7 F
+ F#° C Am Dm G7 Am F G7 C''',
       ),
       
       Song(

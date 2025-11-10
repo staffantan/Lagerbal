@@ -4,6 +4,7 @@ class Song {
   final String melody;
   final String lyrics;
   final String about;
+  final String guitarTabs;
 
   const Song({
     required this.title,
@@ -11,6 +12,7 @@ class Song {
     required this.melody,
     required this.lyrics,
     required this.about,
+    this.guitarTabs = '',
   });
 
   // Convert Song to JSON
@@ -21,6 +23,7 @@ class Song {
       'melody': melody,
       'lyrics': lyrics,
       'about': about,
+      'guitarTabs': guitarTabs,
     };
   }
 
@@ -32,6 +35,7 @@ class Song {
       melody: json['melody'] as String,
       lyrics: json['lyrics'] as String,
       about: json['about'] as String,
+      guitarTabs: json['guitarTabs'] as String? ?? '',
     );
   }
 }
