@@ -413,18 +413,7 @@ Då våra löften segra skall
 och större tider gry.''',
         about: '',
       ),
-      Song(
-        title: 'Pizza Hut',
-        author: '',
-        melody: '',
-        lyrics: '''A Pizza Hut, a Pizza Hut, Kentucky Fried Chicken and a Pizza Hut
-A Pizza Hut, a Pizza Hut, Kentucky Fried Chicken and a Pizza Hut
-Mc Donalds, Mc Donalds, Kentucky Fried Chicken and a Pizza Hut
-Mc Donalds, Mc Donalds, Kentucky Fried Chicken and a Pizza Hut
-
-A Pizza Hut, a Pizza ...''',
-        about: 'Låten upprepas fortare och fortare',
-      ),
+      
       Song(
         title: 'Skillemandinke',
         author: '',
@@ -1389,6 +1378,19 @@ Next morning my neighbour was dead
 
 Bring back, bring back…''',
         about: '',
+      ),
+      Song(
+        title: 'Pizza Hut',
+        author: '',
+        melody: '',
+        lyrics:
+            '''A Pizza Hut, a Pizza Hut, Kentucky Fried Chicken and a Pizza Hut
+A Pizza Hut, a Pizza Hut, Kentucky Fried Chicken and a Pizza Hut
+Mc Donalds, Mc Donalds, Kentucky Fried Chicken and a Pizza Hut
+Mc Donalds, Mc Donalds, Kentucky Fried Chicken and a Pizza Hut
+
+A Pizza Hut, a Pizza ...''',
+        about: 'Låten upprepas fortare och fortare',
       ),
       Song(
         title: 'Auld Lang Syne',

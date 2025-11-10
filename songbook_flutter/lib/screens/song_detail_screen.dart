@@ -179,6 +179,32 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
                     ),
               ),
             ),
+            
+            // About information (if available)
+            if (widget.song.about.isNotEmpty) ...[
+              const SizedBox(height: 24),
+              Text(
+                'Om låten:',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(height: 8),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Text(
+                  widget.song.about,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        height: 1.5,
+                      ),
+                ),
+              ),
+            ],
           ],
         ),
       ),
