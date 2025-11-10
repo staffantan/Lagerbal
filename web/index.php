@@ -39,7 +39,7 @@ if($data->Title){
 echo "<a href='sangbok://?sang=".$_REQUEST['data']."'>importera s&aring;ng till s&aring;ngboksappen</a>";
 ?>
 
-<p><a href="https://www.ahlvik.se/apk/get_apk.php?filename=sangbok.apk">h&auml;mta appen</a></p>
+<p><a href="https://github.com/staffantan/Lagerbal/releases">h&auml;mta appen</a></p>
 </div>
 </body>
 </html>
