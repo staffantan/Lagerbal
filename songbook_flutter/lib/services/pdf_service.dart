@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -6,7 +7,35 @@ import 'package:path_provider/path_provider.dart';
 import '../models/song.dart';
 
 class PdfService {
+  // Generate PDF and return bytes for preview
+  static Future<Uint8List> generatePdf(List<Song> songs) async {
+    final pdf = await _buildPdfDocument(songs);
+    return pdf.save();
+  }
+  
+  // Generate and open PDF directly (legacy method)
   static Future<void> generateAndOpenPdf(List<Song> songs) async {
+    final bytes = await generatePdf(songs);
+    
+    if (Platform.isAndroid || Platform.isIOS) {
+      // On mobile, use the printing package to show preview/share
+      await Printing.layoutPdf(
+        onLayout: (format) async => bytes,
+      );
+    } else {
+      // On desktop, save to file and open
+      final dir = await getApplicationDocumentsDirectory();
+      final file = File('${dir.path}/sangbok_${DateTime.now().millisecondsSinceEpoch}.pdf');
+      await file.writeAsBytes(bytes);
+      
+      // Open the PDF
+      await Printing.layoutPdf(
+        onLayout: (format) async => bytes,
+      );
+    }
+  }
+
+  static Future<pw.Document> _buildPdfDocument(List<Song> songs) async {
     final pdf = pw.Document();
 
     // Load a font that supports Swedish characters
@@ -178,24 +207,7 @@ class PdfService {
       ),
     );
 
-    // Save and open the PDF
-    if (Platform.isAndroid || Platform.isIOS) {
-      // On mobile, use the printing package to show preview/share
-      await Printing.layoutPdf(
-        onLayout: (format) async => pdf.save(),
-      );
-    } else {
-      // On desktop, save to file and open
-      final bytes = await pdf.save();
-      final dir = await getApplicationDocumentsDirectory();
-      final file = File('${dir.path}/sangbok_${DateTime.now().millisecondsSinceEpoch}.pdf');
-      await file.writeAsBytes(bytes);
-      
-      // Open the PDF
-      await Printing.layoutPdf(
-        onLayout: (format) async => bytes,
-      );
-    }
+    return pdf;
   }
 
   static List<pw.Widget> _buildSongWidgets(

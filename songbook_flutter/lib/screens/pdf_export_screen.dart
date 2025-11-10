@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:printing/printing.dart';
 import '../models/song.dart';
 import '../models/category.dart';
 import '../services/pdf_service.dart';
@@ -263,13 +264,52 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
     });
 
     try {
-      await PdfService.generateAndOpenPdf(selectedSongs);
+      // Generate PDF and get the bytes
+      final pdfBytes = await PdfService.generatePdf(selectedSongs);
       
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('PDF skapad!'),
-            backgroundColor: Colors.green,
+        setState(() {
+          _isGenerating = false;
+        });
+        
+        // Show preview
+        await Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Scaffold(
+              appBar: AppBar(
+                title: const Text('PDF Förhandsvisning'),
+                actions: [
+                  IconButton(
+                    icon: const Icon(Icons.share),
+                    tooltip: 'Dela',
+                    onPressed: () async {
+                      await Printing.sharePdf(
+                        bytes: pdfBytes,
+                        filename: 'sangbok_${DateTime.now().millisecondsSinceEpoch}.pdf',
+                      );
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.print),
+                    tooltip: 'Skriv ut',
+                    onPressed: () async {
+                      await Printing.layoutPdf(
+                        onLayout: (format) async => pdfBytes,
+                      );
+                    },
+                  ),
+                ],
+              ),
+              body: PdfPreview(
+                build: (format) async => pdfBytes,
+                allowSharing: false,
+                allowPrinting: false,
+                canChangePageFormat: false,
+                canChangeOrientation: false,
+                canDebug: false,
+              ),
+            ),
           ),
         );
       }
