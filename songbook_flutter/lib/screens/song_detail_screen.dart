@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../models/song.dart';
 
 class SongDetailScreen extends StatefulWidget {
@@ -177,34 +178,7 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Guitar Tabs (if available and toggled on)
-            if (_showGuitarTabs && widget.song.guitarTabs.isNotEmpty) ...[
-              Text(
-                'Gitarrtabulatur:',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-              const SizedBox(height: 8),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Text(
-                  widget.song.guitarTabs,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        height: 1.5,
-                        fontFamily: 'monospace',
-                      ),
-                ),
-              ),
-              const SizedBox(height: 24),
-            ],
-
-            // Text
+            // Text with optional inline guitar tabs
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16.0),
@@ -212,13 +186,15 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              child: Text(
-                widget.song.lyrics,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      height: 1.5,
-                      fontSize: (Theme.of(context).textTheme.bodyLarge?.fontSize ?? 16) * widget.fontSize,
+              child: _showGuitarTabs && widget.song.guitarTabs.isNotEmpty
+                  ? _buildLyricsWithTabs(context)
+                  : Text(
+                      widget.song.lyrics,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            height: 1.5,
+                            fontSize: (Theme.of(context).textTheme.bodyLarge?.fontSize ?? 16) * widget.fontSize,
+                          ),
                     ),
-              ),
             ),
             
             // About information (if available)
@@ -250,6 +226,56 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
         ),
       ),
       ),
+    );
+  }
+
+  Widget _buildLyricsWithTabs(BuildContext context) {
+    final tabLines = widget.song.guitarTabs.split('\n');
+    final lyricLines = widget.song.lyrics.split('\n');
+    
+    final List<Widget> combinedLines = [];
+    
+    for (int i = 0; i < lyricLines.length; i++) {
+      // Add guitar tab line if available
+      if (i < tabLines.length && tabLines[i].trim().isNotEmpty) {
+        combinedLines.add(
+          Text(
+            tabLines[i],
+            style: GoogleFonts.robotoMono(
+                  textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    height: 1.5,
+                    fontSize:
+                        (Theme.of(context).textTheme.bodyMedium?.fontSize ?? 16) *
+                        widget.fontSize,
+                  ),
+                ),
+          ),
+        );
+      }
+      
+      // Add lyric line
+      combinedLines.add(
+        Text(
+          lyricLines[i],
+          style: GoogleFonts.robotoMono(
+                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  height: 1.5,
+                  fontSize: (Theme.of(context).textTheme.bodyMedium?.fontSize ?? 16) * widget.fontSize,
+                ),
+              ),
+        ),
+      );
+      
+      // Add spacing between verses (when there's an empty line in lyrics)
+      if (i < lyricLines.length - 1 && lyricLines[i].trim().isEmpty) {
+        combinedLines.add(const SizedBox(height: 8));
+      }
+    }
+    
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: combinedLines,
     );
   }
 }

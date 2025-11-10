@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../models/song.dart';
 
 class AddSongScreen extends StatefulWidget {
@@ -154,7 +155,7 @@ class _AddSongScreenState extends State<AddSongScreen> {
                 alignLabelWithHint: true,
               ),
               maxLines: 8,
-              style: const TextStyle(fontFamily: 'monospace'),
+              style: GoogleFonts.robotoMono(),
             ),
             const SizedBox(height: 24),
 

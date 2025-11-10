@@ -1,6 +1,8 @@
 ﻿import '../models/category.dart';
 import '../models/song.dart';
 
+// find tabs here: https://www.ultimate-guitar.com/explore
+
 final List<Category> sampleSongbook = [
   Category(
     name: 'Scoutvisor',
@@ -104,6 +106,15 @@ På läger, på läger, på läger sjunga vi.
 På läger, på läger, på läger vi vilja förbli (utan
 paraply).''',
         about: '',
+        guitarTabs: '''    G                  Am
+    D           G
+    G                Am
+     D            G
+ 
+    G             C
+    Am            D
+    G             C
+    Am            D''',
       ),
       Song(
         title: 'Vässarövisan',
@@ -333,15 +344,24 @@ Jag kan ro utan åror.
 Men ej skiljas från vännen min,
 Utan att fälla tårar.''',
         about: '',
+        guitarTabs: ''' Em            Bm
+ Am      Em     Bm
+ C        Em          Bm    Em
+ Bsus2    F    Bm
+ 
+ Em            Bm
+  Am     Em     Bm
+ C      Em          Bm     Em
+ Bsus2    F      Bm'''
       ),
       Song(
         title: 'Kumbaya',
         author: '',
         melody: '',
-        lyrics: '''Kumbayah my Lord, kumbayah
-Kumbayah my Lord, kumbayah.
-Kumbayah my Lord, kum ba yah.
-Oh Lord, kumba yah.
+        lyrics: '''Kum-ba-ya my Lord, kum-ba-ya
+Kum-ba-ya my Lord, kum-ba-ya
+Kum-ba-ya my Lord, kum-ba-ya
+Oh Lord, kum-ba-ya
 
 Someone's crying Lord, kum ba yah ...
 
@@ -349,6 +369,10 @@ Someone's praying Lord, kum ba yah ...
 
 Someone's singing Lord, kum ba yah ...''',
         about: '',
+        guitarTabs: '''C                 F      C
+C                  F      G
+C                   F      C
+F   C     G     C'''
       ),
       
       Song(
@@ -361,6 +385,10 @@ I like the campfire, When all the lights are low,
 Boom di-a-dah, boom di-a-dah,
 Boom di-a-dah, boom di-a-dah…''',
         about: '',
+        guitarTabs: '''C          Am        Dm             G7
+C          Am        Dm             G7
+C          Am        Dm             G7
+C          Am        Dm             G7'''
       ),
       Song(
         title: 'Jag gillar blommor',
@@ -403,19 +431,25 @@ all over me to stay''',
         title: 'Nu lägerelden brunnit ner',
         author: '',
         melody: '',
-        lyrics: '''Nu lägerelden brunnit ner
-och dagen nått sitt slut.
+        lyrics: '''När lägerelden brunnit ner
+Och dagen nått sitt slut
 Men allt det vackra som vi känt
-kan aldrig plånas ut.
+Kan aldrig plånas ut
+ 
 Vi tacka för den tid som gått
-och blickar mot en ny.
+Och blickar mot en ny
 Då våra löften segra skall
-och större tider gry.''',
+Och dagen åter gry''',
         about: '',
-        guitarTabs: '''C/G Am Dm G7 C C7 F
- C Am Dm G7 Am F G7 C
- C Am Dm G7 C C7 F
- F#° C Am Dm G7 Am F G7 C''',
+        guitarTabs: '''    C      Am  Dm      G7
+    C     C7        F     Dm
+    C          Am   Dm     G7
+    Am     G      C
+
+   C         Am  Dm      G7
+    C       C7     F   Dm
+   C       Am  Dm    G7
+    Am    G    C''',
       ),
       
       Song(
@@ -445,14 +479,15 @@ I love you''',
 Jag aldrig drömt förut
 Jag drömde det var fred på jord
 Och alla krig var slut
+Jag drömde om en jättesal 
+där statsmän satt i rad
+Så skrev dom på ett konvolut 
+och reste sig och sa
 
-Jag drömde om en jättesal där statsmän satt i rad
-Så skrev dom på ett konvolut och reste sig och sa
 Det finns inga soldater mer
 det finns inga gevär
 och ingen känner längre till
 det ordet militär
-
 På gatorna gick folk omkring
 Och drog från krog till krog
 Och alla drack varandra till
@@ -460,8 +495,31 @@ Och dansade och log
 
 I natt jag drömde något som
 Jag aldrig drömt förut
-Jag drömde det var fred på jord och alla krig var slut''',
+Jag drömde det var fred på jord 
+och alla krig var slut''',
         about: '',
+        guitarTabs: '''  G
+    C               G
+    D              G
+    Am   D        G
+    C            G
+    D                G
+   C                G    Em
+    Am    D       G 
+ 
+    G
+    C            G
+    D            G
+    Am   D     G
+   C            G
+    D                   G
+    C             G     Em
+    Am    D     G 
+ 
+  G
+    C               G
+    D              G
+    Am     D       G'''
       ),
       Song(
         title: 'Moster Ingeborg',
