@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:printing/printing.dart';
 import '../models/song.dart';
 import '../models/category.dart';
+import '../models/pdf_export_item.dart';
 import '../services/pdf_service.dart';
 
 class PdfExportScreen extends StatefulWidget {
@@ -17,8 +18,9 @@ class PdfExportScreen extends StatefulWidget {
 }
 
 class _PdfExportScreenState extends State<PdfExportScreen> {
-  List<Song> selectedSongs = [];
+  List<PdfExportItem> selectedItems = [];
   bool _isGenerating = false;
+  int _spacerCounter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +28,13 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
       appBar: AppBar(
         title: const Text('Exportera till PDF'),
         actions: [
-          if (selectedSongs.isNotEmpty)
+          if (selectedItems.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.clear_all),
               tooltip: 'Rensa alla',
               onPressed: () {
                 setState(() {
-                  selectedSongs.clear();
+                  selectedItems.clear();
                 });
               },
             ),
@@ -41,7 +43,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
       body: Column(
         children: [
           // Selected songs section (reorderable)
-          if (selectedSongs.isNotEmpty) ...[
+          if (selectedItems.isNotEmpty) ...[
             Container(
               padding: const EdgeInsets.all(16.0),
               color: Theme.of(context).colorScheme.primaryContainer,
@@ -56,7 +58,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Valda sånger (${selectedSongs.length})',
+                        'Valda element (${selectedItems.length})',
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: Theme.of(context).colorScheme.onPrimaryContainer,
                           fontWeight: FontWeight.bold,
@@ -78,57 +80,124 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
               flex: 2,
               child: ReorderableListView.builder(
                 padding: const EdgeInsets.all(8.0),
-                itemCount: selectedSongs.length,
+                itemCount: selectedItems.length,
                 onReorder: (oldIndex, newIndex) {
                   setState(() {
                     if (newIndex > oldIndex) {
                       newIndex -= 1;
                     }
-                    final song = selectedSongs.removeAt(oldIndex);
-                    selectedSongs.insert(newIndex, song);
+                    final item = selectedItems.removeAt(oldIndex);
+                    selectedItems.insert(newIndex, item);
                   });
                 },
                 itemBuilder: (context, index) {
-                  final song = selectedSongs[index];
-                  return ReorderableDragStartListener(
-                    key: ValueKey(song.title + index.toString()),
-                    index: index,
-                    child: Card(
-                      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      child: ListTile(
-                        leading: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.drag_handle,
-                              color: Theme.of(context).colorScheme.secondary,
-                            ),
-                            const SizedBox(width: 8),
-                            CircleAvatar(
-                              backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-                              child: Text(
-                                '${index + 1}',
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.onSecondaryContainer,
-                                ),
+                  final item = selectedItems[index];
+                  
+                  if (item is SpacerItem) {
+                    // Spacer item UI
+                    return ReorderableDragStartListener(
+                      key: ValueKey(item.uniqueId),
+                      index: index,
+                      child: Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        color: Theme.of(context).colorScheme.secondaryContainer.withValues(alpha: 0.3),
+                        child: ListTile(
+                          leading: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.drag_handle,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
+                              const SizedBox(width: 8),
+                              Icon(
+                                Icons.space_bar,
+                                color: Theme.of(context).colorScheme.onSecondaryContainer,
+                              ),
+                            ],
+                          ),
+                          title: Text(
+                            'Mellanrum',
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Theme.of(context).colorScheme.onSecondaryContainer,
                             ),
-                          ],
-                        ),
-                        title: Text(song.title),
-                        subtitle: song.author.isNotEmpty ? Text(song.author) : null,
-                        trailing: IconButton(
-                          icon: const Icon(Icons.remove_circle_outline),
-                          color: Theme.of(context).colorScheme.error,
-                          onPressed: () {
-                            setState(() {
-                              selectedSongs.removeAt(index);
-                            });
-                          },
+                          ),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.remove_circle_outline),
+                            color: Theme.of(context).colorScheme.error,
+                            onPressed: () {
+                              setState(() {
+                                selectedItems.removeAt(index);
+                              });
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                  );
+                    );
+                  } else if (item is SongItem) {
+                    // Song item UI
+                    final song = item.song;
+                    return ReorderableDragStartListener(
+                      key: ValueKey(item.uniqueId),
+                      index: index,
+                      child: Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        child: ListTile(
+                          leading: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.drag_handle,
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
+                              const SizedBox(width: 8),
+                              CircleAvatar(
+                                backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+                                child: Text(
+                                  '${_getSongNumber(index)}',
+                                  style: TextStyle(
+                                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          title: Text(song.title),
+                          subtitle: song.author.isNotEmpty ? Text(song.author) : null,
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.space_bar),
+                                tooltip: 'Lägg till mellanrum innan',
+                                color: Theme.of(context).colorScheme.primary,
+                                onPressed: () {
+                                  setState(() {
+                                    selectedItems.insert(
+                                      index,
+                                      SpacerItem('${DateTime.now().millisecondsSinceEpoch}_${_spacerCounter++}'),
+                                    );
+                                  });
+                                },
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.remove_circle_outline),
+                                color: Theme.of(context).colorScheme.error,
+                                onPressed: () {
+                                  setState(() {
+                                    selectedItems.removeAt(index);
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  
+                  return const SizedBox.shrink();
                 },
               ),
             ),
@@ -186,7 +255,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                             ),
                           ),
                           ...category.songs.map((song) {
-                            final isSelected = selectedSongs.any((s) => s.title == song.title);
+                            final isSelected = selectedItems.whereType<SongItem>().any((item) => item.song.title == song.title);
                             return Card(
                               margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                               color: isSelected 
@@ -204,9 +273,9 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                                 onTap: () {
                                   setState(() {
                                     if (isSelected) {
-                                      selectedSongs.removeWhere((s) => s.title == song.title);
+                                      selectedItems.removeWhere((item) => item is SongItem && item.song.title == song.title);
                                     } else {
-                                      selectedSongs.add(song);
+                                      selectedItems.add(SongItem(song));
                                     }
                                   });
                                 },
@@ -224,7 +293,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
           ),
         ],
       ),
-      floatingActionButton: selectedSongs.isEmpty
+      floatingActionButton: selectedItems.isEmpty
           ? null
           : FloatingActionButton.extended(
               onPressed: _isGenerating ? null : _generatePdf,
@@ -240,24 +309,37 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
     );
   }
 
+  // Helper method to get song number (excluding spacers)
+  int _getSongNumber(int index) {
+    int songCount = 0;
+    for (int i = 0; i <= index; i++) {
+      if (selectedItems[i] is SongItem) {
+        songCount++;
+      }
+    }
+    return songCount;
+  }
+
   void _selectAllSongs() {
     setState(() {
-      selectedSongs.clear();
+      selectedItems.clear();
       // Add all songs from all categories
       for (final category in widget.songbook) {
-        selectedSongs.addAll(category.songs);
+        for (final song in category.songs) {
+          selectedItems.add(SongItem(song));
+        }
       }
     });
   }
 
   void _deselectAllSongs() {
     setState(() {
-      selectedSongs.clear();
+      selectedItems.clear();
     });
   }
 
   Future<void> _generatePdf() async {
-    if (selectedSongs.isEmpty) return;
+    if (selectedItems.isEmpty) return;
 
     setState(() {
       _isGenerating = true;
@@ -265,7 +347,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
 
     try {
       // Generate PDF and get the bytes
-      final pdfBytes = await PdfService.generatePdf(selectedSongs);
+      final pdfBytes = await PdfService.generatePdf(selectedItems);
       
       if (mounted) {
         setState(() {

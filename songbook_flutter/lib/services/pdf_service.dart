@@ -5,17 +5,18 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:path_provider/path_provider.dart';
 import '../models/song.dart';
+import '../models/pdf_export_item.dart';
 
 class PdfService {
   // Generate PDF and return bytes for preview
-  static Future<Uint8List> generatePdf(List<Song> songs) async {
-    final pdf = await _buildPdfDocument(songs);
+  static Future<Uint8List> generatePdf(List<PdfExportItem> items) async {
+    final pdf = await _buildPdfDocument(items);
     return pdf.save();
   }
   
   // Generate and open PDF directly (legacy method)
-  static Future<void> generateAndOpenPdf(List<Song> songs) async {
-    final bytes = await generatePdf(songs);
+  static Future<void> generateAndOpenPdf(List<PdfExportItem> items) async {
+    final bytes = await generatePdf(items);
     
     if (Platform.isAndroid || Platform.isIOS) {
       // On mobile, use the printing package to show preview/share
@@ -35,8 +36,11 @@ class PdfService {
     }
   }
 
-  static Future<pw.Document> _buildPdfDocument(List<Song> songs) async {
+  static Future<pw.Document> _buildPdfDocument(List<PdfExportItem> items) async {
     final pdf = pw.Document();
+
+    // Filter out only songs for cover page and TOC
+    final songs = items.whereType<SongItem>().map((item) => item.song).toList();
 
     // Load a font that supports Swedish characters
     final font = await PdfGoogleFonts.robotoRegular();
@@ -149,53 +153,64 @@ class PdfService {
     // Create all song widgets in a single column with smart page breaks
     final allSongWidgets = <pw.Widget>[];
     
-    for (var i = 0; i < songs.length; i++) {
-      final song = songs[i];
+    int songNumber = 1;
+    for (var i = 0; i < items.length; i++) {
+      final item = items[i];
       
-      // Calculate song height estimate
-      double songHeight = 27 + 15; // Title + spacing
-      
-      if (song.author.isNotEmpty || song.melody.isNotEmpty) {
-        songHeight += 22 + 15; // Metadata + spacing
-      }
-      
-      // Estimate lyrics height
-      final lyricLines = song.lyrics.split('\n');
-      for (var line in lyricLines) {
-        if (line.isEmpty) {
-          songHeight += 20; // Empty line spacing
-        } else {
-          songHeight += 25; // Text line (22pt font + ~3pt spacing)
-        }
-      }
-      
-      // Calculate 20% threshold for page break decision
-      final threshold = songHeight * 0.2;
-      
-      // Add divider and potential page break before song (except first)
-      if (i > 0) {
-        allSongWidgets.add(pw.SizedBox(height: 20));
-        allSongWidgets.add(pw.Divider(thickness: 1, color: PdfColors.grey400));
-        allSongWidgets.add(pw.SizedBox(height: 20));
+      if (item is SpacerItem) {
+        // Add spacer - force a page break
+        allSongWidgets.add(pw.SizedBox(height: 50));
+        allSongWidgets.add(pw.NewPage());
+      } else if (item is SongItem) {
+        final song = item.song;
         
-        // Add NewPage widget with threshold - forces new page if insufficient space
-        allSongWidgets.add(
-          pw.Container(
-            height: threshold,
-            child: pw.NewPage(),
-          ),
-        );
+        // Calculate song height estimate
+        double songHeight = 27 + 15; // Title + spacing
+        
+        if (song.author.isNotEmpty || song.melody.isNotEmpty) {
+          songHeight += 22 + 15; // Metadata + spacing
+        }
+        
+        // Estimate lyrics height
+        final lyricLines = song.lyrics.split('\n');
+        for (var line in lyricLines) {
+          if (line.isEmpty) {
+            songHeight += 20; // Empty line spacing
+          } else {
+            songHeight += 25; // Text line (22pt font + ~3pt spacing)
+          }
+        }
+        
+        // Calculate 20% threshold for page break decision
+        final threshold = songHeight * 0.2;
+        
+        // Add divider and potential page break before song (except first song)
+        if (songNumber > 1) {
+          allSongWidgets.add(pw.SizedBox(height: 20));
+          allSongWidgets.add(pw.Divider(thickness: 1, color: PdfColors.grey400));
+          allSongWidgets.add(pw.SizedBox(height: 20));
+          
+          // Add NewPage widget with threshold - forces new page if insufficient space
+          allSongWidgets.add(
+            pw.Container(
+              height: threshold,
+              child: pw.NewPage(),
+            ),
+          );
+        }
+        
+        // Add song widgets
+        allSongWidgets.addAll(_buildSongWidgets(
+          song,
+          songNumber,
+          songs.length,
+          font,
+          boldFont,
+          monoFont,
+        ));
+        
+        songNumber++;
       }
-      
-      // Add song widgets
-      allSongWidgets.addAll(_buildSongWidgets(
-        song,
-        i + 1,
-        songs.length,
-        font,
-        boldFont,
-        monoFont,
-      ));
     }
     
     // Create pages with single column layout that maximizes page usage
