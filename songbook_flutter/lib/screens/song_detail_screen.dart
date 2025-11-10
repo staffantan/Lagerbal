@@ -185,27 +185,27 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
             const SizedBox(height: 16),
             
             // Melodi
-            _InfoRow(
-              label: 'Melodi:',
-              value: widget.song.melody,
-            ),
-            const SizedBox(height: 8),
+            if (widget.song.melody.isNotEmpty) ...[
+              _InfoRow(
+                label: 'Melodi:',
+                value: widget.song.melody,
+              ),
+              const SizedBox(height: 8),
+            ],
 
             // Författare
-            _InfoRow(
-              label: 'Författare:',
-              value: widget.song.author,
-            ),
-            const SizedBox(height: 24),
+            if (widget.song.author.isNotEmpty) ...[
+              _InfoRow(
+                label: 'Författare:',
+                value: widget.song.author,
+              ),
+              const SizedBox(height: 24),
+            ],
 
             // Text with optional inline guitar tabs
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
               child: _showGuitarTabs && widget.song.guitarTabs.isNotEmpty
                   ? _buildLyricsWithTabs(context)
                   : Text(
