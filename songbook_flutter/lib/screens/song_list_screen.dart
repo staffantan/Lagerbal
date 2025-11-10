@@ -266,13 +266,7 @@ class _SongListScreenState extends State<SongListScreen> {
 
   List<Map<String, dynamic>> _getFilteredSongs() {
     // Start with all sample categories
-    final categoriesToShow = sampleSongbook.where((category) {
-      // Filter out Ekivoka if showAdultSongs is false
-      if (!widget.settings.showAdultSongs && category.name == 'Ekivoka') {
-        return false;
-      }
-      return true;
-    }).toList();
+    final categoriesToShow = sampleSongbook.toList();
 
     // Collect all favorite songs from all categories
     final favoriteSongsList = <Song>[];

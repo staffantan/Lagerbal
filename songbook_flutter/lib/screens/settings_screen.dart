@@ -119,23 +119,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SizedBox(height: 8),
 
-          // Show Adult Songs
-          Card(
-            child: SwitchListTile(
-              title: const Text('Visa ekivoka låtar'),
-              subtitle: const Text('Visa låtar i ekivoka kategorin'),
-              secondary: const Icon(Icons.warning_amber),
-              value: widget.settings.showAdultSongs,
-              onChanged: (value) {
-                final updatedSettings = widget.settings.copyWith(
-                  showAdultSongs: value,
-                );
-                widget.onSettingsChanged(updatedSettings);
-              },
-            ),
-          ),
-          const SizedBox(height: 8),
-
           // Show Custom Songs
           Card(
             child: SwitchListTile(
