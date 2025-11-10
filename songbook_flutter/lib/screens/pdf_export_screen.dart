@@ -89,39 +89,42 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                 },
                 itemBuilder: (context, index) {
                   final song = selectedSongs[index];
-                  return Card(
+                  return ReorderableDragStartListener(
                     key: ValueKey(song.title + index.toString()),
-                    margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: ListTile(
-                      leading: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.drag_handle,
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
-                          const SizedBox(width: 8),
-                          CircleAvatar(
-                            backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-                            child: Text(
-                              '${index + 1}',
-                              style: TextStyle(
-                                color: Theme.of(context).colorScheme.onSecondaryContainer,
+                    index: index,
+                    child: Card(
+                      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      child: ListTile(
+                        leading: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.drag_handle,
+                              color: Theme.of(context).colorScheme.secondary,
+                            ),
+                            const SizedBox(width: 8),
+                            CircleAvatar(
+                              backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+                              child: Text(
+                                '${index + 1}',
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.onSecondaryContainer,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      title: Text(song.title),
-                      subtitle: song.author.isNotEmpty ? Text(song.author) : null,
-                      trailing: IconButton(
-                        icon: const Icon(Icons.remove_circle_outline),
-                        color: Theme.of(context).colorScheme.error,
-                        onPressed: () {
-                          setState(() {
-                            selectedSongs.removeAt(index);
-                          });
-                        },
+                          ],
+                        ),
+                        title: Text(song.title),
+                        subtitle: song.author.isNotEmpty ? Text(song.author) : null,
+                        trailing: IconButton(
+                          icon: const Icon(Icons.remove_circle_outline),
+                          color: Theme.of(context).colorScheme.error,
+                          onPressed: () {
+                            setState(() {
+                              selectedSongs.removeAt(index);
+                            });
+                          },
+                        ),
                       ),
                     ),
                   );
