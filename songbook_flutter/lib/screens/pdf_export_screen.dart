@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:printing/printing.dart';
+import 'package:path_provider/path_provider.dart';
 import '../models/song.dart';
 import '../models/category.dart';
 import '../models/pdf_export_item.dart';
@@ -355,12 +357,19 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                 title: const Text('PDF Förhandsvisning'),
                 actions: [
                   IconButton(
+                    icon: const Icon(Icons.save),
+                    tooltip: 'Spara',
+                    onPressed: () async {
+                      await _savePdfToFile(pdfBytes);
+                    },
+                  ),
+                  IconButton(
                     icon: const Icon(Icons.share),
                     tooltip: 'Dela',
                     onPressed: () async {
                       await Printing.sharePdf(
                         bytes: pdfBytes,
-                        filename: 'sangbok_${DateTime.now().millisecondsSinceEpoch}.pdf',
+                        filename: 'sangbok_${DateTime.now().toString().replaceAll(":", "-")}.pdf',
                       );
                     },
                   ),
@@ -401,6 +410,39 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
         setState(() {
           _isGenerating = false;
         });
+      }
+    }
+  }
+
+  Future<void> _savePdfToFile(List<int> pdfBytes) async {
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      final fileName = 'sangbok_${DateTime.now().toString().replaceAll(":", "-")}.pdf';
+      final file = File('${directory.path}/$fileName');
+      await file.writeAsBytes(pdfBytes);
+      
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('PDF sparad: ${file.path}'),
+            backgroundColor: Colors.green,
+            duration: const Duration(seconds: 4),
+            action: SnackBarAction(
+              label: 'OK',
+              textColor: Colors.white,
+              onPressed: () {},
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Fel vid sparande: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
       }
     }
   }
