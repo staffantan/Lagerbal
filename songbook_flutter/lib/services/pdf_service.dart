@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -50,13 +51,12 @@ class PdfService {
     // Load icon image
     pw.ImageProvider? iconImage;
     try {
-      final iconFile = File('icon.png');
-      if (await iconFile.exists()) {
-        final bytes = await iconFile.readAsBytes();
-        iconImage = pw.MemoryImage(bytes);
-      }
+      final ByteData data = await rootBundle.load('icon.png');
+      final Uint8List bytes = data.buffer.asUint8List();
+      iconImage = pw.MemoryImage(bytes);
     } catch (e) {
       // Icon not found, continue without it
+      print('Failed to load icon: $e');
     }
 
     // Add cover page

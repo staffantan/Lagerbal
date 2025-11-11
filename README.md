@@ -13,6 +13,8 @@ A Flutter songbook application for Swedish scout campfire songs and other popula
 - 🔗 **Deep Linking** - Support for `sangbok://` and `http://www.ahlvik.se/sangbok/` URL schemes
 - 💾 **Local Storage** - All favorites and custom songs are saved locally using SharedPreferences
 - 🎨 **Swedish Scout Colors** - Blue (#003D7A) and Yellow (#FECB00) theme matching Swedish Scouts
+- 🖨️ **PDF Export** - Export selected songs into a printable pdf
+- 🎸 **Guitar tabs** - Show guitar tabs for select songs
 
 ## Download
 
@@ -138,6 +140,14 @@ The app supports two URL schemes for opening songs:
 
 Songs shared via the share feature generate these links automatically.
 
+## PDF Export with Song Selection: 
+ - Added comprehensive PDF export feature accessible from Settings
+ - Select individual songs from all categories to include in export
+ - Reorderable song list with drag-and-drop functionality
+ - Live preview before saving or sharing
+ - Cover page with app icon, title "Lägerbålssånger", song count, and date
+ - Automatic table of contents with song numbers and authors
+
 ## Dependencies
 
 - **flutter**: SDK
@@ -145,6 +155,10 @@ Songs shared via the share feature generate these links automatically.
 - **shared_preferences**: ^2.5.3 - Local data persistence
 - **app_links**: ^6.3.3 - Deep linking support
 - **flutter_launcher_icons**: ^0.13.1 - Icon generation (dev)
+- **pdf**: ^3.11.1 - PDF document generation
+- **printing**: ^5.13.4 - PDF preview, sharing, and printing
+- **path_provider**: ^2.1.5 - File system access for saving PDFs
+- **google_fonts**: ^6.1.0 - Roboto fonts for PDF text rendering
 
 ## Development
 
@@ -216,5 +230,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Adjustable font size
 - Deep linking support
 
-
+### 1.1.1
+- Added guitar tabs
+- Added export to PDF
 
