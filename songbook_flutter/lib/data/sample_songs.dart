@@ -9,8 +9,6 @@ final List<Category> sampleSongbook = [
     songs: [
       Song(
         title: 'Lägerbålshumöret',
-        author: '',
-        melody: '',
         lyrics: '''Fram med lägerbålshumöret
 alla måste vara med.
 Dås i sinnet, rost i röret
@@ -19,36 +17,54 @@ Ni där borta - är ni klara?
 Jajamensan fattas bara!
 Ja, då sätter vi igång,
 med en glad och livad sång.''',
-        about: '',
+        
       ),
       Song(
         title: 'Scoutsången',
         author: 'J. Nordling',
         melody: 'S. Swedberg',
-        lyrics: '''Vi äro svenska scouter vi 
-och löftet som blev givet.
-En vårdag brusande och fri
-står på vår panna skrivet.
-För Gud för kung och fosterland 
-vart än i livet ställer.
-Var redo när det gäller
+        lyrics: '''Vi äro svenska scouter vi, 
+och löftet som blev givet. 
+En vårdag brusande och fri, 
+står  på vår panna skrivet: 
+För Gud, för kung och  fosterland, 
+var än dig  livet ställer.
+Var redo när det gäller, 
 med hjärta håg och hand.
 
-Var redo hör den stormens il
- som genom världen skrider.
-Håll spänd din sträng
-håll blank din pil
-nu är det knoppningstider.
-Nu knyta vi vårt syskonband
-i kärlek och i gamman.
-Nu smida vi det samman
-kring hela Sveriges land.''',
-        about: '',
+Var redo! Hör den stormens il, 
+som genom världen skrider.
+Håll spänd din sträng, 
+håll blank din pil 
+nu är det knoppningstider. 
+Nu knyta vi våra syskonband, 
+i kärlek och i gamman, 
+nu smida vi det samman 
+kring kring hela Sveriges land!''',
+        
+        guitarTabs: '''   A           D       A   
+    D       A       B7     
+E   A            Ab7    Dbm  
+      E7           B7       
+E    E7      A          E           
+    A       F#m   B7      
+E    E7           F#m     
+D   Bm      E7     A
+
+    A             D       A    
+    D      A      B7      
+E     A                 
+Ab7     Dbm        
+E7                 B7      
+E  E7      A     E           
+  A       F#m  B7      
+E  E7           F#m    
+ D    Bm      E7         A''',
       ),
       Song(
         title: 'Trampa på gasen',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Trampa på gasen och lätta ankar
 Sätt inunder pannan fyr (fem, sex)
 Med svällande segel och fyllda tankar
@@ -68,16 +84,14 @@ Trampa på bromsen och släpp ner ankar
 Sätt inunder pannan fyr (fem, sex)
 Med slokande segel och tomma tankar
 dra vi hem, dra vi hem, dra vi hem från äventyr.''',
-        about: '',
+        
       ),
       Song(
         title: 'Temperaturen',
-        author: '',
-        melody: '',
         lyrics: '''Temperaturen är hög uti kroppen
-närmare 40 än 37,5
+Närmare fyrtio än trettiosju (komma fem)
 Så ska det vara när ångan är oppe
-å så är fallet uti detta nu.
+Och så är fallet uti detta nu
 
 Vi rulla, vi rulla, vi rulla, vi rulla.
 Rulla, vi rulla, vi rulla tjohej
@@ -85,22 +99,35 @@ Vi rulla, vi rulla, vi rulla, vi rulla.
 Rulla, vi rulla, vi rulla tjohej.
 
 Temperaturen är hög uti kroppen
-närmare 40 än 37,6
+Närmare fyrtio än trettiosju (komma fem)
 Så ska det vara när ångan är oppe
-å så är fallet uti detta nu.
+Och så är fallet uti detta nu
+
 Framåt och bakåt …
+
 Temperaturen är hög uti kroppen
-närmare 40 än 37,7
+Närmare fyrtio än trettiosju (komma fem)
 Så ska det vara när ångan är oppe
-å så är fallet uti detta nu.
+Och så är fallet uti detta nu
+
+För diagonalen ...
+
+Temperaturen är hög uti kroppen
+Närmare fyrtio än trettiosju (komma fem)
+Så ska det vara när ångan är oppe
+Och så är fallet uti detta nu
 
 August och Lotta ...''',
-        about: '',
+        
+        guitarTabs: '''A                        E
+                  E7     A
+                             E
+                 E7         A''',
       ),
       Song(
         title: 'Omkring vår eld',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Omkring vår eld vi nu samlats har,
 liksom så ofta förr,
 och innan någon till orda tar,
@@ -109,7 +136,7 @@ På läger, på läger,
 på läger sjunga vi.
 På läger, på läger, 
 på läger vi vilja förbli (utan paraply).''',
-        about: '',
+        
         guitarTabs: '''    G                  Am
     D           G
     G                Am
@@ -121,8 +148,8 @@ på läger vi vilja förbli (utan paraply).''',
       ),
       Song(
         title: 'Vässarövisan',
-        author: '',
-        melody: '',
+        author: "Rune Bergström",
+        melody: "Gösta Westerberg",
         lyrics: '''Bort från stadens larm, ut till sol och sommar.
 Bort från rök och damm, ut till skog och mark.
 Bort från gatorna, bort från mörka gårdar,
@@ -152,19 +179,25 @@ Vad är målet för resan i sommar?
 Vässarö, Vässarö, Vässarö!
 Var så säker att vi återkommer
 Till Vässarö, våran ö, Vässarö.''',
-        about: '',
+        
       ),
       Song(
         title: 'Bär ner mig till sjön',
-        author: '',
-        melody: '',
-        lyrics: '''Bär ner mig till sjön, bär ner mig till sjön
+        author: "Christer Cervin",
+        melody: "Sholom Secunda",
+        lyrics: '''Bär ner mig till sjön, 
+        bär ner mig till sjön
 jag känner att jag måste i.
-Bär ner mig till sjön, bär ner mig till sjön
+Bär ner mig till sjön, 
+bär ner mig till sjön
 jag känner att jag måste i.
-Och när du badat mig så ska du torka mig
-och när du torkat mig så vill jag i igen!
-Bär ner mig till sjön, bär ner mig till sjön
+
+Och när du badat mig 
+så ska du torka mig
+och när du torkat mig 
+så vill jag i igen!
+Bär ner mig till sjön, 
+bär ner mig till sjön
 Jag känner att jag måste i.
 
 Släng upp mig i en tall,
@@ -174,6 +207,7 @@ tallen)
 Släng upp mig i en tall,
 Släng upp mig i en tall,
 jag känner att jag måste upp.
+
 Och när jag kommit upp,
 så vill jag ner igen
 och när jag kommit ner,
@@ -189,6 +223,7 @@ väggen)
 Släng in mig i en vägg.
 Släng in mig i en vägg
 Jag känner att jag måste in.
+
 Och när jag kommit in,
 Så vill jag ut igen
 Och när jag kommit ut,
@@ -204,6 +239,7 @@ väggen)
 Bär ner mig till sjön
 Släng upp mig i en tall
 Jag känner att jag måste in.
+
 Och när du badat mig,
 så vill jag ner igen
 Och när jag kommit ut,
@@ -211,36 +247,45 @@ så vill jag i igen.
 Släng upp mig i en tall
 Släng in mig i en vägg
 För jag känner att jag måste i.''',
-        about: '',
+        
       ),
       Song(
         title: 'A ramsamsam',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''A ramsamsam, a ramsamsam
 Goli goli goli goli goli ramsamsam
 A ramsamsam, a ramsamsam
 Goli goli goli goli goli ramsamsam
-Arafi arafi, Goli goli goli goli goli ramsamsam
-Arafi arafi, Goli goli goli goli goli ramsamsam''',
-        about: '',
+Arafi arafi, 
+Goli goli goli goli goli ramsamsam
+Arafi arafi, 
+Goli goli goli goli goli ramsamsam''',
+        guitarTabs: '''G
+D                          G
+G
+D                          G
+G
+D                          G
+G
+D                          G''',
       ),
       Song(
         title: 'En kulen natt',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''En kulen natt, natt, natt min båt jag styrde
 på havets vågade, vågade, våg så skummet yrde
 Och vart jag sågade, sågade, såg,
 på havets vågade, vågade, våg,
 långt ner i djup, peti-peti-peti-pet
 en fisk jag såg och det var du.''',
-        about: '',
+        
       ),
       Song(
         title: 'Gasflygmaskinen',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''En gasflygmaskin en gång uppfann jag
 med den upp i luften försvann jag.
 En flygtur på tre minuter hann jag
@@ -252,12 +297,12 @@ och sen kom stadens ambulans.
 Och sen kom det tre journalister
 från Stockholms aftonblad
 och sist kom jag!''',
-        about: '',
+        
       ),
       Song(
         title: 'Munkar',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Jag vill ha munkar, munkar, munkar med hål i
 stora feta munkar med hål i.
 När jag kommer hem till dig
@@ -270,25 +315,25 @@ Jag vill ha kola med papper...
 Jag vill ha plättar med sylt på...
 
 Jag vill ha hallon med mask i...''',
-        about: '',
+        
       ),
       Song(
         title: 'Min häst',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Min häst den har gula öron,
 och vita små skor av trä.
 Röda strumpor till knät,
 han är ganska fet
 med blåa små vingar under magen.''',
-        about: '',
+        
       ),
       
       
       Song(
         title: 'I medelhavet',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''I medelhavet sardiner simmar
 apu, apu, apu, apu
 Men i mitt hjärta där simmar du
@@ -313,23 +358,23 @@ I Norska havet små torskar svömme,
 apu, apu, apu, apu
 men i min blopump, där plasker du,
 apu, apu, apu, apu''',
-        about: '',
+        
       ),
       
       Song(
         title: 'Huvud, axlar, knä och tå',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Huvud, axlar, knä och tå - knä och tå
 Huvud, axlar, knä och tå - knä och tå
 Ögon, öron, kinden klappen får
 Huvud, axlar, knä och tå - knä och tå''',
-        about: '',
+        
       ),
       Song(
         title: 'Muggebigge',
-        author: '',
-        melody: '',
+        author: "Charles Redland/John Redland",
+        melody: "Charles Redland/John Redland",
         lyrics: '''Muggebigge muggebigge tuff, tuff, tuff
 Mahognyskrov med ruff, ruff, ruff,
 Muggebigge muggebigge tuff, tuff, tuff,
@@ -339,12 +384,12 @@ Själv jag styr, så skummet yr,
 vågorna plaskar och vinden sjunger
 Muggebigge muggebigge tuff, tuff, tuff,
 det är vår seglarsång''',
-        about: '',
+        
       ),
       Song(
         title: 'Vem kan segla',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Vem kan segla förutan vind?
 Vem kan ro utan åror?
 Vem kan skiljas från vännen sin,
@@ -354,7 +399,7 @@ Jag kan segla förutan vind.
 Jag kan ro utan åror.
 Men ej skiljas från vännen min,
 Utan att fälla tårar.''',
-        about: '',
+        
         guitarTabs: ''' Em            Bm
  Am      Em     Bm
  C        Em          Bm    Em
@@ -367,8 +412,8 @@ Utan att fälla tårar.''',
       ),
       Song(
         title: 'Kumbaya',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Kum-ba-ya my Lord, kum-ba-ya
 Kum-ba-ya my Lord, kum-ba-ya
 Kum-ba-ya my Lord, kum-ba-ya
@@ -379,7 +424,7 @@ Someone's crying Lord, kum ba yah ...
 Someone's praying Lord, kum ba yah ...
 
 Someone's singing Lord, kum ba yah ...''',
-        about: '',
+        
         guitarTabs: '''C                 F      C
 C                  F      G
 C                   F      C
@@ -388,14 +433,14 @@ F   C     G     C'''
       
       Song(
         title: 'I like the flowers',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''I like the flowers, I like the daffodils,
 I like the mountains, I like the rolling hills
 I like the campfire, When all the lights are low,
 Boom di-a-dah, boom di-a-dah,
 Boom di-a-dah, boom di-a-dah…''',
-        about: '',
+        
         guitarTabs: '''C          Am        Dm             G7
 C          Am        Dm             G7
 C          Am        Dm             G7
@@ -403,25 +448,27 @@ C          Am        Dm             G7'''
       ),
       Song(
         title: 'Jag gillar blommor',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Jag gillar blommor, jag gillar påskliljor.
 Jag gillar bergen, och de gröna kullarna.
 Jag gillar elden när skymning faller på.
 Bom-didadi, bom-didadi, bomdidadi,
 bom-didadi, bom-didadi, bom-didadi,
 bom-didadi, bom-didadi.''',
-        about: '',
+        
       ),
       Song(
         title: 'BP-spirit',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''I've got the BP-spirit
-///right in my head///
-I've got the BP-spirit
+Right in my head, 
+right in my head, 
 right in my head
-right in my head to stay
+I've got the BP-spirit 
+right in my head
+Right in my head to stay
 
 I've got the BP-spirit
 deep in my heart….
@@ -436,12 +483,18 @@ all round my feet
 I've got the BP-spirit
 all over me
 all over me to stay''',
-        about: '',
+        guitarTabs: '''             C
+
+G7                
+C
+             C
+
+G7                  C''',
       ),
       Song(
         title: 'Nu lägerelden brunnit ner',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''När lägerelden brunnit ner
 Och dagen nått sitt slut
 Men allt det vackra som vi känt
@@ -451,7 +504,7 @@ Vi tacka för den tid som gått
 Och blickar mot en ny
 Då våra löften segra skall
 Och dagen åter gry''',
-        about: '',
+        
         guitarTabs: '''    C      Am  Dm      G7
     C     C7        F     Dm
     C          Am   Dm     G7
@@ -465,8 +518,8 @@ Och dagen åter gry''',
       
       Song(
         title: 'Skillemandinke',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Skillemandinke, dinke, dinke
 Skillemandinke do. I love you
 Skillemandinke, dinke, dinke
@@ -479,13 +532,13 @@ I love you in the evening when the stars are shining bright
 Skillemandinke, dinke, dinke
 Skillemandinke do.
 I love you''',
-        about: '',
+        
       ),
       
       Song(
         title: 'I natt jag drömde',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''I natt jag drömde något som
 Jag aldrig drömt förut
 Jag drömde det var fred på jord
@@ -508,7 +561,7 @@ I natt jag drömde något som
 Jag aldrig drömt förut
 Jag drömde det var fred på jord 
 och alla krig var slut''',
-        about: '',
+        
         guitarTabs: '''  G
     C               G
     D              G
@@ -534,8 +587,8 @@ och alla krig var slut''',
       ),
       Song(
         title: 'Moster Ingeborg',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Jag har en gammal moster
 som heter Ingeborg
 nu ska vi henne härma
@@ -544,12 +597,12 @@ Så här vajar hatten ja hatten vajar så
 Så här vajar hatten ja hatten vajar så
 
 hatten - fjädern - muffen - kjolen - moster''',
-        about: '',
+        
       ),
       Song(
         title: 'Pelle Jöns',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Det var en gång en daggmask,
 som hette Pelle Jöns
 Han var så rädd för skator,
@@ -569,12 +622,12 @@ I trädgården gick metare
 och letare och höns
 Dom hitta många maskar
 men inte Pelle Jöns''',
-        about: '',
+        
       ),
       Song(
         title: 'En taggatrå',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''En taggatrå en taggatrå
 det är en trå med taggar på
 och är det inga taggar på
@@ -595,40 +648,43 @@ i
 
 En ingenjör … en man som inget
 gör''',
-        about: '',
+        
       ),
       
       Song(
         title: 'Laurentia',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Laurentia, kära Laurentia.
-När får jag träffa dig nästa
-gång? Laurentia.
+När får jag träffa dig nästa gång? 
+Laurentia.
 
 På måndag kära Laurentia,
-då får jag träffa dig nästa
-gång, Laurentia
+då får jag träffa dig nästa gång, 
+Laurentia
 
 Laurentia, kära Laurentia.
-När får jag träffa dig nästa
-gång? Laurentia.
+När får jag träffa dig nästa gång? 
+Laurentia.
 
-På måndag på tisdag, kära
-Laurentia,
+På måndag på tisdag, 
+kära Laurentia,
 då får jag träffa…
 
 osv..
 
 På måndag, på tisdag, på onsdag, på torsdag,
 På fredag, på lördag, på söndag kära Laurentia
-Då får jag träffa dig nästa gång, Laurentia!''',
-        about: '',
+Då får jag träffa dig nästa gång, 
+Laurentia!''',
+        guitarTabs: '''   G               D7
+     Am                  G
+  D    G''',
       ),
       Song(
         title: 'Dä ha kommi böh',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Dä har kommi bööh
 
 – Hocke bööh?
@@ -651,13 +707,13 @@ storhamra´ och stora stöten och
 stora pusten ska gå.
 
 Att smedjan ska stå.''',
-        about: '',
+        
       ),
       
       Song(
         title: 'Fader Abraham',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Fader Abraham, fader Abraham
 Fyra söner hade Abraham
 Och de åt och drack
@@ -677,13 +733,13 @@ Huvudet
 Kroppen med
 
 Tungan!''',
-        about: '',
+        
       ),
       
       Song(
         title: 'Du ska få min gamla cykel',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Du ska få min gamla cykel när jag
 dör
 Du ska få min gamla cykel när jag
@@ -719,39 +775,25 @@ Den är tvättad, ren och struken
 Och den räcker ner till knäna
 Du ska få min gamla skjorta när
 jag dör''',
-        about: '',
+        
       ),
-      Song(
-        title: 'Jag fångade en räv',
-        author: '',
-        melody: '',
-        lyrics: '''Jag fångade en räv en gång
-men räven slank ur näven
-och lika glad var jag ändå
-men gladast var nog räven
-Trala trallallala…
-
-Jag brukar steppa kring ibland
-men jag har tappat takten
-och jag kan inte finna den
-var katten har jag lagt den
-Trala trallallala…''',
-        about: '',
-      ),
+      
       
       Song(
         title: 'Jag hade en gång en båt',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Jag hade en gång en båt
 med segel och ruff och köl,
-men det var för länge sen, så länge sen
+men det var för länge sen, 
+så länge sen
 Svara mig, du, var är den nu?
 Jag bara undrar, var är den nu?
 
 Jag hade en gång en dröm
 jag trodde att den var sann
-Så väcktes jag ur min sömn och drömmen försvann
+Så väcktes jag ur min sömn 
+och drömmen försvann
 Svara mej, du, var är den nu?
 Jag bara undrar, var är den nu?
 
@@ -764,16 +806,23 @@ Jag bara undrar, var är han nu?
 
 Det fanns en gång en stad
 i parken där lekte barn
-Så släppte man ner en bomb, och staden försvann
+Så släppte man ner en bomb, 
+och staden försvann
 Svara mej, du, var är den nu?
 Jag bara undrar, var är den nu?
 
 Jag hade en gång en båt
 jag drömde en dröm en gång
-men det var för längesen, så längesen
+men det var för längesen, 
+så längesen
 Svara mej, du, var är dom nu?
 Jag bara undrar, var är dom nu?''',
-        about: '',
+        guitarTabs: '''B
+
+                           
+           F#
+             B             E
+B             F#             B''',
       ),
       Song(title: "Gul moped", 
       author: "", 
@@ -810,7 +859,7 @@ about: "")
     Song(
         title: 'Du gamla du fria',
         author: 'Richard Dybeck',
-        melody: '',
+        
         lyrics: '''Du gamla, Du fria, Du fjällhöga nord
 Du tysta, Du glädjerika sköna!
 Jag hälsar Dig, vänaste land uppå jord,
@@ -834,12 +883,16 @@ för Sverige, den kära fosterjorden.
 Jag byter Dig ej, mot allt i en värld
 Nej, jag vill leva jag vill dö i Norden.
 Nej, jag vill leva jag vill dö i Norden.''',
-        about: '',
+        guitarTabs: '''   A                            E
+                        D  E
+    A           E       D         E
+    A                            E  A
+    A                            E  A''',
       ),
     Song(
         title: 'Brevet från kolonien',
         author: 'Cornelis Vreeswijk',
-        melody: '',
+        
         lyrics: '''Hejsan morsan, hejsan stabben!
 Här är brev från älsklingsgrabben
 Vi har kul på kolonien
@@ -878,12 +931,12 @@ Honom ska de operera
 Ja, nu vet jag inge mera
 Kram och kyss och hjärtligt tack sen
 Men nu ska vi ut och bränna grannbaracken!''',
-        about: '',
+        
       ),
     Song(
         title: 'Lingonben',
         author: 'Povel Ramel',
-        melody: '',
+        
         lyrics: '''Blu  och spark och tork och kvark, 
 Voro sex små dvärgar, 
 En var ful och en var glad 
@@ -928,12 +981,12 @@ Kungen är full av stock och sten,
 skogen är full av lingonben, 
 Pär är full av tomtar, 
 hur ska Lillan orka.''',
-        about: '',
+        
       ),
       Song(
         title: 'Hönan Agda',
         author: 'Cornelis Vreeswijk',
-        melody: '',
+        
         lyrics: '''Jag ska be att få ställa upp 
 med en visa om en tupp 
 som var gammal och utsliten, 
@@ -1005,12 +1058,82 @@ Tuppen svarade smått generat
 Du, jag älskar dig passionerat. 
 Allt du ber om det skall du få 
 men jag vill ha dig naken då!''',
-        about: '',
+        guitarTabs: '''         D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D
+        
+                 D               A7
+         A7        D
+         D              A7
+                   D
+D7     G           D
+         G               A7
+          D           G
+        A7              D''',
       ),
       Song(
         title: 'Balladen om Cecilia Lind',
         author: 'Cornelis Vreeswijk',
-        melody: '',
+        
         lyrics: '''Från Öckerö loge hörs dragspel och bas, 
 och fullmånen lyser som var den av glas.
 Där dansar Fredrik Åkare kind emot kind, 
@@ -1040,51 +1163,130 @@ Och stjärnorna tindra och timmarna
 fly och Fredrik är gammal men månen är ny, 
 Ja Fredrik är gammal men kärleken blind,  
 Å kyss mig igen , sa Cecilia Lind.''',
-        about: '',
+        guitarTabs: '''      Dm                E          Am
+Dm          G7       C          E
+    Am             G      C        E7
+Am        Dm       E     Am
+ 
+    Dm                    E      Am
+    Dm       G7        C            E
+    Am          G        C          E7
+    Am         Dm       E     Am
+ 
+    Dm                      E     Am
+    Dm        G7          C         E
+    Am       G        C         E7
+Am        Dm        E     Am
+ 
+    Dm                       E          Am
+    Dm       G7      C        E
+    Am            G          C       E7
+   Am           Dm       E       Am
+ 
+    Dm                 E           Am
+  Dm    G7         C        E
+Am         G       C            E7
+     Am           Dm             E    Am
+ 
+    Dm                    E        Am
+    Dm         G7          C        E
+Am            G          C         E7
+Am            Dm        E     Am''',
       ),
       Song(
         title: 'En kväll i juni',
         author: 'Lasse Berghagen',
-        melody: '',
-        lyrics: '''Ja, det var en kväll i juni, 
-just när sommar'n är som bäst, 
-och jag dansade för morfar, 
-som jag gillar allra mest.
-
-Ja, min morfar satt och nynna, 
-på en sommarmelodi. 
-Plötsligt spratt det till i gubben,
-han blev ung och han blev fri.
-
-Han tog av sig sin kavaj, 
-sparka av sig båda skorna, 
-och se'n spotta han ut snuset, sa :  -Min sköna får jag lov?  
-
-Hon var vacker han var stolt, 
-rak i ryggen som en fura. 
-Det var sommar, det var glädje 
-och vi dansade och sjöng! La la la. . .
-
-Ja, du skulle sett din mormor, 
-hon var lika grann som du 
-när hon dansade en sommar, 
-likadant som du gör nu! 
-
-Hennes hår var blekt av solen, 
-hennes mun var  smultronröd. 
-Hon var vacker som en lilja,
-hennes kärlek var som glöd.
-
-Hon var vacker han var stolt, 
-rak i ryggen som en fura. 
-Det var sommar, det var glädje 
-och vi dansade och sjöng! La la la. . .''',
-        about: '',
+        
+        lyrics: '''Det var en kväll i juni
+just när sommar'n är som bäst
+Och hon dansade för morfar
+som hon gilla' allra mest
+Hennes morfar satt och nynna
+på en sommarmelodi
+Plötsligt spratt det till i gubben
+Han blev ung och han blev fri___    
+ 
+Så han tog av sig sin kavaj
+sparka av sig båda skorna
+och så spotta han ut snuset
+och sa ”min sköna, får jag lov?”
+Hon var vacker, han var stolt
+rak i ryggen som en fura
+Det var sommar, det var glädje
+och hon skrattade och sjöng
+ 
+Tralala lala la la, tralala lalala lala
+Tralala lala la lala, tralala lala lala
+ 
+Så mindes han och sa:
+Du skulle sett din mormor
+hon var lika grann som du
+när hon dansade i gräset
+likadant som du gör nu
+Hennes hår var blekt av solen
+hennes mun av smultron röd
+Hon var ljuvlig som en lilja
+hennes kärlek var som glöd      
+ 
+Så han tog av sig sin kavaj
+sparka av sig båda skorna
+och så spotta han ut snuset
+och sa ”min sköna, får jag lov?”
+Hon var vacker, han var stolt
+rak i ryggen som en fura
+Det var sommar det var glädje
+och hon skrattade och sjöng
+ 
+Tralala lala la la, tralala lalala lala
+Tralala lala la lala, tralala lala lala''',
+guitarTabs: '''    Am              Dm
+         G               Cmaj7
+        Am          Dm
+        E7           Am
+       Am              Dm
+      G       Cmaj7
+          Am                Dm
+         E                Am G7
+ 
+           C            G7
+       E7          Am
+       Am            Dm
+            E7
+        C               G7
+      E7            Am
+        Am              Dm
+        E7
+ 
+     C          G7       E7        Am
+     Am         Dm         E7
+ 
+   Dm      E
+   Am              Dm
+        G              Cmaj7
+        Am        Dm
+    E7              Am
+       Am               Dm
+       G               Cmaj7
+        Am             Dm
+       E7             Am G7
+ 
+           C            G7
+       E7          Am
+       Am            Dm
+            E7
+        C               G
+      E7            Am
+        Am             Dm
+        E7
+ 
+     C          G7       E7        Am
+     Am         Dm         E''',
+        
       ),
       Song(
         title: 'Varm korv boogie',
         author: 'Owe Thörnqvist',
-        melody: '',
+        
         lyrics: '''Det stod en varm korv gubbe ner - på Fyris torg,
 han måla - korvarna svarta för han hade sorg.
 Han hade låda på magen, det gillas inte av lagen.
@@ -1110,12 +1312,12 @@ och sedan spela han och sjöng en liten galen vers:
 Jag har en låda på magen, där kan ni lägga bidragen.
 Det blev en fin affär, nu är han miljonär på både
 ryggen och magen.''',
-        about: '',
+        
       ),
       Song(
         title: 'Balladen om den kaxiga myran',
         author: 'Stefan Demert',
-        melody: '',
+        
         lyrics: '''Jag uppstämma vill min lyra,
 fast det blott är en gitarr,
 och berätta om en myra,
@@ -1192,12 +1394,12 @@ du blir stursk men kroppen loj,
 och om Du är född till myra;
 brottas aldrig med ett TOY
 brottas aldrig med ett TOY.''',
-        about: '',
+        
       ),
       Song(
         title: 'Båtlåt',
         author: 'Robert Broberg',
-        melody: '',
+        
         lyrics: '''Det va en båt som sa till en annan Va du va stilig,
 vi borde borda varann, som gjorda för varann
 och köla lite grann
@@ -1233,12 +1435,12 @@ det e en hemlighet
 som bara båtar vet
 Badda bam bam bam bam
 Badda bam bam bam''',
-        about: '',
+        
       ),
       Song(
         title: 'Kungens man',
         author: 'Björn Afzelius',
-        melody: '',
+        
         lyrics: '''Maria går på vägen som leder ner
 till byn
 Hon sjunger och hon skrattar åt
@@ -1271,12 +1473,89 @@ efter riddaren det blev firat varje
 folket det blir dömt
 Och vi som ser hur allt går till vi
 får veta att vi drömt''',
-        about: '',
+        
+      ),
+      Song(
+        title: 'Sill i dill',
+        lyrics: '''Morsa lilla Olle
+(Morsa lilla Olle)
+i skogen gick 
+(i skogen gick)
+Rosor på kinden
+och solsken i blick.
+Men blicken gick sönder
+i slagsmål med bönder
+om en säck potatis
+och en tunna sill,
+sill i dill, sill i dill,
+sill i dill–dill-dill.
+
+Sankta Lucia
+snart är det jul.
+Då kommer tomten
+och då blir det kul.
+Men kulan gick sönder
+i slagsmål med bönder
+om en säck….
+
+Framåt i bussen
+så långt som det går,
+för det finns så många
+som på gatan står.
+Men gatan gick sönder
+i slagsmål med bönder
+om en säck…
+
+Jonas i öknen
+han trampa’ och gick,
+i sand mellan tårna
+var allt som han fick.
+Men fickan gick sönder
+i slagsmål med bönder
+om en säck…
+
+Adam och Eva
+i Paradiset gick,
+dom hade inga kläder
+så fikonlöv dom fick.
+Men löven gick sönder
+i slagsmål med bönder
+om en säck…''',
+      ),
+
+      Song(
+        title: 'Eskimåvisa',
+        lyrics: '''Det var en gång en eskimå 
+vars namn om jag miss rätt,
+var Eskil Eskimårtensson, 
+esquire rätt och slätt
+Till yrket eskimålare 
+med långt och svajigt hår,
+han älskade en eskimö, 
+som nyss fyllt nitton år.
+	
+Och fröken Eskimonika 
+hon bodde med sin mor,
+på klippan Eskimåseskär, 
+dit målar'n ofta for.
+En stormig eskimånskensnatt 
+en våg kajaken tog,
+och Eskil Eskimårtensson 
+han drunknade och dog.
+
+Och fröken Eskimonika, 
+som uppå stranden stod,
+hon drog sitt eskimordredskap 
+och föll uti sitt blod.
+Och eskimånen sken så klar, 
+då paret döden ljöt,
+och eskimodern svimmade 
+och eskimopsen tjöt.''',
       ),
       Song(
         title: 'Sånt är livet',
         author: 'Anita Lindblom',
-        melody: '',
+        
         lyrics: '''Sånt är livet, sånt är livet
 Så mycket falskhet bor det här
 Den man förlorar,
@@ -1307,15 +1586,30 @@ Det jag har lärt mig,
 är just detta,
 När hjärtat svider,
 sjung åh sjung''',
-        about: '',
+        
       ),
   ]),
   Category(name: "Disney låtar", 
   songs: [
     Song(
+        title: 'Jag fångade en räv',
+
+        lyrics: '''Jag fångade en räv en gång
+men räven slank ur näven
+och lika glad var jag ändå
+men gladast var nog räven
+Trala trallallala…
+
+Jag brukar steppa kring ibland
+men jag har tappat takten
+och jag kan inte finna den
+var katten har jag lagt den
+Trala trallallala…''',
+      ),
+    Song(
         title: 'Jag vill va som du',
-        author: '',
-        melody: '',
+        author: "Martin Söderhjelm",
+        melody: "Richard M. Sherman, Robert B. Sherman",
         lyrics: '''Jag kungen är över alla här under trädens gröna höjd
 Jag har nått opp till högsta topp, men ännu är jag ej nöjd
 Jag vill bli en man, en människa och kunna allt ni kan
@@ -1337,12 +1631,12 @@ Jag vill se ut som du, gå som du, Du-u-u-u
 Det vill jag nu-u-u
 Ett djur som jag
 Det lär sig bra bli en människa''',
-        about: '',
+        
       ),
       Song(
         title: 'Var nöjd',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Var nöjd med allt som livet ger
 och allting som du kring dig ser
 glöm bort bekymmer sorger och besvär. 
@@ -1385,15 +1679,15 @@ glöm bort bekymmer sorger och besvär.
 Var glad och nöjd, för vet du vad? 
 En björntjänst gör ju ingen glad. 
 Var nöjd med livet som vi lever här.''',
-        about: '',
+        
       ),
   ]),
   Category(name: "Engelska visor", 
   songs: [
     Song(
         title: 'Drunken Sailor',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''What shall we do with the
 drunken sailor,
 what shall we do with the drunken
@@ -1424,12 +1718,12 @@ daughter. . .
 
 -That's what we do with the
 drunken sailor..''',
-        about: '',
+        
       ),
     Song(
         title: 'My Bonny',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''My Bonny is over the ocean
 My Bonny is over the sea
 My Bonny is over the ocean
@@ -1450,12 +1744,12 @@ I put my feet through the window
 Next morning my neighbour was dead
 
 Bring back, bring back…''',
-        about: '',
+        
       ),
       Song(
         title: 'Pizza Hut',
-        author: '',
-        melody: '',
+        
+        
         lyrics:
             '''A Pizza Hut, a Pizza Hut, Kentucky Fried Chicken and a Pizza Hut
 A Pizza Hut, a Pizza Hut, Kentucky Fried Chicken and a Pizza Hut
@@ -1467,8 +1761,8 @@ A Pizza Hut, a Pizza ...''',
       ),
       Song(
         title: 'Auld Lang Syne',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Should auld acquaintance be forgot,
 And never brought to mind?
 Should auld acquaintance be forgot,
@@ -1499,7 +1793,334 @@ And surely ye'll be your pint' stoup,
 And surely I'll be mine!
 And we'll tak a cup o' kindness yet
 For auld lang syne!''',
-        about: '',
+        
+      ),
+      Song(
+        title: 'Whiskey in the jar',
+        lyrics: '''As I was going over the far fam'd Kerry Mountains,
+I met with Captain Farrel, and his money he was countin',
+I first produced my pistol, and I then produced my rapier,
+Sayin': "Stand and deliver for you are a bold deceiver". 
+ 
+Musha ring dum a doo dum a da,
+Whack for the daddy ol',
+Whack for the daddy ol',
+There's whiskey in the jar. 
+ 
+I counted out his money and it made a pretty penny,
+I put it in my pocket, and I took it home to Jenny,
+She sighed, and she swore that she never would deceive me,
+But the devil take the women for they never can be easy.
+ 
+Musha ring dum a doo dum a da,
+Whack for the daddy ol',
+Whack for the daddy ol',
+There's whiskey in the jar. 
+ 
+I went into my chamber all for to take a slumber,
+I dreamt of gold and jewels and for sure it was no wonder,
+But Jenny drew my charges and she filled them out with water,
+Then sent for Captain Farrel, to be ready for the slaughter.
+ 
+Musha ring dum a doo dum a da,
+Whack for the daddy ol',
+Whack for the daddy ol',
+There's whiskey in the jar. 
+ 
+'Twas early in the morning just before I rose to travel,
+Up comes a band of footmen and likewise, Captain Farrel,
+I first produced my pistol for she stole away my rapier,
+But I couldn't shoot the water, so a prisoner I was taken.
+ 
+Musha ring dum a doo dum a da,
+Whack for the daddy ol',
+Whack for the daddy ol',
+There's whiskey in the jar. 
+ 
+Now there's some take delight in the carriages a rolling
+and others take delight in the hurling and the bowling
+but I take delight in the juice of the barley
+and courting pretty fair maids in the morning bright and early
+ 
+Musha ring dum a doo dum a da,
+Whack for the daddy ol',
+Whack for the daddy ol',
+There's whiskey in the jar. 
+ 
+If anyone can aid me 'tis my brother in the army,
+If I can find his station, in Cork or in Killarney,
+And if he'll go with me we'll go roving in Kilkenny,
+And I'm sure he'll treat me better than my old a-sporting Jenny.
+ 
+Musha ring dum a doo dum a da,
+Whack for the daddy ol',
+Whack for the daddy ol',
+There's whiskey in the jar.''',
+guitarTabs: '''   C                    Am
+  F                                C            G
+  C                               Am
+         F                         C
+ 
+      G
+C
+F
+        C       G      C
+ 
+   C                           Am
+  F                          C               G
+    C                              Am
+        F                             C
+ 
+      G
+C
+F
+        C       G      C
+ 
+   C                       Am
+  F                                 C              G
+    C                             Am
+     F                              C
+ 
+      G
+C
+F
+        C       G      C
+ 
+   C                              Am
+  F                            C                 G
+  C                                Am
+      F                              C
+ 
+      G
+C
+F
+        C       G      C
+ 
+   C                                 Am
+    F                          C               G
+   C                      Am
+    F                                 C
+ 
+      G
+C
+F
+        C       G      C
+ 
+   C                         Am
+  F                           C          G
+   C                             Am
+        F                                  C
+ 
+      G
+C
+F
+        C       G      C'''
+      ),
+
+      Song(
+        title: 'Where have all the flowers gone',
+        lyrics: '''Where have all the flowers gone?
+Long time passing
+Where have all the flowers gone?
+Long time ago
+Where have all the flowers gone?
+Girls have picked them every one
+When will they ever learn?
+When will they ever learn?
+
+Where have all the young girls gone?
+Long time passing
+Where have all the young girls gone?
+Long time ago
+Where have all the young girls gone?
+Taken husbands every one
+When will they ever learn?
+When will they ever learn?
+
+Where have all the young men gone?
+Long time passing
+Where have all the young men gone?
+Long time ago
+Where have all the young men gone?
+Gone for soldiers every one
+When will they ever learn?
+When will they ever learn?
+ 
+Where have all the soldiers gone?
+Long time passing
+Where have all the soldiers gone?
+Long time ago
+Where have all the soldiers gone?
+Gone to graveyards every one
+When will they ever learn?
+When will they ever learn?
+  
+Where have all the graveyards gone?
+Long time passing
+Where have all the graveyards gone?
+Long time ago
+Where have all the graveyards gone?
+Covered with flowers every one
+When will we ever learn?
+When will we ever learn?''',
+guitarTabs: '''G                   Em
+C         D
+G                   Em
+C         D
+G                   Em
+C                      D
+C               G
+C              D    G
+
+G                   Em
+C         D
+G                   Em
+C         D
+G                   Em
+C              D
+C              G
+C              D     G
+
+G                   Em
+C         D
+G                   Em
+C         D
+G                   Em
+C                 D
+C              G
+C              D    G
+ 
+G                  Em
+C         D
+G                  Em
+C         D
+G                  Em
+C                  D
+C              G
+C              D    G
+  
+G                  Em
+C         D
+G                  Em
+C         D
+G                  Em
+C                    D
+C            G
+C            D     G'''
+      ),
+
+      Song(
+        title: 'The house of the rising sun',
+        lyrics: '''There is a house in New Orleans
+They call the "Rising Sun"
+And it's been the ruin of many a poor boy
+And God, I know, I'm one               
+ 
+My mother was a tailor
+She sewed my new blue jeans 
+My father was a gambling man
+Down in New Orleans.            
+ 
+Now the only thing a gambler needs
+Is a suitcase and a trunk 
+And the only time, he's satisfied,
+Is when he's on a drunk              
+ 
+Oh, mother, tell your children 
+Not to do what I have done
+Spend your lives in sin and misery
+In the House of the Rising Sun 
+ 
+Well, I got one foot on the platform 
+The other foot on the train 
+I'm going back to New Orleans 
+To wear that ball and chain
+ 
+Well, there is a house in New Orleans
+They call the "Rising Sun"
+And it's been the ruin of many a poor boy
+And God, I know, I'm one''',
+guitarTabs: '''      Am   C        D           F
+     Am        C      E     E
+         Am       C       D             F
+    Am     E        
+ 
+   Am     C     D        F
+    Am       C        E     E
+   Am     C     D        F
+Am      E    
+ 
+        Am   C       D         F
+     Am       C     E     E
+        Am   C      D           F
+   Am        E    
+ 
+    Am     C              D       F
+       Am      C      E     E
+Am         C        D            F
+       Am           E     
+ 
+            Am       C      D           F
+    Am         C        E     E
+    Am    C       D           F
+   Am        E      
+ 
+            Am   C        D           F
+     Am        C      E     E
+         Am       C       D           F
+    Am     E7'''
+      ),
+
+      Song(
+        title: 'Scarborough Fair',
+        lyrics: '''  Are you going to Scarborough Fair
+  Parsley, sage, rosemary and thyme
+  Remember me to one who lives there
+  She once was a true love of mine
+
+  Tell her to make me a cambric shirt
+  Parsley, sage, rosemary and thyme
+  Without no seams nor nee-ee-dle work
+  Then she'll be a true love of mine
+
+  Tell her to find me an acre of land
+  Parsley, sage, rosemary and thyme
+  Between the salt water and the sea strands
+  Then she'll be a true love of mine
+
+  Tell her to reap it with a sickle of leather
+  Parsley, sage, rosemary and thyme
+  And gather it all in a bunch of heather
+  Then she'll be a true love of mine
+
+  Are you going to Scarborough Fair
+  Parsley, sage, rosemary and thyme
+  Remember me to one who lives there
+  She once was a true love of mine''',
+  guitarTabs: '''  Am               G           Am
+C          Am        C D      Am
+    Am     C     C   G/B Am    G
+  Am       G                  Am
+
+  Am                    G       Am
+C          Am        C D      Am
+      Am     C         C   G/B Am G
+  Am          G               Am
+
+  Am                     G       Am
+C          Am        C D      Am
+     Am            C     C   G/B Am  G
+  Am          G                 Am
+
+ Am                         G         Am
+C          Am        C D      Am
+      Am        C        C G/B Am G
+  Am          G                 Am
+
+  Am               G           Am
+C          Am        C D      Am
+    Am     C     C   G/B Am    G
+  Am       G                  Am''',
       ),
       Song(title: "Tom Dooley", 
       author: "", 
@@ -1541,8 +2162,8 @@ Poor boy, you're bound to die''',
 about: ""),
     Song(
         title: 'Streets of London',
-        author: '',
-        melody: '',
+        
+        
         lyrics: '''Have you seen the old man, in the closed down market, 
 kicking up the papers, with his worn-out shoes?
 In his eyes you see no pride, hand held loosely at his side.
@@ -1582,7 +2203,7 @@ So, how can you tell me you're lonely,
 and say for you that the sun don't shine?
 Let me take you by the hand, and lead you through the streets of London!
 I'll show you something, to make you change your mind!''',
-        about: '',
+        
       ),
   ])
 ];

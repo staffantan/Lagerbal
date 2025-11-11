@@ -8,10 +8,10 @@ class Song {
 
   const Song({
     required this.title,
-    required this.author,
-    required this.melody,
+    this.author = '',
+    this.melody = '',
     required this.lyrics,
-    required this.about,
+    this.about = '',
     this.guitarTabs = '',
   });
 
@@ -31,10 +31,10 @@ class Song {
   factory Song.fromJson(Map<String, dynamic> json) {
     return Song(
       title: json['title'] as String,
-      author: json['author'] as String,
-      melody: json['melody'] as String,
+      author: json['author'] as String? ?? '',
+      melody: json['melody'] as String? ?? '',
       lyrics: json['lyrics'] as String,
-      about: json['about'] as String,
+      about: json['about'] as String? ?? '',
       guitarTabs: json['guitarTabs'] as String? ?? '',
     );
   }
