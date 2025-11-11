@@ -40,9 +40,10 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
             ),
         ],
       ),
-      body: Column(
-        children: [
-          // Selected songs section (reorderable)
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Selected songs section (reorderable)
           if (selectedItems.isNotEmpty) ...[
             Container(
               padding: const EdgeInsets.all(8.0),
@@ -282,6 +283,7 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
             ),
           ),
         ],
+      ),
       ),
       floatingActionButton: selectedItems.isEmpty
           ? null
