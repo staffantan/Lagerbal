@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import '../models/app_settings.dart';
 import '../models/category.dart';
+import '../models/song.dart';
 import 'pdf_export_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   final AppSettings settings;
   final Function(AppSettings) onSettingsChanged;
   final List<Category> songbook;
+  final List<Song> customSongs;
 
   const SettingsScreen({
     super.key,
     required this.settings,
     required this.onSettingsChanged,
     required this.songbook,
+    this.customSongs = const [],
   });
 
   @override
@@ -153,6 +156,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   MaterialPageRoute(
                     builder: (context) => PdfExportScreen(
                       songbook: widget.songbook,
+                      customSongs: widget.customSongs,
                     ),
                   ),
                 );

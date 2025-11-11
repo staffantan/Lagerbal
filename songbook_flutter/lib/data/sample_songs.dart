@@ -105,15 +105,15 @@ August och Lotta ...''',
 liksom så ofta förr,
 och innan någon till orda tar,
 så sjunger vi uti kör:
-På läger, på läger, på läger sjunga vi.
-På läger, på läger, på läger vi vilja förbli (utan
-paraply).''',
+På läger, på läger, 
+på läger sjunga vi.
+På läger, på läger, 
+på läger vi vilja förbli (utan paraply).''',
         about: '',
         guitarTabs: '''    G                  Am
     D           G
     G                Am
      D            G
- 
     G             C
     Am            D
     G             C

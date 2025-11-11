@@ -9,10 +9,12 @@ import '../services/pdf_service.dart';
 
 class PdfExportScreen extends StatefulWidget {
   final List<Category> songbook;
+  final List<Song> customSongs;
 
   const PdfExportScreen({
     super.key,
     required this.songbook,
+    this.customSongs = const [],
   });
 
   @override
@@ -231,8 +233,68 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
                 Expanded(
                   child: ListView.builder(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    itemCount: widget.songbook.length,
-                    itemBuilder: (context, categoryIndex) {
+                    itemCount: (widget.customSongs.isNotEmpty ? 1 : 0) + widget.songbook.length,
+                    itemBuilder: (context, index) {
+                      // Show custom songs section first if there are any
+                      if (widget.customSongs.isNotEmpty && index == 0) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.edit_note,
+                                    color: Theme.of(context).colorScheme.primary,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'Egna visor',
+                                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                      color: Theme.of(context).colorScheme.primary,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            ...widget.customSongs.map((song) {
+                              final isSelected = selectedItems.whereType<SongItem>().any((item) => item.song.title == song.title);
+                              return Card(
+                                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                color: isSelected 
+                                    ? Theme.of(context).colorScheme.primaryContainer.withAlpha(128)
+                                    : null,
+                                child: ListTile(
+                                  leading: Icon(
+                                    isSelected ? Icons.check_circle : Icons.add_circle_outline,
+                                    color: isSelected 
+                                        ? Theme.of(context).colorScheme.primary
+                                        : Theme.of(context).colorScheme.secondary,
+                                  ),
+                                  title: Text(song.title),
+                                  subtitle: song.author.isNotEmpty ? Text(song.author) : null,
+                                  onTap: () {
+                                    setState(() {
+                                      if (isSelected) {
+                                        selectedItems.removeWhere((item) => item is SongItem && item.song.title == song.title);
+                                      } else {
+                                        selectedItems.add(SongItem(song));
+                                      }
+                                    });
+                                  },
+                                ),
+                              );
+                            }),
+                            const SizedBox(height: 8),
+                          ],
+                        );
+                      }
+                      
+                      // Show regular categories (adjust index if custom songs are shown)
+                      final categoryIndex = widget.customSongs.isNotEmpty ? index - 1 : index;
                       final category = widget.songbook[categoryIndex];
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -317,6 +379,11 @@ class _PdfExportScreenState extends State<PdfExportScreen> {
   void _selectAllSongs() {
     setState(() {
       selectedItems.clear();
+      // Add all custom songs first
+      for (final song in widget.customSongs) {
+        selectedItems.add(SongItem(song));
+      }
+
       // Add all songs from all categories
       for (final category in widget.songbook) {
         for (final song in category.songs) {

@@ -329,7 +329,7 @@ class PdfService {
           pw.Text(
             lyricLine,
             style: pw.TextStyle(
-              font: font,
+              font: monoFont,
               fontSize: 22,
             ),
           ),
