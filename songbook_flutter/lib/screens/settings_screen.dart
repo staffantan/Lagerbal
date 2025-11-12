@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:http/http.dart' as http;
+import 'package:ota_update/ota_update.dart';
+import 'dart:convert';
 import '../models/app_settings.dart';
 import '../models/category.dart';
 import '../models/song.dart';
@@ -26,6 +29,7 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   String _version = '';
   String _buildNumber = '';
+  bool _isCheckingUpdate = false;
 
   @override
   void initState() {
@@ -39,6 +43,208 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _version = packageInfo.version;
       _buildNumber = packageInfo.buildNumber;
     });
+  }
+
+  Future<void> _checkForUpdates() async {
+    setState(() {
+      _isCheckingUpdate = true;
+    });
+
+    try {
+      final response = await http.get(
+        Uri.parse('https://api.github.com/repos/staffantan/Lagerbal/releases/latest'),
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        final latestVersion = data['tag_name']?.toString().replaceAll('v', '') ?? '';
+
+        if (!mounted) return;
+
+        // Compare versions
+        if (latestVersion.isNotEmpty && _isNewerVersion(latestVersion, _version)) {
+          _showUpdateDialog(latestVersion, data);
+        } else {
+          _showNoUpdateDialog();
+        }
+      } else {
+        if (!mounted) return;
+        _showErrorDialog('Kunde inte kontrollera uppdateringar (${response.statusCode})');
+      }
+    } catch (e) {
+      if (!mounted) return;
+      _showErrorDialog('Fel vid kontroll av uppdateringar: $e');
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isCheckingUpdate = false;
+        });
+      }
+    }
+  }
+
+  bool _isNewerVersion(String latest, String current) {
+    final latestParts = latest.split('.').map((e) => int.tryParse(e) ?? 0).toList();
+    final currentParts = current.split('.').map((e) => int.tryParse(e) ?? 0).toList();
+
+    for (var i = 0; i < 3; i++) {
+      final latestPart = i < latestParts.length ? latestParts[i] : 0;
+      final currentPart = i < currentParts.length ? currentParts[i] : 0;
+      
+      if (latestPart > currentPart) return true;
+      if (latestPart < currentPart) return false;
+    }
+    return false;
+  }
+
+  void _showUpdateDialog(String version, Map<String, dynamic> releaseData) {
+    final assets = releaseData['assets'] as List? ?? [];
+    
+    // Find APK file
+    String? apkDownloadUrl;
+    for (var asset in assets) {
+      final assetName = asset['name']?.toString() ?? '';
+      if (assetName.endsWith('.apk')) {
+        apkDownloadUrl = asset['browser_download_url'];
+        break;
+      }
+    }
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Uppdatering tillgänglig'),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Ny version: v$version'),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Avbryt'),
+          ),
+          FilledButton(
+            onPressed: () {
+              if (apkDownloadUrl != null) {
+                Navigator.pop(context);
+                _downloadAndInstallUpdate(apkDownloadUrl);
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('APK-fil kunde inte hittas i releasen'),
+                  ),
+                );
+              }
+            },
+            child: const Text('Uppdatera'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showNoUpdateDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Ingen uppdatering'),
+        content: Text('Du har redan den senaste versionen (v$_version)'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _downloadAndInstallUpdate(String downloadUrl) async {
+    try {
+      OtaEvent? currentEvent;
+      
+      // Show progress dialog
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => StatefulBuilder(
+          builder: (context, setDialogState) => AlertDialog(
+            title: const Text('Laddar ner uppdatering'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const CircularProgressIndicator(),
+                const SizedBox(height: 16),
+                Text(
+                  currentEvent != null
+                      ? '${currentEvent!.status.name}: ${currentEvent!.value ?? "0"}%'
+                      : 'Förbereder nedladdning...',
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+
+      // Start download and installation
+      OtaUpdate().execute(
+        downloadUrl,
+        destinationFilename: 'lagerbal_update.apk',
+      ).listen(
+        (OtaEvent event) {
+          currentEvent = event;
+          
+          if (event.status == OtaStatus.INSTALLING) {
+            // Close progress dialog when installation starts
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
+          } else if (event.status == OtaStatus.ALREADY_RUNNING_ERROR) {
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
+            _showErrorDialog('En uppdatering pågår redan');
+          } else if (event.status == OtaStatus.PERMISSION_NOT_GRANTED_ERROR) {
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
+            _showErrorDialog('Behörighet att installera appar krävs');
+          }
+        },
+        onError: (error) {
+          if (Navigator.canPop(context)) {
+            Navigator.of(context).pop();
+          }
+          _showErrorDialog('Fel vid nedladdning: $error');
+        },
+      );
+    } catch (e) {
+      if (Navigator.canPop(context)) {
+        Navigator.of(context).pop();
+      }
+      _showErrorDialog('Fel vid uppdatering: $e');
+    }
+  }
+
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Fel'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -181,6 +387,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
             ),
           ),
+          const SizedBox(height: 8),
+
+          // Check for Updates Button
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.system_update),
+              title: const Text('Sök efter uppdateringar'),
+              subtitle: const Text('Kontrollera om en ny version finns tillgänglig'),
+              trailing: _isCheckingUpdate
+                  ? const SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : const Icon(Icons.arrow_forward_ios),
+              onTap: _isCheckingUpdate ? null : _checkForUpdates,
+            ),
+          ),
           const SizedBox(height: 32),
           
           // Version information at the bottom
@@ -190,7 +414,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: Text(
                 'Version $_version${_buildNumber.isNotEmpty ? '+$_buildNumber' : ''}',
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
               ),
             ),
