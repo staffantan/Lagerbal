@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share_plus/share_plus.dart';
 import '../models/song.dart';
 import '../models/app_settings.dart';
 
@@ -104,34 +105,14 @@ class _SongDetailScreenState extends State<SongDetailScreen> {
     final base64Data = base64Encode(utf8.encode(songJson));
     final shareLink = 'http://www.ahlvik.se/sangbok/?data=$base64Data';
 
-    // Copy to clipboard
-    Clipboard.setData(ClipboardData(text: shareLink));
-
-    // Show confirmation
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text('Delbar länk kopierad till urklipp!'),
-        duration: const Duration(seconds: 2),
-        action: SnackBarAction(
-          label: 'Visa',
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                title: const Text('Dela länk'),
-                content: SelectableText(shareLink),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: const Text('Stäng'),
-                  ),
-                ],
-              ),
-            );
-          },
-        ),
-      ),
+    // Use the native share dialog
+    Share.share(
+      shareLink,
+      subject: 'Dela låt: ${widget.song.title}',
     );
+
+    // Also copy to clipboard as backup
+    Clipboard.setData(ClipboardData(text: shareLink));
   }
 
   @override
