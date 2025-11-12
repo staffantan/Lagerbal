@@ -96,59 +96,8 @@ class PdfService {
       ),
     );
 
-    // Add table of contents
-    pdf.addPage(
-      pw.Page(
-        pageFormat: PdfPageFormat.a4,
-        build: (context) {
-          return pw.Column(
-            crossAxisAlignment: pw.CrossAxisAlignment.start,
-            children: [
-              pw.Text(
-                'Innehåll',
-                style: pw.TextStyle(
-                  font: boldFont,
-                  fontSize: 24,
-                  fontWeight: pw.FontWeight.bold,
-                ),
-              ),
-              pw.SizedBox(height: 20),
-              ...songs.asMap().entries.map((entry) {
-                final index = entry.key;
-                final song = entry.value;
-                return pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 4),
-                  child: pw.Row(
-                    children: [
-                      pw.Text(
-                        '${index + 1}.',
-                        style: pw.TextStyle(font: font, fontSize: 12),
-                      ),
-                      pw.SizedBox(width: 8),
-                      pw.Expanded(
-                        child: pw.Text(
-                          song.title,
-                          style: pw.TextStyle(font: font, fontSize: 12),
-                        ),
-                      ),
-                      if (song.author.isNotEmpty)
-                        pw.Text(
-                          song.author,
-                          style: pw.TextStyle(
-                            font: font,
-                            fontSize: 10,
-                            color: PdfColors.grey700,
-                          ),
-                        ),
-                    ],
-                  ),
-                );
-              }),
-            ],
-          );
-        },
-      ),
-    );
+    // Add table of contents (with pagination support)
+    _addTableOfContents(pdf, songs, font, boldFont);
 
     // Create all song widgets in a single column with smart page breaks
     final allSongWidgets = <pw.Widget>[];
@@ -338,5 +287,76 @@ class PdfService {
     }
 
     return widgets;
+  }
+
+  static void _addTableOfContents(
+    pw.Document pdf,
+    List<Song> songs,
+    pw.Font font,
+    pw.Font boldFont,
+  ) {
+    const itemsPerPage = 30; // Adjust based on testing
+    final totalPages = (songs.length / itemsPerPage).ceil();
+
+    for (var pageIndex = 0; pageIndex < totalPages; pageIndex++) {
+      final startIndex = pageIndex * itemsPerPage;
+      final endIndex = (startIndex + itemsPerPage).clamp(0, songs.length);
+      final pageSongs = songs.sublist(startIndex, endIndex);
+
+      pdf.addPage(
+        pw.Page(
+          pageFormat: PdfPageFormat.a4,
+          build: (context) {
+            return pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                if (pageIndex == 0) ...[
+                  pw.Text(
+                    'Innehåll',
+                    style: pw.TextStyle(
+                      font: boldFont,
+                      fontSize: 24,
+                      fontWeight: pw.FontWeight.bold,
+                    ),
+                  ),
+                  pw.SizedBox(height: 20),
+                ],
+                ...pageSongs.asMap().entries.map((entry) {
+                  final globalIndex = startIndex + entry.key;
+                  final song = entry.value;
+                  return pw.Padding(
+                    padding: const pw.EdgeInsets.symmetric(vertical: 4),
+                    child: pw.Row(
+                      children: [
+                        pw.Text(
+                          '${globalIndex + 1}.',
+                          style: pw.TextStyle(font: font, fontSize: 12),
+                        ),
+                        pw.SizedBox(width: 8),
+                        pw.Expanded(
+                          child: pw.Text(
+                            song.title,
+                            style: pw.TextStyle(font: font, fontSize: 12),
+                          ),
+                        ),
+                        if (song.author.isNotEmpty)
+                          pw.Text(
+                            song.author,
+                            style: pw.TextStyle(
+                              font: font,
+                              fontSize: 10,
+                              color: PdfColors.grey700,
+                            ),
+                          ),
+                      ],
+                    ),
+                  );
+                }),
+              ],
+            );
+          },
+        ),
+      );
+    }
   }
 }
