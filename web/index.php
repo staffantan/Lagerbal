@@ -4,8 +4,9 @@
 $data = json_decode($json); ?>
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" type="image/png" href="graphic.png"/>
-  <title>Delad S&aring;ng: <?php echo utf8_decode($data->title)?></title>
+  <meta name="robots" content="noindex">
+  <link rel="shortcut icon" type="image/png" href="icon.png"/>
+  <title>Delad S&aring;ng: <?php echo $data->title?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Material-like App Styling */
@@ -90,11 +91,11 @@ $data = json_decode($json); ?>
     <h1>N&aring;gon har delat en s&aring;ng med dig</h1>
     <?php
     if($data->title){
-    	echo "<h2>".utf8_decode($data->title)."</h2>";
-    	echo "<p>".utf8_decode($data->text)."</p>";
-    	echo "<p>".utf8_decode($data->melody)."</p>";
-    	echo "<p>".nl2br(utf8_decode($data->lyrics))."</p>";
-    	echo "<p>".nl2br(utf8_decode($data->about))."</p>";
+    	echo "<h2>".$data->title."</h2>";
+    	echo "<p>".$data->text."</p>";
+    	echo "<p>".$data->melody."</p>";
+    	echo "<p>".nl2br($data->lyrics)."</p>";
+    	echo "<p>".nl2br($data->about)."</p>";
     }
     if($data->Title){
     	echo "<h2>".utf8_decode($data->Title)."</h2>";
