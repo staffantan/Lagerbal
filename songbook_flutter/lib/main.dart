@@ -86,8 +86,8 @@ class _MyAppState extends State<MyApp> {
       title: 'Lägerbål',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF003D7A), // Swedish Scout blue
-          primary: const Color(0xFF003D7A), // Scout blue
+          seedColor: const Color(0xFF003660), // Scout blue
+          primary: const Color(0xFF003660), // Scout blue
           secondary: const Color(0xFFFECB00), // Scout yellow
           surface: const Color(0xFFF5F5F5), // Light grey
           brightness: Brightness.light,
@@ -96,8 +96,8 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1565C0), // Lighter blue for dark mode
-          primary: const Color(0xFF42A5F5), // Lighter scout blue for dark mode
+          seedColor: const Color(0xFF0D4D7A), // Lighter scout blue for dark mode
+          primary: const Color(0xFF4A90C8), // Lighter scout blue for dark mode
           secondary: const Color(0xFFFECB00), // Scout yellow
           surface: const Color(0xFF1E1E1E), // Dark grey
           brightness: Brightness.dark,

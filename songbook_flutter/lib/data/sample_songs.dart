@@ -273,7 +273,6 @@ D                          G''',
       Song(
         title: 'En kulen natt',
         
-        
         lyrics: '''En kulen natt, natt, natt min båt jag styrde
 på havets vågade, vågade, våg så skummet yrde
 Och vart jag sågade, sågade, såg,
@@ -284,8 +283,6 @@ en fisk jag såg och det var du.''',
       ),
       Song(
         title: 'Gasflygmaskinen',
-        
-        
         lyrics: '''En gasflygmaskin en gång uppfann jag
 med den upp i luften försvann jag.
 En flygtur på tre minuter hann jag
@@ -536,56 +533,6 @@ I love you''',
       ),
       
       Song(
-        title: 'I natt jag drömde',
-        
-        
-        lyrics: '''I natt jag drömde något som
-Jag aldrig drömt förut
-Jag drömde det var fred på jord
-Och alla krig var slut
-Jag drömde om en jättesal 
-där statsmän satt i rad
-Så skrev dom på ett konvolut 
-och reste sig och sa
-
-Det finns inga soldater mer
-det finns inga gevär
-och ingen känner längre till
-det ordet militär
-På gatorna gick folk omkring
-Och drog från krog till krog
-Och alla drack varandra till
-Och dansade och log
-
-I natt jag drömde något som
-Jag aldrig drömt förut
-Jag drömde det var fred på jord 
-och alla krig var slut''',
-        
-        guitarTabs: '''  G
-    C               G
-    D              G
-    Am   D        G
-    C            G
-    D                G
-   C                G    Em
-    Am    D       G 
- 
-    G
-    C            G
-    D            G
-    Am   D     G
-   C            G
-    D                   G
-    C             G     Em
-    Am    D     G 
- 
-  G
-    C               G
-    D              G
-    Am     D       G'''
-      ),
-      Song(
         title: 'Moster Ingeborg',
         
         
@@ -601,7 +548,6 @@ hatten - fjädern - muffen - kjolen - moster''',
       ),
       Song(
         title: 'Pelle Jöns',
-        
         
         lyrics: '''Det var en gång en daggmask,
 som hette Pelle Jöns
@@ -739,7 +685,6 @@ Tungan!''',
       Song(
         title: 'Du ska få min gamla cykel',
         
-        
         lyrics: '''Du ska få min gamla cykel när jag
 dör
 Du ska få min gamla cykel när jag
@@ -779,51 +724,6 @@ jag dör''',
       ),
       
       
-      Song(
-        title: 'Jag hade en gång en båt',
-        
-        
-        lyrics: '''Jag hade en gång en båt
-med segel och ruff och köl,
-men det var för länge sen, 
-så länge sen
-Svara mig, du, var är den nu?
-Jag bara undrar, var är den nu?
-
-Jag hade en gång en dröm
-jag trodde att den var sann
-Så väcktes jag ur min sömn 
-och drömmen försvann
-Svara mej, du, var är den nu?
-Jag bara undrar, var är den nu?
-
-Det fanns en gång en soldat
-han kysste sin mor farväl
-Han sa till sin flicka:
-Du, jag kommer igen
-Svara mej, du, var är han nu?
-Jag bara undrar, var är han nu?
-
-Det fanns en gång en stad
-i parken där lekte barn
-Så släppte man ner en bomb, 
-och staden försvann
-Svara mej, du, var är den nu?
-Jag bara undrar, var är den nu?
-
-Jag hade en gång en båt
-jag drömde en dröm en gång
-men det var för längesen, 
-så längesen
-Svara mej, du, var är dom nu?
-Jag bara undrar, var är dom nu?''',
-        guitarTabs: '''B
-
-                           
-           F#
-             B             E
-B             F#             B''',
-      ),
       Song(title: "Gul moped", 
       author: "", 
       melody: "", 
@@ -888,6 +788,101 @@ Nej, jag vill leva jag vill dö i Norden.''',
     A           E       D         E
     A                            E  A
     A                            E  A''',
+      ),
+      
+      Song(
+        title: 'I natt jag drömde',
+        author: 'Cornelis Vreeswijk',
+        lyrics: '''I natt jag drömde något som
+Jag aldrig drömt förut
+Jag drömde det var fred på jord
+Och alla krig var slut
+Jag drömde om en jättesal 
+där statsmän satt i rad
+Så skrev dom på ett konvolut 
+och reste sig och sa
+
+Det finns inga soldater mer
+det finns inga gevär
+och ingen känner längre till
+det ordet militär
+På gatorna gick folk omkring
+Och drog från krog till krog
+Och alla drack varandra till
+Och dansade och log
+
+I natt jag drömde något som
+Jag aldrig drömt förut
+Jag drömde det var fred på jord 
+och alla krig var slut''',
+
+        guitarTabs: '''  G
+    C               G
+    D              G
+    Am   D        G
+    C            G
+    D                G
+   C                G    Em
+    Am    D       G 
+ 
+    G
+    C            G
+    D            G
+    Am   D     G
+   C            G
+    D                   G
+    C             G     Em
+    Am    D     G 
+ 
+  G
+    C               G
+    D              G
+    Am     D       G''',
+      ),
+      Song(
+        title: 'Jag hade en gång en båt',
+        author: 'Cornelis Vreeswijk',
+
+        lyrics: '''Jag hade en gång en båt
+med segel och ruff och köl,
+men det var för länge sen, 
+så länge sen
+Svara mig, du, var är den nu?
+Jag bara undrar, var är den nu?
+
+Jag hade en gång en dröm
+jag trodde att den var sann
+Så väcktes jag ur min sömn 
+och drömmen försvann
+Svara mej, du, var är den nu?
+Jag bara undrar, var är den nu?
+
+Det fanns en gång en soldat
+han kysste sin mor farväl
+Han sa till sin flicka:
+Du, jag kommer igen
+Svara mej, du, var är han nu?
+Jag bara undrar, var är han nu?
+
+Det fanns en gång en stad
+i parken där lekte barn
+Så släppte man ner en bomb, 
+och staden försvann
+Svara mej, du, var är den nu?
+Jag bara undrar, var är den nu?
+
+Jag hade en gång en båt
+jag drömde en dröm en gång
+men det var för längesen, 
+så längesen
+Svara mej, du, var är dom nu?
+Jag bara undrar, var är dom nu?''',
+        guitarTabs: '''B
+
+                           
+           F#
+             B             E
+B             F#             B''',
       ),
     Song(
         title: 'Brevet från kolonien',
@@ -1919,6 +1914,7 @@ F
 
       Song(
         title: 'Where have all the flowers gone',
+        author: 'Pete Seeger',
         lyrics: '''Where have all the flowers gone?
 Long time passing
 Where have all the flowers gone?
@@ -2011,6 +2007,7 @@ C            D     G'''
 
       Song(
         title: 'The house of the rising sun',
+        author: 'Alan Price',
         lyrics: '''There is a house in New Orleans
 They call the "Rising Sun"
 And it's been the ruin of many a poor boy
@@ -2162,8 +2159,7 @@ Poor boy, you're bound to die''',
 about: ""),
     Song(
         title: 'Streets of London',
-        
-        
+        author: 'Ralph McTell',
         lyrics: '''Have you seen the old man, in the closed down market, 
 kicking up the papers, with his worn-out shoes?
 In his eyes you see no pride, hand held loosely at his side.
