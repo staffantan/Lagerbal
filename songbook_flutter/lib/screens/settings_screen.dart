@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../models/app_settings.dart';
 import '../models/category.dart';
 import '../models/song.dart';
@@ -23,6 +24,23 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  String _version = '';
+  String _buildNumber = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPackageInfo();
+  }
+
+  Future<void> _loadPackageInfo() async {
+    final packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      _version = packageInfo.version;
+      _buildNumber = packageInfo.buildNumber;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,6 +179,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 );
               },
+            ),
+          ),
+          const SizedBox(height: 32),
+          
+          // Version information at the bottom
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'Version $_version${_buildNumber.isNotEmpty ? '+$_buildNumber' : ''}',
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                ),
+              ),
             ),
           ),
         ],
