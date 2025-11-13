@@ -346,7 +346,7 @@ class _SongListScreenState extends State<SongListScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset(
-          'icon.png', 
+          'campfire_icon.png', 
           height: 72
         ),
         title: const Text('Lägerbål'),

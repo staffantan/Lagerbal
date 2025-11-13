@@ -51,7 +51,7 @@ class PdfService {
     // Load icon image
     pw.ImageProvider? iconImage;
     try {
-      final ByteData data = await rootBundle.load('icon.png');
+      final ByteData data = await rootBundle.load('campfire_icon.png');
       final Uint8List bytes = data.buffer.asUint8List();
       iconImage = pw.MemoryImage(bytes);
     } catch (e) {
@@ -263,7 +263,7 @@ class PdfService {
             tabLine,
             style: pw.TextStyle(
               font: monoFont,
-              fontSize: 22,
+              fontSize: 18,
               color: PdfColors.blue800,
             ),
           ),
@@ -279,7 +279,7 @@ class PdfService {
             lyricLine,
             style: pw.TextStyle(
               font: monoFont,
-              fontSize: 22,
+              fontSize: 18,
             ),
           ),
         );
