@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:http/http.dart' as http;
 import 'package:ota_update/ota_update.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'dart:convert';
 import '../models/app_settings.dart';
 import '../models/category.dart';
@@ -63,7 +64,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
         // Compare versions
         if (latestVersion.isNotEmpty && _isNewerVersion(latestVersion, _version)) {
-          _showUpdateDialog(latestVersion, data);
+          await _showUpdateDialog(latestVersion, data);
         } else {
           _showNoUpdateDialog();
         }
@@ -97,18 +98,72 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return false;
   }
 
-  void _showUpdateDialog(String version, Map<String, dynamic> releaseData) {
+  Future<String?> _getDeviceAbi() async {
+    try {
+      final deviceInfo = DeviceInfoPlugin();
+      final androidInfo = await deviceInfo.androidInfo;
+      
+      // Get the supported ABIs from the device
+      final abis = androidInfo.supportedAbis;
+      
+      if (abis.isEmpty) {
+        return null; // No ABI detected, will use universal APK
+      }
+      
+      // Return the first (preferred) ABI
+      // supportedAbis returns ABIs in order of preference
+      final primaryAbi = abis.first;
+      
+      // Map Android ABI names to APK naming convention
+      if (primaryAbi.contains('arm64')) {
+        return 'arm64-v8a';
+      } else if (primaryAbi.contains('armeabi-v7a') || primaryAbi.contains('armeabi')) {
+        return 'armeabi-v7a';
+      } else if (primaryAbi.contains('x86_64')) {
+        return 'x86_64';
+      } else if (primaryAbi.contains('x86')) {
+        return 'x86';
+      }
+      
+      // Unknown ABI, will use universal APK
+      return null;
+    } catch (e) {
+      // If there's any error, use universal APK
+      return null;
+    }
+  }
+
+  Future<void> _showUpdateDialog(String version, Map<String, dynamic> releaseData) async {
     final assets = releaseData['assets'] as List? ?? [];
     
-    // Find APK file
+    // Determine device ABI
+    final abi = await _getDeviceAbi();
+    
+    // Find APK file matching the device ABI, or fallback to universal APK
     String? apkDownloadUrl;
+    String? universalApkUrl;
+    
     for (var asset in assets) {
       final assetName = asset['name']?.toString() ?? '';
       if (assetName.endsWith('.apk')) {
-        apkDownloadUrl = asset['browser_download_url'];
-        break;
+        final url = asset['browser_download_url'];
+        
+        // Check for ABI-specific APK if ABI was detected
+        if (abi != null && assetName.contains(abi)) {
+          apkDownloadUrl = url;
+          break; // Prefer exact ABI match
+        }
+        
+        // Store universal APK as fallback (typically named app-release.apk)
+        if (assetName.contains('release.apk') && !assetName.contains('arm64') && 
+            !assetName.contains('armeabi') && !assetName.contains('x86')) {
+          universalApkUrl = url;
+        }
       }
     }
+    
+    // Use ABI-specific or fall back to universal
+    apkDownloadUrl ??= universalApkUrl;
 
     showDialog(
       context: context,
@@ -119,7 +174,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Ny version: v$version'),
+              Text('Ny version: v$version${abi != null ? ' ($abi)' : ''}'),
             ],
           ),
         ),
