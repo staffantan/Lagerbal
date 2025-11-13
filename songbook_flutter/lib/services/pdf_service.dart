@@ -27,7 +27,7 @@ class PdfService {
     } else {
       // On desktop, save to file and open
       final dir = await getApplicationDocumentsDirectory();
-      final file = File('${dir.path}/sangbok_${DateTime.now().millisecondsSinceEpoch}.pdf');
+      final file = File('${dir.path}/sangbok_${DateTime.now().toString().replaceAll(":", "-")}.pdf');
       await file.writeAsBytes(bytes);
       
       // Open the PDF
